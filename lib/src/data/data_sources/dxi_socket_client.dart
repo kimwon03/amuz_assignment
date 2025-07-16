@@ -159,7 +159,9 @@ class DxiSocketClient {
     await Future.delayed(Duration(seconds: 1));
   }
 
-  void _whenReceviedSetDxiMode() async {}
+  void _whenReceviedSetDxiMode() async {
+    _stopSendSetDxiReqTimer();
+  }
 
   void _sendSet2WayCertRequest() {
     int sendCount = 0;
@@ -206,5 +208,10 @@ class DxiSocketClient {
   void _stopSendSet2WayCertReqTimer() {
     _sendSet2WayCertReqTimer?.cancel();
     _sendSet2WayCertReqTimer = null;
+  }
+
+  void _stopSendSetDxiReqTimer() {
+    _sendSetDxiReqTimer?.cancel();
+    _sendSetDxiReqTimer = null;
   }
 }
