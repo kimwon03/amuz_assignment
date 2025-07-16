@@ -72,12 +72,19 @@ class BaseSocketClient {
   }) async {
     if (socket == null || !isConnected) return;
 
+    await removeListener();
+
     _socketSubscription = socket?.listen(
       onData,
       onDone: onDone,
       onError: onError,
       cancelOnError: cancelOnError,
     );
+  }
+
+  Future<void> removeListener() async {
+    await _socketSubscription?.cancel();
+    _socketSubscription = null;
   }
 
   void _sendMessageOnQueue() {
