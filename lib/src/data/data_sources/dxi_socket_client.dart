@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
 
+import 'package:amuz_assignment/src/core/constants/app_constant.dart';
 import 'package:amuz_assignment/src/core/constants/dxi_constant.dart';
 import 'package:amuz_assignment/src/core/constants/keys.dart';
 import 'package:amuz_assignment/src/core/utils/base_socket_client.dart';
@@ -22,7 +23,9 @@ class DxiSocketClient {
 
     final bool updateSocketSecurity = await _updateSecurity(securityContext);
 
-    if(!updateSocketSecurity) return;
+    if (!updateSocketSecurity) return;
+
+    _socketClient.addListener(_listener);
   }
 
   SecurityContext _getSecurityContext() {
@@ -48,5 +51,13 @@ class DxiSocketClient {
       onBadCertificate: (_) => true,
       context: securityContext,
     );
+  }
+
+  void _listener(Uint8List response) {
+    final Map<String, dynamic> result = jsonDecode(
+      String.fromCharCodes(response),
+    );
+
+    appLog.d('Get Socket Response : $result');
   }
 }
