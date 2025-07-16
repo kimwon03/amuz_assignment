@@ -53,6 +53,10 @@ class DxiSocketClient {
 
     if (!updateSocketSecurity) return;
 
+    _socketClient.addListener(_dxiListener);
+
+    await Future.delayed(Duration(seconds: 1));
+
     _sendSetDxiRequest();
   }
 
