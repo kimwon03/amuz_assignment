@@ -19,7 +19,20 @@ class BaseSocketClient {
   Future<bool> addSecureOnSocket({
     bool Function(X509Certificate)? onBadCertificate,
     SecurityContext? context,
-  }) {
-    throw UnimplementedError();
+  }) async {
+    if (socket == null) return false;
+
+    try {
+      socket = await SecureSocket.secure(
+        socket!,
+        onBadCertificate: onBadCertificate,
+        context: context,
+      );
+
+      return true;
+    } catch (e, stackTrace) {
+      appLog.e(e, error: e, stackTrace: stackTrace);
+      return false;
+    }
   }
 }
