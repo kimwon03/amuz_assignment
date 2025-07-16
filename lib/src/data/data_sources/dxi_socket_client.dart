@@ -30,7 +30,7 @@ class DxiSocketClient {
 
     if (!updateSocketSecurity) return;
 
-    await _socketClient.addListener(_listener);
+    await _socketClient.addListener(_authenticationListener);
 
     await Future.delayed(Duration(seconds: 1));
 
@@ -94,7 +94,7 @@ class DxiSocketClient {
     );
   }
 
-  void _listener(Uint8List response) {
+  void _authenticationListener(Uint8List response) {
     final Map<String, dynamic> result = jsonDecode(
       String.fromCharCodes(response),
     );
