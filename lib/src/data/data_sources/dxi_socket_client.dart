@@ -113,6 +113,10 @@ class DxiSocketClient {
     }
   }
 
+  void _dxiListener(Uint8List response) {
+    
+  }
+
   void _whenReceviedPing() {
     final DxiRequestModel dxiRequestModel = DxiRequestModel(
       type: 'request',
