@@ -50,6 +50,8 @@ class BaseSocketClient {
 
   Future<void> disconnect() async {
     try {
+      await removeListener();
+      
       await socket?.close();
 
       socket?.done.then((_) {
