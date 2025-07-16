@@ -4,10 +4,13 @@ import 'package:amuz_assignment/src/core/constants/app_constant.dart';
 
 class BaseSocketClient {
   Socket? socket;
+  bool isConnected = false;
 
   Future<bool> connet(String ip, int port) async {
     try {
       socket = await Socket.connect(ip, port, timeout: Duration(seconds: 2));
+
+      isConnected = true;
 
       return true;
     } catch (e, stackTrace) {
@@ -40,12 +43,15 @@ class BaseSocketClient {
     try {
       await socket?.close();
 
-      socket?.done.then((_) {});
+      socket?.done.then((_) {
+        isConnected = false;
+      });
     } catch (e, stackTrace) {
       appLog.e(e, error: e, stackTrace: stackTrace);
       appLog.d('강제 연결해제 시작');
 
       socket?.destroy();
+      isConnected = false;
     }
   }
 }
