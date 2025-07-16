@@ -78,7 +78,7 @@ class BaseSocketClient {
     );
   }
 
-  void sendMessageOnQueue() {
+  void _sendMessageOnQueue() {
     Future.doWhile(() async {
       Future.delayed(Duration(milliseconds: 500));
 
