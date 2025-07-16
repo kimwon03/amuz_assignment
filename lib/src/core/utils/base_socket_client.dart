@@ -35,4 +35,8 @@ class BaseSocketClient {
       return false;
     }
   }
+
+  Future<void> disconnect() {
+    throw UnimplementedError();
+  }
 }
