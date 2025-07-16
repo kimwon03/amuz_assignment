@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
 
-import 'package:amuz_assignment/src/core/constants/dxi_constant.dart';
 import 'package:amuz_assignment/src/core/constants/keys.dart';
 import 'package:amuz_assignment/src/core/utils/base_socket_client.dart';
 
@@ -25,5 +24,13 @@ class DxiSocketClient {
     securityContext.usePrivateKeyBytes(privateKeyBytes);
 
     return securityContext;
+  }
+
+  Future<bool> _socketConnect(String host, int port) async {
+    await _socketClient.disconnect();
+
+    await Future.delayed(Duration(seconds: 1));
+
+    return _socketClient.connect(host, port);
   }
 }
