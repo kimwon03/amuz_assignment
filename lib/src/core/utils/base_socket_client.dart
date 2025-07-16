@@ -102,8 +102,6 @@ class BaseSocketClient {
   }
 
   void _write(Object? object) {
-    if(socket == null) return;
-
     socket!.write(object);
   }
 }
