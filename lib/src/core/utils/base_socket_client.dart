@@ -84,9 +84,17 @@ class BaseSocketClient {
 
       if(_messageQueue.isNotEmpty) {
         Object? object = _messageQueue.removeAt(0);
+
+        _write(object);
       }
 
       return isConnected;
     });
+  }
+
+  void _write(Object? object) {
+    if(socket == null) return;
+
+    socket!.write(object);
   }
 }
