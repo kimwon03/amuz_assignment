@@ -136,6 +136,7 @@ class DxiSocketClient {
       case Cmd.sendDxiData:
         break;
       case Cmd.setDxiMode:
+        _whenReceviedSetDxiMode();
         break;
     }
   }
@@ -157,6 +158,8 @@ class DxiSocketClient {
 
     await Future.delayed(Duration(seconds: 1));
   }
+
+  void _whenReceviedSetDxiMode() async {}
 
   void _sendSet2WayCertRequest() {
     int sendCount = 0;
