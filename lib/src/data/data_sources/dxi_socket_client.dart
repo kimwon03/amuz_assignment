@@ -90,7 +90,7 @@ class DxiSocketClient {
   }
 
   void _whenReceviedSet2WayCert() {
-
+    _stopSendSet2WayCertReqTimer();
   }
 
   void _sendSet2WayCertRequest() {
@@ -115,5 +115,10 @@ class DxiSocketClient {
     appLog.d('send message\n$dxiRequestModel');
 
     _socketClient.addMessage(jsonEncode(dxiRequestModel.toJson()));
+  }
+
+  void _stopSendSet2WayCertReqTimer() {
+    _sendSet2WayCertReqTimer?.cancel();
+    _sendSet2WayCertReqTimer = null;
   }
 }
