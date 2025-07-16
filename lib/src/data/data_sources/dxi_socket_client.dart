@@ -50,7 +50,7 @@ class DxiSocketClient {
 
     final bool updateSocketSecurity = await _updateSecurity(securityContext);
 
-    if(!updateSocketSecurity) return;
+    if (!updateSocketSecurity) return;
   }
 
   SecurityContext _getSecurityContext({
@@ -114,7 +114,23 @@ class DxiSocketClient {
   }
 
   void _dxiListener(Uint8List response) {
-    
+    final Map<String, dynamic> result = jsonDecode(
+      String.fromCharCodes(response),
+    );
+
+    appLog.d('Get Socket Response : $result');
+
+    final String? cmd = result['cmd'] as String?;
+
+    switch (cmd) {
+      case Cmd.ping:
+        _whenReceviedPing();
+        break;
+      case Cmd.sendDxiData:
+        break;
+      case Cmd.setDxiMode:
+        break;
+    }
   }
 
   void _whenReceviedPing() {
