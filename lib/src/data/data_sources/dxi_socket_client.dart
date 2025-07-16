@@ -79,6 +79,8 @@ class DxiSocketClient {
       data: {'constantConnect': 'Y'},
     );
 
+    appLog.d('send message\n$dxiRequestModel');
+
     _socketClient.addMessage(jsonEncode(dxiRequestModel.toJson()));
   }
 }
