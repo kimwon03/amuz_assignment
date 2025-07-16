@@ -1,10 +1,13 @@
+import 'dart:async';
 import 'dart:io';
+import 'dart:typed_data';
 
 import 'package:amuz_assignment/src/core/constants/app_constant.dart';
 
 class BaseSocketClient {
   Socket? socket;
   bool isConnected = false;
+  StreamSubscription<Uint8List>? _socketSubscription;
 
   Future<bool> connect(String ip, int port) async {
     try {
@@ -58,7 +61,19 @@ class BaseSocketClient {
     }
   }
 
-  Future<void> addListener() async {
+  Future<void> addListener(
+    void Function(Uint8List)? onData, {
+    Function? onError,
+    void Function()? onDone,
+    bool? cancelOnError,
+  }) async {
     if (socket == null || !isConnected) return;
+
+    _socketSubscription = socket?.listen(
+      onData,
+      onDone: onDone,
+      onError: onError,
+      cancelOnError: cancelOnError,
+    );
   }
 }
