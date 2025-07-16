@@ -157,7 +157,7 @@ class DxiSocketClient {
   void _sendSet2WayCertRequest() {
     int sendCount = 0;
 
-    _sendSet2WayCertReqTimer = Timer.periodic(Duration(seconds: 5), (timer) {
+    _sendSet2WayCertReqTimer = Timer.periodic(sendRequestDuration, (timer) {
       if (sendCount >= maxSendCount) timer.cancel();
 
       final DxiRequestModel dxiRequestModel = DxiRequestModel(
@@ -175,7 +175,7 @@ class DxiSocketClient {
   void _sendSetDxiRequest() {
     int sendCount = 0;
 
-    _sendSetDxiReqTimer = Timer.periodic(Duration(seconds: 5), (timer) {
+    _sendSetDxiReqTimer = Timer.periodic(sendRequestDuration, (timer) {
       if (sendCount >= maxSendCount) timer.cancel();
 
       final DxiRequestModel dxiRequestModel = DxiRequestModel(

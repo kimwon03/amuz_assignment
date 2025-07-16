@@ -3,6 +3,8 @@ const int port = int.fromEnvironment('dxi_port');
 
 const int maxSendCount = 3;
 
+final Duration sendRequestDuration = Duration(seconds: 5);
+
 final class Cmd {
   const Cmd._();
 
