@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
@@ -84,5 +85,19 @@ class DxiSocketClient {
     appLog.d('send message\n$dxiRequestModel');
 
     _socketClient.addMessage(jsonEncode(dxiRequestModel.toJson()));
+  }
+
+  void _sendSet2WayCertRequest() {
+    Timer.periodic(Duration(seconds: 5), (timer) {
+      final DxiRequestModel dxiRequestModel = DxiRequestModel(
+        type: 'request',
+        cmd: 'set2wayCert',
+        data: {"constantConnect": "N"},
+      );
+
+      appLog.d('send message\n$dxiRequestModel');
+
+      _socketClient.addMessage(jsonEncode(dxiRequestModel.toJson()));
+    });
   }
 }
