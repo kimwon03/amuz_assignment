@@ -82,9 +82,7 @@ class DxiSocketClient {
       data: {'constantConnect': 'Y'},
     );
 
-    appLog.d('send message\n$dxiRequestModel');
-
-    _socketClient.addMessage(jsonEncode(dxiRequestModel.toJson()));
+    _sendRequest(dxiRequestModel);
   }
 
   void _sendSet2WayCertRequest() {
@@ -95,9 +93,13 @@ class DxiSocketClient {
         data: {"constantConnect": "N"},
       );
 
-      appLog.d('send message\n$dxiRequestModel');
-
-      _socketClient.addMessage(jsonEncode(dxiRequestModel.toJson()));
+      _sendRequest(dxiRequestModel);
     });
+  }
+
+  void _sendRequest(DxiRequestModel dxiRequestModel) {
+    appLog.d('send message\n$dxiRequestModel');
+
+    _socketClient.addMessage(jsonEncode(dxiRequestModel.toJson()));
   }
 }
