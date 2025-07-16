@@ -4,6 +4,10 @@ keys.dart
 # Environment Variable File
 .env
 
+# Build Generat output Files
+*.g.dart
+*.freezed.dart
+
 # Miscellaneous
 *.class
 *.log
