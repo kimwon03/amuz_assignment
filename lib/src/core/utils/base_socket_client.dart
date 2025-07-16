@@ -82,6 +82,10 @@ class BaseSocketClient {
     Future.doWhile(() async {
       Future.delayed(Duration(milliseconds: 500));
 
+      if(_messageQueue.isNotEmpty) {
+        Object? object = _messageQueue.removeAt(0);
+      }
+
       return isConnected;
     });
   }
