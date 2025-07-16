@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
 
+import 'package:amuz_assignment/src/core/constants/dxi_constant.dart';
 import 'package:amuz_assignment/src/core/constants/keys.dart';
 import 'package:amuz_assignment/src/core/utils/base_socket_client.dart';
 
@@ -14,6 +15,10 @@ class DxiSocketClient {
 
   Future<void> serverAuthentication() async {
     final SecurityContext securityContext = _getSecurityContext();
+
+    final bool socketConnectResult = await _socketConnect(host, port);
+
+    if (!socketConnectResult) return;
   }
 
   SecurityContext _getSecurityContext() {
