@@ -9,16 +9,12 @@ import 'package:amuz_assignment/src/core/utils/base_socket_client.dart';
 class DxiSocketClient {
   final BaseSocketClient _socketClient = BaseSocketClient();
 
-  Future<void> serverAuthentication() async {
-    final SecurityContext securityContext = _getSecurityContext();
+  Future<void> connect() async {
+    await serverAuthentication();
   }
 
-  Future<void> connect() async {
-    _socketClient.disconnect();
-
-    bool socketConnectResult = await _socketClient.connect(host, port);
-
-    if (!socketConnectResult) false;
+  Future<void> serverAuthentication() async {
+    final SecurityContext securityContext = _getSecurityContext();
   }
 
   SecurityContext _getSecurityContext() {
