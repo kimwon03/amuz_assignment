@@ -15,4 +15,11 @@ class BaseSocketClient {
       return false;
     }
   }
+
+  Future<bool> addSecureOnSocket({
+    bool Function(X509Certificate)? onBadCertificate,
+    SecurityContext? context,
+  }) {
+    throw UnimplementedError();
+  }
 }
