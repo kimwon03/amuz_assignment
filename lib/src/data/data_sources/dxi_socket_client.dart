@@ -37,7 +37,11 @@ class DxiSocketClient {
     _sendSet2WayCertRequest();
   }
 
-  Future<void> setupDxi() async {}
+  Future<void> setupDxi() async {
+    final bool socketConnectResult = await _socketClient.connect(host, port);
+
+    if(!socketConnectResult) return;
+  }
 
   SecurityContext _getSecurityContext({
     required String key,
