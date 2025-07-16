@@ -26,7 +26,9 @@ class DxiSocketClient {
 
     if (!updateSocketSecurity) return;
 
-    _socketClient.addListener(_listener);
+    await _socketClient.addListener(_listener);
+
+    await Future.delayed(Duration(seconds: 1));
   }
 
   SecurityContext _getSecurityContext() {
