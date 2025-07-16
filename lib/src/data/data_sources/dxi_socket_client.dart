@@ -11,7 +11,7 @@ import 'package:amuz_assignment/src/data/models/dxi_request_model.dart';
 
 class DxiSocketClient {
   final BaseSocketClient _socketClient = BaseSocketClient();
-  Timer? _sendSet2WayCertReqTimer = null;
+  Timer? _sendSet2WayCertReqTimer;
 
   Future<void> connect() async {
     await serverAuthentication();
