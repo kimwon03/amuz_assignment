@@ -19,6 +19,10 @@ class DxiSocketClient {
     final bool socketConnectResult = await _socketConnect(host, port);
 
     if (!socketConnectResult) return;
+
+    final bool updateSocketSecurity = await _updateSecurity(securityContext);
+
+    if(!updateSocketSecurity) return;
   }
 
   SecurityContext _getSecurityContext() {
@@ -37,5 +41,12 @@ class DxiSocketClient {
     await Future.delayed(Duration(seconds: 1));
 
     return _socketClient.connect(host, port);
+  }
+
+  Future<bool> _updateSecurity(SecurityContext securityContext) {
+    return _socketClient.addSecureOnSocket(
+      onBadCertificate: (_) => true,
+      context: securityContext,
+    );
   }
 }
