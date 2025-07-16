@@ -89,8 +89,12 @@ class DxiSocketClient {
     _sendRequest(dxiRequestModel);
   }
 
-  void _whenReceviedSet2WayCert() {
+  void _whenReceviedSet2WayCert() async {
     _stopSendSet2WayCertReqTimer();
+
+    await _socketClient.disconnect();
+
+    await Future.delayed(Duration(seconds: 1));
   }
 
   void _sendSet2WayCertRequest() {
