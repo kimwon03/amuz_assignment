@@ -16,6 +16,8 @@ class BaseSocketClient {
 
       isConnected = true;
 
+      _sendMessageOnQueue();
+
       return true;
     } catch (e, stackTrace) {
       appLog.e(e, error: e, stackTrace: stackTrace);
