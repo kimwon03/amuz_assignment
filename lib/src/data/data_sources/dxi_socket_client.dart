@@ -86,7 +86,11 @@ class DxiSocketClient {
   }
 
   void _sendSet2WayCertRequest() {
+    int sendCount = 0;
+
     Timer.periodic(Duration(seconds: 5), (timer) {
+      if (sendCount >= maxSendCount) timer.cancel();
+
       final DxiRequestModel dxiRequestModel = DxiRequestModel(
         type: 'request',
         cmd: 'set2wayCert',
@@ -94,6 +98,8 @@ class DxiSocketClient {
       );
 
       _sendRequest(dxiRequestModel);
+
+      sendCount++;
     });
   }
 
