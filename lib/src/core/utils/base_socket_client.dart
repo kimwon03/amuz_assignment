@@ -59,6 +59,6 @@ class BaseSocketClient {
   }
 
   Future<void> addListener() async {
-    if (!isConnected) return;
+    if (socket == null || !isConnected) return;
   }
 }
