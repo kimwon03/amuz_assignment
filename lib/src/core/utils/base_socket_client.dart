@@ -1,5 +1,7 @@
 import 'dart:io';
 
+import 'package:amuz_assignment/src/core/constants/app_constant.dart';
+
 class BaseSocketClient {
   Socket? socket;
 
@@ -8,7 +10,8 @@ class BaseSocketClient {
       socket = await Socket.connect(ip, port, timeout: Duration(seconds: 2));
 
       return true;
-    } catch(e) {
+    } catch (e, stackTrace) {
+      appLog.e(e, error: e, stackTrace: stackTrace);
       return false;
     }
   }
