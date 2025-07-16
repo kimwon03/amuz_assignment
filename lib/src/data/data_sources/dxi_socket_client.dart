@@ -73,6 +73,7 @@ class DxiSocketClient {
         _whenReceviedPing();
         break;
       case Cmd.set2wayCert:
+        _whenReceviedSet2WayCert();
         break;
     }
   }
@@ -85,6 +86,10 @@ class DxiSocketClient {
     );
 
     _sendRequest(dxiRequestModel);
+  }
+
+  void _whenReceviedSet2WayCert() {
+
   }
 
   void _sendSet2WayCertRequest() {
