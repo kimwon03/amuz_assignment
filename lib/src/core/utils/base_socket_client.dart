@@ -8,6 +8,7 @@ class BaseSocketClient {
   Socket? socket;
   bool isConnected = false;
   StreamSubscription<Uint8List>? _socketSubscription;
+  final List<Object?> _messageQueue = [];
 
   Future<bool> connect(String ip, int port) async {
     try {
