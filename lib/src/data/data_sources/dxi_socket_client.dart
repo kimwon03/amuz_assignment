@@ -37,6 +37,8 @@ class DxiSocketClient {
     _sendSet2WayCertRequest();
   }
 
+  Future<void> setupDxi() async {}
+
   SecurityContext _getSecurityContext({
     required String key,
     String? rootCA,
