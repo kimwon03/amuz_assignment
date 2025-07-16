@@ -35,6 +35,9 @@ class BaseSocketClient {
       return true;
     } catch (e, stackTrace) {
       appLog.e(e, error: e, stackTrace: stackTrace);
+
+      disconnect();
+
       return false;
     }
   }
