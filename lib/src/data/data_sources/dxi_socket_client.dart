@@ -6,6 +6,7 @@ import 'package:amuz_assignment/src/core/constants/app_constant.dart';
 import 'package:amuz_assignment/src/core/constants/dxi_constant.dart';
 import 'package:amuz_assignment/src/core/constants/keys.dart';
 import 'package:amuz_assignment/src/core/utils/base_socket_client.dart';
+import 'package:amuz_assignment/src/data/models/dxi_request_model.dart';
 
 class DxiSocketClient {
   final BaseSocketClient _socketClient = BaseSocketClient();
@@ -64,9 +65,20 @@ class DxiSocketClient {
 
     switch (cmd) {
       case Cmd.ping:
+        _whenReceviedPing();
         break;
       case Cmd.set2wayCert:
         break;
     }
+  }
+
+  void _whenReceviedPing() {
+    final DxiRequestModel dxiRequestModel = DxiRequestModel(
+      type: 'request',
+      cmd: 'pong',
+      data: {'constantConnect': 'Y'},
+    );
+
+    _socketClient.addMessage(jsonEncode(dxiRequestModel.toJson()));
   }
 }
