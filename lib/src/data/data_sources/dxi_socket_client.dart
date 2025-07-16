@@ -5,6 +5,7 @@ import 'dart:typed_data';
 import 'package:amuz_assignment/src/core/constants/app_constant.dart';
 import 'package:amuz_assignment/src/core/constants/dxi_constant.dart';
 import 'package:amuz_assignment/src/core/constants/keys.dart';
+import 'package:amuz_assignment/src/core/constants/socket_constant.dart';
 import 'package:amuz_assignment/src/core/utils/base_socket_client.dart';
 
 class DxiSocketClient {
@@ -59,5 +60,14 @@ class DxiSocketClient {
     );
 
     appLog.d('Get Socket Response : $result');
+
+    final String? cmd = result['cmd'] as String?;
+
+    switch (cmd) {
+      case Cmd.ping:
+        break;
+      case Cmd.set2wayCert:
+        break;
+    }
   }
 }
