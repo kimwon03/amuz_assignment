@@ -18,7 +18,9 @@ class DxiSocketClient {
   }
 
   Future<void> serverAuthentication() async {
-    final SecurityContext securityContext = _getSecurityContext();
+    final SecurityContext securityContext = _getSecurityContext(
+      key: Keys.blackboxKey,
+    );
 
     final bool socketConnectResult = await _socketConnect(host, port);
 
@@ -35,12 +37,28 @@ class DxiSocketClient {
     _sendSet2WayCertRequest();
   }
 
-  SecurityContext _getSecurityContext() {
+  SecurityContext _getSecurityContext({
+    required String key,
+    String? rootCA,
+    String? serverCert,
+  }) {
     final SecurityContext securityContext = SecurityContext.defaultContext;
 
-    final Uint8List privateKeyBytes = base64Decode(Keys.blackboxKey);
+    final Uint8List privateKeyBytes = base64Decode(key);
 
     securityContext.usePrivateKeyBytes(privateKeyBytes);
+
+    if (rootCA != null) {
+      final Uint8List rootCABytes = base64Decode(rootCA);
+
+      securityContext.setTrustedCertificatesBytes(rootCABytes);
+    }
+
+    if (serverCert != null) {
+      final Uint8List serverCertBytes = base64Decode(serverCert);
+
+      securityContext.setClientAuthoritiesBytes(serverCertBytes);
+    }
 
     return securityContext;
   }
