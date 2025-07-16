@@ -40,7 +40,17 @@ class DxiSocketClient {
   Future<void> setupDxi() async {
     final bool socketConnectResult = await _socketClient.connect(host, port);
 
-    if(!socketConnectResult) return;
+    if (!socketConnectResult) return;
+
+    final SecurityContext securityContext = _getSecurityContext(
+      key: Keys.appKey,
+      rootCA: Keys.rootCert,
+      serverCert: Keys.appCert,
+    );
+
+    final bool updateSocketSecurity = await _updateSecurity(securityContext);
+
+    if(!updateSocketSecurity) return;
   }
 
   SecurityContext _getSecurityContext({
