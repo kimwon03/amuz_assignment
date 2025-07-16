@@ -76,4 +76,10 @@ class BaseSocketClient {
       cancelOnError: cancelOnError,
     );
   }
+
+  void sendMessageOnQueue() {
+    Future.doWhile(() async {
+      return isConnected;
+    });
+  }
 }
