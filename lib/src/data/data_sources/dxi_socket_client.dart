@@ -11,6 +11,7 @@ import 'package:amuz_assignment/src/data/models/dxi_request_model.dart';
 
 class DxiSocketClient {
   final BaseSocketClient _socketClient = BaseSocketClient();
+  Timer? _sendSet2WayCertReqTimer = null;
 
   Future<void> connect() async {
     await serverAuthentication();
@@ -95,7 +96,7 @@ class DxiSocketClient {
   void _sendSet2WayCertRequest() {
     int sendCount = 0;
 
-    Timer.periodic(Duration(seconds: 5), (timer) {
+    _sendSet2WayCertReqTimer = Timer.periodic(Duration(seconds: 5), (timer) {
       if (sendCount >= maxSendCount) timer.cancel();
 
       final DxiRequestModel dxiRequestModel = DxiRequestModel(
