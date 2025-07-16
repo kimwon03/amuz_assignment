@@ -5,7 +5,6 @@ import 'dart:typed_data';
 import 'package:amuz_assignment/src/core/constants/app_constant.dart';
 import 'package:amuz_assignment/src/core/constants/dxi_constant.dart';
 import 'package:amuz_assignment/src/core/constants/keys.dart';
-import 'package:amuz_assignment/src/core/constants/socket_constant.dart';
 import 'package:amuz_assignment/src/core/utils/base_socket_client.dart';
 
 class DxiSocketClient {

@@ -1,2 +1,9 @@
 const String host = String.fromEnvironment('dxi_host');
-const int port = int.fromEnvironment('dxi_port'); 
+const int port = int.fromEnvironment('dxi_port');
+
+final class Cmd {
+  const Cmd._();
+
+  static const String ping = 'ping';
+  static const String set2wayCert = 'set2wayCert';
+}
