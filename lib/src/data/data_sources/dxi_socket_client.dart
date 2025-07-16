@@ -12,6 +12,7 @@ import 'package:amuz_assignment/src/data/models/dxi_request_model.dart';
 class DxiSocketClient {
   final BaseSocketClient _socketClient = BaseSocketClient();
   Timer? _sendSet2WayCertReqTimer;
+  Timer? _sendSetDxiReqTimer;
 
   Future<void> connect() async {
     await serverAuthentication();
@@ -51,6 +52,8 @@ class DxiSocketClient {
     final bool updateSocketSecurity = await _updateSecurity(securityContext);
 
     if (!updateSocketSecurity) return;
+
+    _sendSetDxiRequest();
   }
 
   SecurityContext _getSecurityContext({
@@ -161,6 +164,24 @@ class DxiSocketClient {
         type: 'request',
         cmd: 'set2wayCert',
         data: {"constantConnect": "N"},
+      );
+
+      _sendRequest(dxiRequestModel);
+
+      sendCount++;
+    });
+  }
+
+  void _sendSetDxiRequest() {
+    int sendCount = 0;
+
+    _sendSetDxiReqTimer = Timer.periodic(Duration(seconds: 5), (timer) {
+      if (sendCount >= maxSendCount) timer.cancel();
+
+      final DxiRequestModel dxiRequestModel = DxiRequestModel(
+        type: 'request',
+        cmd: 'setDxiMode',
+        data: {"constantConnect": "Y"},
       );
 
       _sendRequest(dxiRequestModel);
