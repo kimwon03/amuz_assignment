@@ -6,7 +6,7 @@ class BaseSocketClient {
   Socket? socket;
   bool isConnected = false;
 
-  Future<bool> connet(String ip, int port) async {
+  Future<bool> connect(String ip, int port) async {
     try {
       if(isConnected) disconnect();
 
