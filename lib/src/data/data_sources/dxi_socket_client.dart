@@ -12,7 +12,7 @@ import 'package:amuz_assignment/src/data/models/dxi_request_model.dart';
 class DxiSocketClient {
   final BaseSocketClient _socketClient = BaseSocketClient();
   Timer? _sendSet2WayCertReqTimer;
-  Timer? _sendSetDxiReqTimer;
+  Timer? _sendSetDxiModeReqTimer;
 
   Future<void> connect() async {
     await serverAuthentication();
@@ -160,7 +160,7 @@ class DxiSocketClient {
   }
 
   void _whenReceviedSetDxiMode() async {
-    _stopSendSetDxiReqTimer();
+    _stopSendSetDxiModeReqTimer();
   }
 
   void _sendSet2WayCertRequest() {
@@ -184,7 +184,7 @@ class DxiSocketClient {
   void _sendSetDxiRequest() {
     int sendCount = 0;
 
-    _sendSetDxiReqTimer = Timer.periodic(sendRequestDuration, (timer) {
+    _sendSetDxiModeReqTimer = Timer.periodic(sendRequestDuration, (timer) {
       if (sendCount >= maxSendCount) timer.cancel();
 
       final DxiRequestModel dxiRequestModel = DxiRequestModel(
@@ -210,8 +210,8 @@ class DxiSocketClient {
     _sendSet2WayCertReqTimer = null;
   }
 
-  void _stopSendSetDxiReqTimer() {
-    _sendSetDxiReqTimer?.cancel();
-    _sendSetDxiReqTimer = null;
+  void _stopSendSetDxiModeReqTimer() {
+    _sendSetDxiModeReqTimer?.cancel();
+    _sendSetDxiModeReqTimer = null;
   }
 }
