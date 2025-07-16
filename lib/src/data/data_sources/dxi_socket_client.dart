@@ -30,6 +30,8 @@ class DxiSocketClient {
     await _socketClient.addListener(_listener);
 
     await Future.delayed(Duration(seconds: 1));
+
+    _sendSet2WayCertRequest();
   }
 
   SecurityContext _getSecurityContext() {
