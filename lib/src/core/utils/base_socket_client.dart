@@ -36,7 +36,16 @@ class BaseSocketClient {
     }
   }
 
-  Future<void> disconnect() {
-    throw UnimplementedError();
+  Future<void> disconnect() async {
+    try {
+      await socket?.close();
+
+      socket?.done.then((_) {});
+    } catch (e, stackTrace) {
+      appLog.e(e, error: e, stackTrace: stackTrace);
+      appLog.d('강제 연결해제 시작');
+
+      socket?.destroy();
+    }
   }
 }
