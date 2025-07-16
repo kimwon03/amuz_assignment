@@ -87,6 +87,10 @@ class BaseSocketClient {
     _socketSubscription = null;
   }
 
+  void addMessage(Object object) {
+    _messageQueue.add(object);
+  }
+
   void _sendMessageOnQueue() {
     Future.doWhile(() async {
       Future.delayed(Duration(milliseconds: 500));
