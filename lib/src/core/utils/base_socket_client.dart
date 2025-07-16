@@ -8,8 +8,6 @@ class BaseSocketClient {
 
   Future<bool> connect(String ip, int port) async {
     try {
-      if(isConnected) disconnect();
-
       socket = await Socket.connect(ip, port, timeout: Duration(seconds: 2));
 
       isConnected = true;
