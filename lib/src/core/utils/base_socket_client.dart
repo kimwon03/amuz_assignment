@@ -18,6 +18,8 @@ class BaseSocketClient {
 
       _sendMessageOnQueue();
 
+      appLog.i('Connect Socket ip : $ip, port $port');
+
       return true;
     } catch (e, stackTrace) {
       appLog.e(e, error: e, stackTrace: stackTrace);
