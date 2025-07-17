@@ -15,3 +15,18 @@ class ConnectButton extends ConsumerWidget {
     );
   }
 }
+
+
+class DisconnectButton extends ConsumerWidget {
+  const DisconnectButton({super.key});
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    return ElevatedButton(
+      onPressed: () {
+        ref.read(connectNotifierProvider.notifier).disconnect();
+      },
+      child: Text('연결 해지'),
+    );
+  }
+}
