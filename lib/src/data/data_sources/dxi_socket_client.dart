@@ -219,7 +219,7 @@ class DxiSocketClient {
   }
 
   void _sendRequest(DxiRequestModel dxiRequestModel) {
-    appLog.d('send message\n$dxiRequestModel');
+    appLog.i('send message\n$dxiRequestModel');
 
     _socketClient.addMessage(jsonEncode(dxiRequestModel.toJson()));
   }

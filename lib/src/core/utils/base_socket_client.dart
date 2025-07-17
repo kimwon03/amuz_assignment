@@ -102,6 +102,8 @@ class BaseSocketClient {
       if(_messageQueue.isNotEmpty) {
         Object? object = _messageQueue.removeAt(0);
 
+        appLog.i('Socket Write message : $object');
+
         _write(object);
       }
 
