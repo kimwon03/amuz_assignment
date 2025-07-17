@@ -161,6 +161,8 @@ class DxiSocketClient {
     await _socketClient.disconnect();
 
     await Future.delayed(Duration(seconds: 1));
+
+    await setupDxi();
   }
 
   void _whenReceviedSetDxiMode() async {
