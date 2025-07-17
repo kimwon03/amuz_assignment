@@ -19,13 +19,13 @@ class DxiSocketClient {
   }
 
   Future<void> serverAuthentication() async {
-    final SecurityContext securityContext = _getSecurityContext(
-      key: Keys.blackboxKey,
-    );
-
     final bool socketConnectResult = await _socketConnect(host, port);
 
     if (!socketConnectResult) return;
+
+    final SecurityContext securityContext = _getSecurityContext(
+      key: Keys.blackboxKey,
+    );
 
     final bool updateSocketSecurity = await _updateSecurity(securityContext);
 
