@@ -97,7 +97,7 @@ class BaseSocketClient {
 
   void _sendMessageOnQueue() {
     Future.doWhile(() async {
-      Future.delayed(Duration(milliseconds: 500));
+      await Future.delayed(Duration(milliseconds: 500));
 
       if(_messageQueue.isNotEmpty) {
         Object? object = _messageQueue.removeAt(0);
