@@ -64,6 +64,17 @@ class DxiSocketClient {
     _sendSetDxiRequest();
   }
 
+  Future<void> dispose({bool releaseDxi = true, bool exitAP = true}) async {
+    _stopSendSet2WayCertReqTimer();
+    _stopSendSetDxiModeReqTimer();
+
+    if(releaseDxi) {
+      _releaseDxiMode(exitAP: exitAP);
+    }
+
+    _socketClient.disconnect();
+  }
+
   SecurityContext _getSecurityContext({
     required String key,
     String? rootCA,
