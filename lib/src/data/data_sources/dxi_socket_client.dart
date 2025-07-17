@@ -119,13 +119,6 @@ class DxiSocketClient {
     );
   }
 
-  Future<bool> _updateSecurity(SecurityContext securityContext) {
-    return _socketClient.addSecureOnSocket(
-      onBadCertificate: (_) => true,
-      context: securityContext,
-    );
-  }
-
   void _authenticationListener(Uint8List response) {
     final Map<String, dynamic> result = jsonDecode(
       String.fromCharCodes(response),
