@@ -144,7 +144,7 @@ class DxiSocketClient {
   void _whenReceviedPing() {
     final DxiRequestModel dxiRequestModel = DxiRequestModel(
       type: 'request',
-      cmd: 'pong',
+      cmd: Cmd.pong,
       data: {'constantConnect': 'Y'},
     );
 
@@ -171,7 +171,7 @@ class DxiSocketClient {
 
       final DxiRequestModel dxiRequestModel = DxiRequestModel(
         type: 'request',
-        cmd: 'set2wayCert',
+        cmd: Cmd.set2wayCert,
         data: {"constantConnect": "N"},
       );
 
@@ -189,7 +189,7 @@ class DxiSocketClient {
 
       final DxiRequestModel dxiRequestModel = DxiRequestModel(
         type: 'request',
-        cmd: 'setDxiMode',
+        cmd: Cmd.setDxiMode,
         data: {"constantConnect": "Y"},
       );
 
@@ -218,7 +218,7 @@ class DxiSocketClient {
   void _releaseDxiMode({final bool exitAP = false}) {
     final DxiRequestModel dxiRequestModel = DxiRequestModel(
       type: 'dxi',
-      cmd: 'releaseDxiMode',
+      cmd: Cmd.releaseDxiMode,
       data: {'constantConnect': 'N', 'exitAP': exitAP ? 'Y' : 'N'},
     );
 

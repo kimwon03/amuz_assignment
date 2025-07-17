@@ -12,4 +12,6 @@ final class Cmd {
   static const String set2wayCert = 'set2wayCert';
   static const String setDxiMode = 'setDxiMode';
   static const String sendDxiData = 'sendDxiData';
+  static const String releaseDxiMode = 'releaseDxiMode';
+  static const String pong = 'pong';
 }
