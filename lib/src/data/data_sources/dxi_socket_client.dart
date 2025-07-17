@@ -35,6 +35,10 @@ class DxiSocketClient {
 
     await Future.delayed(Duration(seconds: 1));
 
+    _releaseDxiMode();
+
+    await Future.delayed(Duration(seconds: 1));
+
     _sendSet2WayCertRequest();
   }
 
