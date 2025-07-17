@@ -19,7 +19,7 @@ class DxiSocketClient {
   }
 
   Future<void> serverAuthentication() async {
-    await dispose(releaseDxi: false, exitAP: false);
+    await disconnect(releaseDxi: false, exitAP: false);
 
     final bool socketConnectResult = await _socketConnect(host, port);
 
@@ -45,7 +45,7 @@ class DxiSocketClient {
   }
 
   Future<void> setupDxi() async {
-    await dispose(releaseDxi: false, exitAP: false);
+    await disconnect(releaseDxi: false, exitAP: false);
 
     final bool socketConnectResult = await _socketClient.connect(host, port);
 
@@ -68,7 +68,7 @@ class DxiSocketClient {
     _sendSetDxiRequest();
   }
 
-  Future<void> dispose({bool releaseDxi = true, bool exitAP = true}) async {
+  Future<void> disconnect({bool releaseDxi = true, bool exitAP = true}) async {
     _stopSendSet2WayCertReqTimer();
     _stopSendSetDxiModeReqTimer();
 
@@ -171,7 +171,7 @@ class DxiSocketClient {
   void _whenReceviedSet2WayCert() async {
     _stopSendSet2WayCertReqTimer();
 
-    await dispose();
+    await disconnect();
 
     await Future.delayed(Duration(seconds: 1));
 
