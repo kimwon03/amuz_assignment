@@ -5,9 +5,14 @@ class DxiRepositoryImpl implements DxiRepository {
   late final DxiSocketClient _client;
 
   DxiRepositoryImpl({required DxiSocketClient client}) : _client = client;
-  
+
   @override
   Future<void> connect() async {
     await _client.connect();
+  }
+
+  @override
+  Future<void> disconnect() async {
+    await _client.disconnect();
   }
 }
