@@ -15,3 +15,10 @@ final class Cmd {
   static const String releaseDxiMode = 'releaseDxiMode';
   static const String pong = 'pong';
 }
+
+final class Type {
+  const Type._();
+
+  static const String request = 'request';
+  static const String dxi = 'dxi';
+}
