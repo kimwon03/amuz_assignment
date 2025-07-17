@@ -1,8 +1,11 @@
+import 'package:amuz_assignment/src/app_initialize.dart';
 import 'package:amuz_assignment/src/core/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 void main() {
+  appInitialize();
+  
   runApp(const ProviderScope(child: MainApp()));
 }
 
