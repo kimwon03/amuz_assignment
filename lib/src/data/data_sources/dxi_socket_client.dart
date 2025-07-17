@@ -46,7 +46,7 @@ class DxiSocketClient {
   Future<void> setupDxi() async {
     await disconnect(releaseDxi: false);
 
-    final bool socketConnectResult = await _socketClient.connect(
+    final bool socketConnectResult = await _socketConnect(
       host,
       port,
       context: _getSecurityContext(
@@ -83,7 +83,9 @@ class DxiSocketClient {
     String? rootCA,
     String? serverCert,
   }) {
-    final SecurityContext securityContext = SecurityContext.defaultContext;
+    final SecurityContext securityContext = rootCA != null
+        ? SecurityContext(withTrustedRoots: true)
+        : SecurityContext.defaultContext;
 
     final Uint8List privateKeyBytes = base64Decode(key);
 
@@ -98,7 +100,7 @@ class DxiSocketClient {
     if (serverCert != null) {
       final Uint8List serverCertBytes = base64Decode(serverCert);
 
-      securityContext.setClientAuthoritiesBytes(serverCertBytes);
+      securityContext.useCertificateChainBytes(serverCertBytes);
     }
 
     return securityContext;
