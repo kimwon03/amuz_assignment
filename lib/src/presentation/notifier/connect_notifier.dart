@@ -14,4 +14,10 @@ class ConnectNotifier extends _$ConnectNotifier {
   bool build() {
     return false;
   }
+
+  void connect() {
+    _dxiRepository.connect();
+
+    state = true;
+  }
 }
