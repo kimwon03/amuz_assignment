@@ -1,1 +1,3 @@
-abstract interface class DxiRepository {}
+abstract interface class DxiRepository {
+  Future<void> connect();
+}
