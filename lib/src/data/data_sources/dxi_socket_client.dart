@@ -214,4 +214,14 @@ class DxiSocketClient {
     _sendSetDxiModeReqTimer?.cancel();
     _sendSetDxiModeReqTimer = null;
   }
+
+  void _releaseDxiMode({final bool exitAP = false}) {
+    final DxiRequestModel dxiRequestModel = DxiRequestModel(
+      type: 'dxi',
+      cmd: 'releaseDxiMode',
+      data: {'constantConnect': 'N', 'exitAP': exitAP ? 'Y' : 'N'},
+    );
+
+    _sendRequest(dxiRequestModel);
+  }
 }
