@@ -15,7 +15,7 @@ class ConnectPage extends StatelessWidget {
           builder: (_, ref, ___) {
             bool isConnected = ref.watch(connectNotifierProvider);
 
-            return isConnected ? ConnectButton() : DisconnectButton();
+            return isConnected ? DisconnectButton() : ConnectButton();
           },
         ),
       ),
