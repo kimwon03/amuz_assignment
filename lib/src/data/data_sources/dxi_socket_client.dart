@@ -21,17 +21,16 @@ class DxiSocketClient {
   Future<void> serverAuthentication() async {
     await disconnect(releaseDxi: false, exitAP: false);
 
-    final bool socketConnectResult = await _socketConnect(host, port);
-
-    if (!socketConnectResult) return;
-
-    final SecurityContext securityContext = _getSecurityContext(
-      key: Keys.blackboxKey,
+    final bool socketConnectResult = await _socketConnect(
+      host,
+      port,
+      context: _getSecurityContext(
+        key: Keys.blackboxKey,
+        password: 'wm03542@@@',
+      ),
     );
 
-    final bool updateSocketSecurity = await _updateSecurity(securityContext);
-
-    if (!updateSocketSecurity) return;
+    if (!socketConnectResult) return;
 
     await _socketClient.addListener(_authenticationListener);
 
@@ -47,19 +46,18 @@ class DxiSocketClient {
   Future<void> setupDxi() async {
     await disconnect(releaseDxi: false, exitAP: false);
 
-    final bool socketConnectResult = await _socketClient.connect(host, port);
-
-    if (!socketConnectResult) return;
-
-    final SecurityContext securityContext = _getSecurityContext(
-      key: Keys.appKey,
-      rootCA: Keys.rootCert,
-      serverCert: Keys.appCert,
+    final bool socketConnectResult = await _socketClient.connect(
+      host,
+      port,
+      context: _getSecurityContext(
+        key: Keys.appKey,
+        password: 'lge12345',
+        rootCA: Keys.rootCert,
+        serverCert: Keys.appCert,
+      ),
     );
 
-    final bool updateSocketSecurity = await _updateSecurity(securityContext);
-
-    if (!updateSocketSecurity) return;
+    if (!socketConnectResult) return;
 
     _socketClient.addListener(_dxiListener);
 
@@ -72,7 +70,7 @@ class DxiSocketClient {
     _stopSendSet2WayCertReqTimer();
     _stopSendSetDxiModeReqTimer();
 
-    if(releaseDxi) {
+    if (releaseDxi) {
       _releaseDxiMode(exitAP: exitAP);
     }
 
@@ -81,6 +79,7 @@ class DxiSocketClient {
 
   SecurityContext _getSecurityContext({
     required String key,
+    String? password,
     String? rootCA,
     String? serverCert,
   }) {
@@ -88,7 +87,7 @@ class DxiSocketClient {
 
     final Uint8List privateKeyBytes = base64Decode(key);
 
-    securityContext.usePrivateKeyBytes(privateKeyBytes);
+    securityContext.usePrivateKeyBytes(privateKeyBytes, password: password);
 
     if (rootCA != null) {
       final Uint8List rootCABytes = base64Decode(rootCA);
@@ -105,10 +104,17 @@ class DxiSocketClient {
     return securityContext;
   }
 
-  Future<bool> _socketConnect(String host, int port) async {
-    await Future.delayed(Duration(seconds: 1));
-
-    return _socketClient.connect(host, port);
+  Future<bool> _socketConnect(
+    String host,
+    int port, {
+    SecurityContext? context,
+  }) async {
+    return _socketClient.connect(
+      host,
+      port,
+      context: context,
+      onBadCertificate: (_) => true,
+    );
   }
 
   Future<bool> _updateSecurity(SecurityContext securityContext) {

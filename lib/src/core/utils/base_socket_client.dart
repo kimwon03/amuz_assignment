@@ -10,9 +10,28 @@ class BaseSocketClient {
   StreamSubscription<Uint8List>? _socketSubscription;
   final List<Object?> _messageQueue = [];
 
-  Future<bool> connect(String ip, int port) async {
+  Future<bool> connect(
+    String ip,
+    int port, {
+    bool Function(X509Certificate)? onBadCertificate,
+    SecurityContext? context,
+  }) async {
     try {
-      socket = await Socket.connect(ip, port, timeout: Duration(seconds: 2));
+      if (context != null) {
+        appLog.d('SecureSocket connecting...');
+
+        socket = await SecureSocket.connect(
+          ip,
+          port,
+          timeout: Duration(seconds: 2),
+          context: context,
+          onBadCertificate: onBadCertificate,
+        );
+      } else {
+        appLog.d('Socket connecting...');
+
+        socket = await Socket.connect(ip, port, timeout: Duration(seconds: 2));
+      }
 
       isConnected = true;
 
@@ -53,7 +72,7 @@ class BaseSocketClient {
   Future<void> disconnect() async {
     try {
       await removeListener();
-      
+
       await socket?.close();
 
       socket?.done.then((_) {
@@ -99,7 +118,7 @@ class BaseSocketClient {
     Future.doWhile(() async {
       await Future.delayed(Duration(milliseconds: 500));
 
-      if(_messageQueue.isNotEmpty) {
+      if (_messageQueue.isNotEmpty) {
         Object? object = _messageQueue.removeAt(0);
 
         appLog.i('Socket Write message : $object');
