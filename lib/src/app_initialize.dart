@@ -7,5 +7,5 @@ void appInitialize() {
   DxiSocketClient dxiSocketClient = DxiSocketClient();
   DxiRepository dxiRepository = DxiRepositoryImpl(client: dxiSocketClient);
 
-  GetIt.I.registerLazySingleton(() => dxiRepository);
+  GetIt.I.registerLazySingleton<DxiRepository>(() => dxiRepository);
 }
