@@ -8,6 +8,7 @@ import 'package:amuz_assignment/src/core/constants/dxi_constant.dart';
 import 'package:amuz_assignment/src/core/constants/keys.dart';
 import 'package:amuz_assignment/src/core/utils/base_socket_client.dart';
 import 'package:amuz_assignment/src/data/models/dxi_request_model.dart';
+import 'package:amuz_assignment/src/data/models/product_information_model.dart';
 
 class DxiSocketClient {
   final BaseSocketClient _socketClient = BaseSocketClient();
@@ -154,7 +155,9 @@ class DxiSocketClient {
       case Cmd.sendDxiData:
         break;
       case Cmd.setDxiMode:
-        _whenReceviedSetDxiMode();
+        Map<String, dynamic> data = result['data'];
+
+        _whenReceviedSetDxiMode(data);
         break;
     }
   }
@@ -179,8 +182,13 @@ class DxiSocketClient {
     await setupDxi();
   }
 
-  void _whenReceviedSetDxiMode() async {
+  void _whenReceviedSetDxiMode(Map<String, dynamic> data) async {
     _stopSendSetDxiModeReqTimer();
+
+    final ProductInformationModel productInformationModel =
+        ProductInformationModel.fromJson(data);
+
+    appLog.i('Get DXi Information : $productInformationModel');
   }
 
   void _sendSet2WayCertRequest() {
