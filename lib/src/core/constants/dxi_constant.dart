@@ -20,5 +20,6 @@ final class Type {
   const Type._();
 
   static const String request = 'request';
+  static const String reponse = 'response';
   static const String dxi = 'dxi';
 }

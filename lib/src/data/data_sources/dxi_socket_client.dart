@@ -168,7 +168,7 @@ class DxiSocketClient {
 
   void _whenReceviedPing() {
     final DxiRequestModel dxiRequestModel = DxiRequestModel(
-      type: Type.request,
+      type: Type.reponse,
       cmd: Cmd.pong,
       data: {'constantConnect': 'Y'},
     );
