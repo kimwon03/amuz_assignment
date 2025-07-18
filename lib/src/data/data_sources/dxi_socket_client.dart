@@ -325,6 +325,9 @@ class DxiSocketClient {
     )) {
       return;
     }
+
+    // Todo: 수신 종료 처리 추가
+    if (byteList[5] != 0xF0) return;
   }
 
   bool _verityCrc(List<int> revData, int originCrc) {
