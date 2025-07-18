@@ -36,3 +36,7 @@ List<String> hexStringTohexList(String hexString) {
 
   return convertList;
 }
+
+List<int> hexListToIntList(List<String> hexList) {
+  return hexList.map((e) => int.parse(e, radix: 16)).toList();
+}
