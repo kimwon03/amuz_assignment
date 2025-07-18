@@ -24,3 +24,15 @@ String listToHexString(List<int> data) {
       .map((b) => b.toRadixString(16).padLeft(2, '0').toUpperCase())
       .join();
 }
+
+List<String> toHexStringList(String hexString) {
+  List<String> convertList = [];
+
+  for (int i = 0; i < hexString.length; i += 2) {
+    String splitText = hexString.substring(i, i + 2);
+
+    convertList.add(splitText);
+  }
+
+  return convertList;
+}
