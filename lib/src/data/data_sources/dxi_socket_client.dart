@@ -7,6 +7,7 @@ import 'package:amuz_assignment/src/core/constants/app_constant.dart';
 import 'package:amuz_assignment/src/core/constants/dxi_constant.dart';
 import 'package:amuz_assignment/src/core/constants/keys.dart';
 import 'package:amuz_assignment/src/core/utils/base_socket_client.dart';
+import 'package:amuz_assignment/src/core/utils/data_parser.dart';
 import 'package:amuz_assignment/src/data/models/dxi_request_model.dart';
 import 'package:amuz_assignment/src/data/models/product_information_model.dart';
 
@@ -194,6 +195,8 @@ class DxiSocketClient {
         ProductInformationModel.fromJson(data);
 
     appLog.i('Get DXi Information : $productInformationModel');
+
+    _sendSpecVersion();
   }
 
   void _sendSet2WayCertRequest() {
@@ -230,6 +233,26 @@ class DxiSocketClient {
 
       sendCount++;
     });
+  }
+
+  void _sendSpecVersion() {
+    List<int> data = [0xAA, 0x12, 0xE0, 0xB7, 0x02];
+
+    data.addAll(toHexList(3, 4));
+    data.addAll(toHexList(1, 2));
+    data.addAll(toHexList(5, 2));
+
+    data.add(generateCrc8Bit(data));
+
+    data.add(0xBB);
+
+    final DxiRequestModel dxiRequestModel = DxiRequestModel(
+      type: Type.dxi,
+      cmd: Cmd.sendDxiData,
+      data: {'data': listToHexString(data), 'constantConnect': 'Y'},
+    );
+
+    _sendRequest(dxiRequestModel);
   }
 
   void _sendRequest(DxiRequestModel dxiRequestModel) {
