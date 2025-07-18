@@ -238,9 +238,17 @@ class DxiSocketClient {
   void _sendSpecVersion() {
     List<int> data = [0xAA, 0x12, 0xE0, 0xB7, 0x02];
 
+    // 제품 UID
     data.addAll(toHexList(3, 4));
+    // 명세서 Major 
     data.addAll(toHexList(1, 2));
+    // 명세서 Minor
     data.addAll(toHexList(5, 2));
+    // 명세서 항목 크기
+    data.addAll(toHexList(0, 2));
+
+    // 모니터링 중지
+    data.add(0xE0);
 
     data.add(generateCrc8Bit(data));
 
@@ -249,7 +257,7 @@ class DxiSocketClient {
     final DxiRequestModel dxiRequestModel = DxiRequestModel(
       type: Type.dxi,
       cmd: Cmd.sendDxiData,
-      data: {'data': listToHexString(data), 'constantConnect': 'Y'},
+      data: {'bytes': listToHexString(data), 'constantConnect': 'Y'},
     );
 
     _sendRequest(dxiRequestModel);
