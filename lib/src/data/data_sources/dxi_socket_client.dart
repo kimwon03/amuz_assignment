@@ -12,11 +12,25 @@ import 'package:amuz_assignment/src/data/models/dxi_request_model.dart';
 import 'package:amuz_assignment/src/data/models/product_information_model.dart';
 
 class DxiSocketClient {
+  bool _initialize = false;
+
   final BaseSocketClient _socketClient = BaseSocketClient();
   Timer? _sendSet2WayCertReqTimer;
   Timer? _sendSetDxiModeReqTimer;
 
+  late final List<String> _productRules;
+  int _sendProductRuleIndex = 0;
+
+  void initialize() {
+    _initialize = false;
+
+    _productRules =
+        productSpecification['productDesc']['product_setting']['setting']['monitoring_rule'];
+  }
+
   Future<void> connect() async {
+    if (!_initialize) return;
+
     await serverAuthentication();
   }
 

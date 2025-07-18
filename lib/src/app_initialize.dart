@@ -12,6 +12,9 @@ Future<void> appInitialize() async {
   productSpecification = await json.decode(response);
 
   DxiSocketClient dxiSocketClient = DxiSocketClient();
+
+  dxiSocketClient.initialize();
+
   DxiRepository dxiRepository = DxiRepositoryImpl(client: dxiSocketClient);
 
   GetIt.I.registerLazySingleton<DxiRepository>(() => dxiRepository);
