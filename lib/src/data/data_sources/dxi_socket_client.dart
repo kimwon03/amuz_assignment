@@ -144,9 +144,11 @@ class DxiSocketClient {
       String.fromCharCodes(response),
     );
 
-    appLog.d('Get Socket Response : $result');
-
     final String? cmd = result['cmd'] as String?;
+
+    if (cmd != Cmd.ping) {
+      appLog.d('Get Socket Response : $result');
+    }
 
     switch (cmd) {
       case Cmd.ping:
@@ -229,7 +231,9 @@ class DxiSocketClient {
   }
 
   void _sendRequest(DxiRequestModel dxiRequestModel) {
-    appLog.i('send message\n$dxiRequestModel');
+    if (dxiRequestModel.cmd != Cmd.pong) {
+      appLog.i('send message\n$dxiRequestModel');
+    }
 
     _socketClient.addMessage(jsonEncode(dxiRequestModel.toJson()));
   }
