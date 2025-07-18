@@ -306,7 +306,23 @@ class DxiSocketClient {
     _sendRequest(dxiRequestModel);
   }
 
-  void _responseSpecVersion(String hexString) {}
+  void _responseSpecVersion(String hexString) {
+    List<String> hexList = hexStringTohexList(hexString);
+    List<int> byteList = hexListToIntList(hexList);
+
+    if (!_verityCrc(
+      byteList.sublist(0, byteList.length - 2),
+      byteList[byteList.length - 2],
+    )) {
+      return;
+    }
+  }
+
+  bool _verityCrc(List<int> revData, int originCrc) {
+    int revCrc = generateCrc8Bit(revData);
+
+    return revCrc == originCrc;
+  }
 
   bool _isCommmndPingOrPong(String cmd) {
     return cmd == Cmd.ping || cmd == Cmd.pong;
