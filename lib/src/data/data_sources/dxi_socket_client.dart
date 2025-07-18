@@ -158,6 +158,9 @@ class DxiSocketClient {
         _whenReceviedPing();
         break;
       case Cmd.sendDxiData:
+        Map<String, dynamic> data = result['data'];
+
+        _whenReceviedSendDxiData(data);
         break;
       case Cmd.setDxiMode:
         Map<String, dynamic> data = result['data'];
@@ -186,6 +189,8 @@ class DxiSocketClient {
 
     await setupDxi();
   }
+
+  void _whenReceviedSendDxiData(Map<String, dynamic> data) {}
 
   void _whenReceviedSetDxiMode(Map<String, dynamic> data) async {
     _stopSendSetDxiModeReqTimer();
@@ -239,7 +244,7 @@ class DxiSocketClient {
 
     // 제품 UID
     data.addAll(toHexList(3, 4));
-    // 명세서 Major 
+    // 명세서 Major
     data.addAll(toHexList(1, 2));
     // 명세서 Minor
     data.addAll(toHexList(5, 2));
