@@ -158,7 +158,6 @@ class DxiSocketClient {
         _whenReceviedPing();
         break;
       case Cmd.sendDxiData:
-        appLog.d('Get Byte ${result['data']['bytes']}');
         break;
       case Cmd.setDxiMode:
         Map<String, dynamic> data = result['data'];
