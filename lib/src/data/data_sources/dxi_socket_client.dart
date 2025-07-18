@@ -42,7 +42,7 @@ class DxiSocketClient {
       port,
       context: _getSecurityContext(
         key: Keys.blackboxKey,
-        password: Keys.blackboxKey,
+        password: Keys.blackboxPassword,
       ),
     );
 
