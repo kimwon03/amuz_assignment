@@ -3,9 +3,11 @@ import 'package:amuz_assignment/src/core/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-void main() {
-  appInitialize();
-  
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await appInitialize();
+
   runApp(const ProviderScope(child: MainApp()));
 }
 
