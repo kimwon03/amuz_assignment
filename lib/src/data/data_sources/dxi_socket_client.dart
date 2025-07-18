@@ -296,6 +296,19 @@ class DxiSocketClient {
     _sendRequest(dxiRequestModel);
   }
 
+  void _sendProductRule() {
+    DxiRequestModel dxiRequestModel = DxiRequestModel(
+      type: Type.dxi,
+      cmd: Cmd.sendDxiData,
+      data: {
+        'bytes': _productRules[_sendProductRuleIndex++],
+        'constantConnect': 'Y',
+      },
+    );
+
+    _sendRequest(dxiRequestModel);
+  }
+
   void _sendRequest(DxiRequestModel dxiRequestModel) {
     if (!_isCommmndPingOrPong(dxiRequestModel.cmd)) {
       appLog.i('send message\n$dxiRequestModel');
