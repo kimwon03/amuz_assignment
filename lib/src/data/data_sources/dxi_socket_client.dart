@@ -190,7 +190,11 @@ class DxiSocketClient {
     await setupDxi();
   }
 
-  void _whenReceviedSendDxiData(Map<String, dynamic> data) {}
+  void _whenReceviedSendDxiData(Map<String, dynamic> data) {
+    String hexString = data['bytes'];
+
+    if (hexString.contains('AA0810B403')) {}
+  }
 
   void _whenReceviedSetDxiMode(Map<String, dynamic> data) async {
     _stopSendSetDxiModeReqTimer();
