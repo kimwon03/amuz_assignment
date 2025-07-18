@@ -4,11 +4,23 @@ import 'dart:typed_data';
 
 import 'package:amuz_assignment/src/core/constants/app_constant.dart';
 
+class Message {
+  final Object? message;
+  final bool showLog;
+
+  const Message({required this.message, this.showLog = true});
+
+  @override
+  String toString() {
+    return 'Message(message: $message, showLog: $showLog)';
+  }
+}
+
 class BaseSocketClient {
   Socket? socket;
   bool isConnected = false;
   StreamSubscription<Uint8List>? _socketSubscription;
-  final List<Object?> _messageQueue = [];
+  final List<Message> _messageQueue = [];
 
   Future<bool> connect(
     String ip,
@@ -110,8 +122,8 @@ class BaseSocketClient {
     _socketSubscription = null;
   }
 
-  void addMessage(Object object) {
-    _messageQueue.add(object);
+  void addMessage(Message message) {
+    _messageQueue.add(message);
   }
 
   void _sendMessageOnQueue() {
@@ -119,11 +131,13 @@ class BaseSocketClient {
       await Future.delayed(Duration(milliseconds: 500));
 
       if (_messageQueue.isNotEmpty) {
-        Object? object = _messageQueue.removeAt(0);
+        Message message = _messageQueue.removeAt(0);
 
-        appLog.i('Socket Write message : $object');
+        if (message.showLog) {
+          appLog.i('Socket Write message : $message');
+        }
 
-        _write(object);
+        _write(message);
       }
 
       return isConnected;

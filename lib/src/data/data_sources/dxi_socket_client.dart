@@ -125,9 +125,11 @@ class DxiSocketClient {
       String.fromCharCodes(response),
     );
 
-    appLog.d('Get Socket Response : $result');
-
     final String? cmd = result['cmd'] as String?;
+
+    if (!isCommmndPingOrPong(cmd ?? '')) {
+      appLog.d('Get Socket Response : $result');
+    }
 
     switch (cmd) {
       case Cmd.ping:
@@ -146,7 +148,7 @@ class DxiSocketClient {
 
     final String? cmd = result['cmd'] as String?;
 
-    if (cmd != Cmd.ping) {
+    if (!isCommmndPingOrPong(cmd ?? '')) {
       appLog.d('Get Socket Response : $result');
     }
 
@@ -231,11 +233,16 @@ class DxiSocketClient {
   }
 
   void _sendRequest(DxiRequestModel dxiRequestModel) {
-    if (dxiRequestModel.cmd != Cmd.pong) {
+    if (!isCommmndPingOrPong(dxiRequestModel.cmd)) {
       appLog.i('send message\n$dxiRequestModel');
     }
 
-    _socketClient.addMessage(jsonEncode(dxiRequestModel.toJson()));
+    _socketClient.addMessage(
+      Message(
+        message: jsonEncode(dxiRequestModel.toJson()),
+        showLog: !isCommmndPingOrPong(dxiRequestModel.cmd),
+      ),
+    );
   }
 
   void _stopSendSet2WayCertReqTimer() {
@@ -256,5 +263,9 @@ class DxiSocketClient {
     );
 
     _sendRequest(dxiRequestModel);
+  }
+
+  bool isCommmndPingOrPong(String cmd) {
+    return cmd == Cmd.ping || cmd == Cmd.pong;
   }
 }
