@@ -248,12 +248,21 @@ class DxiSocketClient {
   void _sendSpecVersion() {
     List<int> data = [0xAA, 0x12, 0xE0, 0xB7, 0x02];
 
+    String? version = productSpecification['specVer'];
+
+    if (version == null) return;
+
+    List<int> versionList = version
+        .split('.')
+        .map((e) => int.parse(e))
+        .toList();
+
     // 제품 UID
-    data.addAll(toHexList(3, 4));
+    data.addAll(toHexList(versionList[0], 4));
     // 명세서 Major
-    data.addAll(toHexList(1, 2));
+    data.addAll(toHexList(versionList[1], 2));
     // 명세서 Minor
-    data.addAll(toHexList(5, 2));
+    data.addAll(toHexList(versionList[2], 2));
     // 명세서 항목 크기
     data.addAll(toHexList(0, 2));
 
