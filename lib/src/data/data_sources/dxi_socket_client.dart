@@ -193,7 +193,9 @@ class DxiSocketClient {
   void _whenReceviedSendDxiData(Map<String, dynamic> data) {
     String hexString = data['bytes'];
 
-    if (hexString.contains('AA0810B403')) {}
+    if (hexString.contains('AA0810B403')) {
+      _responseSpecVersion(hexString);
+    }
   }
 
   void _whenReceviedSetDxiMode(Map<String, dynamic> data) async {
@@ -303,6 +305,8 @@ class DxiSocketClient {
 
     _sendRequest(dxiRequestModel);
   }
+
+  void _responseSpecVersion(String hexString) {}
 
   bool _isCommmndPingOrPong(String cmd) {
     return cmd == Cmd.ping || cmd == Cmd.pong;
