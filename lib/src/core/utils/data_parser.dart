@@ -18,3 +18,9 @@ int generateCrc8Bit(List<int> data) {
 
   return (sum ^ 0x55) % 256;
 }
+
+String listToHexString(List<int> data) {
+  return data
+      .map((b) => b.toRadixString(16).padLeft(2, '0').toUpperCase())
+      .join();
+}
