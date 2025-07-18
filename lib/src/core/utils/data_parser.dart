@@ -25,7 +25,7 @@ String listToHexString(List<int> data) {
       .join();
 }
 
-List<String> toHexStringList(String hexString) {
+List<String> hexStringTohexList(String hexString) {
   List<String> convertList = [];
 
   for (int i = 0; i < hexString.length; i += 2) {
