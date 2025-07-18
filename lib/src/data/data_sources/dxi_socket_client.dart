@@ -127,7 +127,7 @@ class DxiSocketClient {
 
     final String? cmd = result['cmd'] as String?;
 
-    if (!isCommmndPingOrPong(cmd ?? '')) {
+    if (!_isCommmndPingOrPong(cmd ?? '')) {
       appLog.d('Get Socket Response : $result');
     }
 
@@ -148,7 +148,7 @@ class DxiSocketClient {
 
     final String? cmd = result['cmd'] as String?;
 
-    if (!isCommmndPingOrPong(cmd ?? '')) {
+    if (!_isCommmndPingOrPong(cmd ?? '')) {
       appLog.d('Get Socket Response : $result');
     }
 
@@ -233,14 +233,14 @@ class DxiSocketClient {
   }
 
   void _sendRequest(DxiRequestModel dxiRequestModel) {
-    if (!isCommmndPingOrPong(dxiRequestModel.cmd)) {
+    if (!_isCommmndPingOrPong(dxiRequestModel.cmd)) {
       appLog.i('send message\n$dxiRequestModel');
     }
 
     _socketClient.addMessage(
       Message(
         message: jsonEncode(dxiRequestModel.toJson()),
-        showLog: !isCommmndPingOrPong(dxiRequestModel.cmd),
+        showLog: !_isCommmndPingOrPong(dxiRequestModel.cmd),
       ),
     );
   }
@@ -265,7 +265,7 @@ class DxiSocketClient {
     _sendRequest(dxiRequestModel);
   }
 
-  bool isCommmndPingOrPong(String cmd) {
+  bool _isCommmndPingOrPong(String cmd) {
     return cmd == Cmd.ping || cmd == Cmd.pong;
   }
 }
