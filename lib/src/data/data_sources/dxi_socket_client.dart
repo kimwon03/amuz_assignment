@@ -412,6 +412,8 @@ class DxiSocketClient {
     }
   }
 
+  void _responseCompleteReulst(String hexString) {}
+
   bool _verityCrc(List<int> revData, int originCrc) {
     int revCrc = generateCrc8Bit(revData);
 
