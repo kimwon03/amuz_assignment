@@ -6,7 +6,7 @@ part 'dxi_send_data_model.g.dart';
 @Freezed(toJson: true)
 abstract class DxiSendDataModel with _$DxiSendDataModel {
   const factory DxiSendDataModel({
-    String? bytes,
+    @JsonKey(includeIfNull: false) String? bytes,
     @Default('Y') String constantConnect,
   }) = _DxiSendDataModel;
 }
