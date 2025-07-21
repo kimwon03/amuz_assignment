@@ -457,7 +457,9 @@ class DxiSocketClient {
     _updateConnectionState = ConnectionState.connect;
   }
 
-  void _responseMonitoring(String hexString) {}
+  void _responseMonitoring(String hexString) {
+    Map<String, dynamic> monitoringMap = monitoringByteTomonitoringMap(hexString);
+  }
 
   bool _verityCrc(String hexString) {
     List<String> hexList = hexStringTohexList(hexString);

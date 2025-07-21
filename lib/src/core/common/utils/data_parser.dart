@@ -46,3 +46,25 @@ int hexListToInt(List<String> hexList) {
 
   return int.parse(hex, radix: 16);
 }
+
+Map<String, dynamic> monitoringByteTomonitoringMap(String hexString) {
+  List<String> hexList = hexStringTohexList(hexString);
+  List<String> dataList = hexList.sublist(11, hexList.length - 3);
+
+  Map<String, dynamic> result = {};
+
+  while (dataList.isNotEmpty) {
+    String id = dataList[0];
+    String subId = dataList[1];
+
+    int length = hexListToInt(dataList.sublist(2, 3 + 1));
+
+    List<String> data = dataList.sublist(4, length + 4);
+
+    result.addAll({'$id,$subId': data});
+
+    dataList = dataList.sublist(length + 4);
+  }
+
+  return result;
+}
