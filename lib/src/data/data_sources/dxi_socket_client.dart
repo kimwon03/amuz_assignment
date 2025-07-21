@@ -309,6 +309,22 @@ class DxiSocketClient {
     _sendRequest(dxiRequestModel);
   }
 
+  void _sendComplete() {
+    List<int> data = [0xAA, 0x07, 0xE0, 0xB7, 0x06];
+
+    data.add(generateCrc8Bit(data));
+
+    data.add(0xBB);
+
+    final DxiRequestModel dxiRequestModel = DxiRequestModel(
+      type: Type.dxi,
+      cmd: Cmd.sendDxiData,
+      data: DxiSendDataModel(bytes: listToHexString(data)),
+    );
+
+    _sendRequest(dxiRequestModel);
+  }
+
   void _sendRequest(DxiRequestModel dxiRequestModel) {
     if (!_isCommmndPingOrPong(dxiRequestModel.cmd)) {
       appLog.i('send message\n$dxiRequestModel');
@@ -384,7 +400,11 @@ class DxiSocketClient {
       case 0xF0:
         _sendProductRuleIndex++;
 
-        if (_sendProductRuleIndex >= _productRules.length) return;
+        if (_sendProductRuleIndex >= _productRules.length) {
+          _sendComplete();
+
+          return;
+        }
 
         _sendProductRule();
     }
