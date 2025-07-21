@@ -21,7 +21,7 @@ class DxiSocketClient {
   Timer? _sendSet2WayCertReqTimer;
   Timer? _sendSetDxiModeReqTimer;
 
-  late final List<String> _productRules;
+  final List<String> _productRules = [];
   int _sendProductRuleIndex = 0;
 
   final BehaviorSubject<ConnectionState> _connectionStateSubject =
@@ -30,10 +30,12 @@ class DxiSocketClient {
   void initialize() {
     _initialize = true;
 
-    _productRules =
-        (productSpecification['productDesc']['product_setting']['setting']['monitoring_rule']
-                as List)
-            .cast<String>();
+    Map<String, dynamic> settings =
+        productSpecification['productDesc']['product_setting']['setting'];
+
+    settings.forEach((key, value) {
+      _productRules.addAll((value as List).cast<String>());
+    });
   }
 
   Future<void> connect() async {
@@ -294,8 +296,8 @@ class DxiSocketClient {
     // 명세서 항목 크기
     data.addAll(toHexList(0, 2));
 
-    // 모니터링 중지
-    data.add(0xE0);
+    // 이전 상태로 모니터링 유지
+    data.add(0xF0);
 
     data.add(generateCrc8Bit(data));
 
@@ -407,7 +409,27 @@ class DxiSocketClient {
     }
   }
 
-  void _responseCompleteResult(String hexString) {}
+  void _responseCompleteResult(String hexString) {
+    List<String> hexList = hexStringTohexList(hexString);
+
+    List<String> uidList = hexList.sublist(9, 12 + 1).reversed.toList();
+    List<String> majorList = hexList.sublist(13, 14 + 1).reversed.toList();
+    List<String> minorList = hexList.sublist(15, 16 + 1).reversed.toList();
+
+    int uid = hexListToInt(uidList);
+    int major = hexListToInt(majorList);
+    int minor = hexListToInt(minorList);
+
+    appLog.d('Get Version From Response : ${uid}.${major}.${minor}');
+
+    if (uid == 0 && major == 0 && minor == 0) {
+      appLog.d('Resend Product Rule');
+
+      _sendProductRuleIndex = 0;
+
+      _sendProductRule();
+    }
+  }
 
   bool _verityCrc(String hexString) {
     List<String> hexList = hexStringTohexList(hexString);
