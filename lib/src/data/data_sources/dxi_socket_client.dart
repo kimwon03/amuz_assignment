@@ -26,7 +26,9 @@ class DxiSocketClient {
     _initialize = true;
 
     _productRules =
-        productSpecification['productDesc']['product_setting']['setting']['monitoring_rule'];
+        (productSpecification['productDesc']['product_setting']['setting']['monitoring_rule']
+                as List)
+            .cast<String>();
   }
 
   Future<void> connect() async {
