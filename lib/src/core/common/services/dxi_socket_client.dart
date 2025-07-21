@@ -395,7 +395,7 @@ class DxiSocketClient {
       case 0xE3:
         _sendComplete();
         break;
-      case 0x0F:
+      case 0xF0:
         _sendProductRuleIndex = 0;
 
         _sendProductRule();
