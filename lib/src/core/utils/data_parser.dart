@@ -40,3 +40,9 @@ List<String> hexStringTohexList(String hexString) {
 List<int> hexListToIntList(List<String> hexList) {
   return hexList.map((e) => int.parse(e, radix: 16)).toList();
 }
+
+int hexListToInt(List<String> hexList) {
+  String hex = hexList.join();
+
+  return int.parse(hex, radix: 16);
+}
