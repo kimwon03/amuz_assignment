@@ -225,7 +225,7 @@ class DxiSocketClient {
   void _whenReceviedSendDxiData(Map<String, dynamic> data) {
     String hexString = data['bytes'];
 
-    if (!_verityCrc(hexString)) return;
+    // if (!_verityCrc(hexString)) return;
 
     if (hexString.contains('AA0810B403')) {
       _responseSpecVersion(hexString);
@@ -233,6 +233,8 @@ class DxiSocketClient {
       _responseSettingResult(hexString);
     } else if (hexString.contains('AA1310B407')) {
       _responseCompleteResult(hexString);
+    } else if (hexString.substring(2, 4) == 'FF') {
+      _responseMonitoring(hexString);
     }
   }
 
@@ -454,6 +456,8 @@ class DxiSocketClient {
 
     _updateConnectionState = ConnectionState.connect;
   }
+
+  void _responseMonitoring(String hexString) {}
 
   bool _verityCrc(String hexString) {
     List<String> hexList = hexStringTohexList(hexString);
