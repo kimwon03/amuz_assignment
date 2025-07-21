@@ -23,7 +23,7 @@ class DxiSocketClient {
   int _sendProductRuleIndex = 0;
 
   void initialize() {
-    _initialize = false;
+    _initialize = true;
 
     _productRules =
         productSpecification['productDesc']['product_setting']['setting']['monitoring_rule'];
