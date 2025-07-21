@@ -9,6 +9,7 @@ import 'package:amuz_assignment/src/core/constants/keys.dart';
 import 'package:amuz_assignment/src/core/utils/base_socket_client.dart';
 import 'package:amuz_assignment/src/core/utils/data_parser.dart';
 import 'package:amuz_assignment/src/data/models/dxi_request_model.dart';
+import 'package:amuz_assignment/src/data/models/dxi_send_data_model.dart';
 import 'package:amuz_assignment/src/data/models/product_information_model.dart';
 
 class DxiSocketClient {
@@ -188,7 +189,7 @@ class DxiSocketClient {
     final DxiRequestModel dxiRequestModel = DxiRequestModel(
       type: Type.reponse,
       cmd: Cmd.pong,
-      data: {'constantConnect': 'Y'},
+      data: DxiSendDataModel(),
     );
 
     _sendRequest(dxiRequestModel);
@@ -234,7 +235,7 @@ class DxiSocketClient {
       final DxiRequestModel dxiRequestModel = DxiRequestModel(
         type: Type.request,
         cmd: Cmd.set2wayCert,
-        data: {"constantConnect": "N"},
+        data: DxiSendDataModel(constantConnect: 'N'),
       );
 
       _sendRequest(dxiRequestModel);
@@ -252,7 +253,7 @@ class DxiSocketClient {
       final DxiRequestModel dxiRequestModel = DxiRequestModel(
         type: Type.request,
         cmd: Cmd.setDxiMode,
-        data: {"constantConnect": "Y"},
+        data: DxiSendDataModel(),
       );
 
       _sendRequest(dxiRequestModel);
@@ -292,7 +293,7 @@ class DxiSocketClient {
     final DxiRequestModel dxiRequestModel = DxiRequestModel(
       type: Type.dxi,
       cmd: Cmd.sendDxiData,
-      data: {'bytes': listToHexString(data), 'constantConnect': 'Y'},
+      data: DxiSendDataModel(bytes: listToHexString(data)),
     );
 
     _sendRequest(dxiRequestModel);
@@ -302,10 +303,7 @@ class DxiSocketClient {
     DxiRequestModel dxiRequestModel = DxiRequestModel(
       type: Type.dxi,
       cmd: Cmd.sendDxiData,
-      data: {
-        'bytes': _productRules[_sendProductRuleIndex++],
-        'constantConnect': 'Y',
-      },
+      data: DxiSendDataModel(bytes: _productRules[_sendProductRuleIndex]),
     );
 
     _sendRequest(dxiRequestModel);
@@ -338,7 +336,7 @@ class DxiSocketClient {
     final DxiRequestModel dxiRequestModel = DxiRequestModel(
       type: Type.dxi,
       cmd: Cmd.releaseDxiMode,
-      data: {'constantConnect': 'N', 'exitAP': exitAP ? 'Y' : 'N'},
+      data: DxiSendDataModel(constantConnect: 'N', exitAP: exitAP ? 'Y' : 'N'),
     );
 
     _sendRequest(dxiRequestModel);

@@ -7,6 +7,7 @@ part 'dxi_send_data_model.g.dart';
 abstract class DxiSendDataModel with _$DxiSendDataModel {
   const factory DxiSendDataModel({
     @JsonKey(includeIfNull: false) String? bytes,
+    @JsonKey(includeIfNull: false) String? exitAP,
     @Default('Y') String constantConnect,
   }) = _DxiSendDataModel;
 }
