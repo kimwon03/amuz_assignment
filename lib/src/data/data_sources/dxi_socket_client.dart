@@ -209,6 +209,8 @@ class DxiSocketClient {
 
     if (hexString.contains('AA0810B403')) {
       _responseSpecVersion(hexString);
+    } else if (hexString.contains('AA0910B405')) {
+      _responseSettingResult(hexString);
     }
   }
 
@@ -359,6 +361,34 @@ class DxiSocketClient {
     _sendProductRuleIndex = 0;
 
     _sendProductRule();
+  }
+
+  void _responseSettingResult(String hexString) {
+    List<String> hexList = hexStringTohexList(hexString);
+    List<int> byteList = hexListToIntList(hexList);
+
+    if (!_verityCrc(
+      byteList.sublist(0, byteList.length - 2),
+      byteList[byteList.length - 2],
+    )) {
+      return;
+    }
+
+    if (byteList[5] == 0xE0) {
+      _sendProductRule();
+    }
+
+    switch (byteList[5]) {
+      case 0xE0:
+        _sendProductRule();
+        break;
+      case 0xF0:
+        _sendProductRuleIndex++;
+
+        if (_sendProductRuleIndex >= _productRules.length) return;
+
+        _sendProductRule();
+    }
   }
 
   bool _verityCrc(List<int> revData, int originCrc) {
