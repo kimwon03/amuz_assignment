@@ -378,6 +378,7 @@ class DxiSocketClient {
       _sendProductRule();
     }
 
+    // Todo: 오류 종료 처리 추가
     switch (byteList[5]) {
       case 0xE0:
         _sendProductRule();
