@@ -387,12 +387,20 @@ class DxiSocketClient {
     List<String> hexList = hexStringTohexList(hexString);
     List<int> byteList = hexListToIntList(hexList);
 
-    // Todo: 수신 종료 처리 추가
-    if (byteList[5] != 0xF0) return;
+    int code = byteList[5];
 
-    _sendProductRuleIndex = 0;
+    // Todo: 예외처리 추가
+    switch (code) {
+      case 0xE1:
+      case 0xE3:
+        _sendComplete();
+        break;
+      case 0x0F:
+        _sendProductRuleIndex = 0;
 
-    _sendProductRule();
+        _sendProductRule();
+        break;
+    }
   }
 
   void _responseSettingResult(String hexString) {
