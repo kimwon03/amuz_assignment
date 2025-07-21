@@ -13,13 +13,17 @@ class ConnectNotifier extends _$ConnectNotifier {
 
   @override
   ConnectionState build() {
+    _dxiRepository.connectionStateStream.listen((event) {
+      state = event;
+    });
+
     return ConnectionState.disconnect;
   }
 
   void connect() {
     _dxiRepository.connect();
   }
-  
+
   void disconnect() {
     _dxiRepository.disconnect();
   }
