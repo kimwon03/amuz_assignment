@@ -23,6 +23,7 @@ class DxiSocketClient {
 
   final List<String> _productRules = [];
   late final Map<String, dynamic> _monitoringRules;
+  late final Map<String, dynamic> _monitoringDataInfos;
   int _sendProductRuleIndex = 0;
 
   final BehaviorSubject<ConnectionState> _connectionStateSubject =
@@ -47,6 +48,9 @@ class DxiSocketClient {
     _monitoringRules =
         productSpecification['productDesc']['product_setting']['monitoring'] ??
         {};
+
+    _monitoringDataInfos =
+        productSpecification['productDesc']['monitoring'] ?? {};
   }
 
   Future<void> connect() async {
@@ -467,9 +471,23 @@ class DxiSocketClient {
       hexString,
     );
 
-    monitoringMap.forEach((key, value) {
-      appLog.d(_monitoringRules[key]);
-    });
+    monitoringMap.forEach((key, value) => _updateMonitoringData(key, value));
+  }
+
+  void _updateMonitoringData(String key, dynamic value) {
+    List<String> elements = ((_monitoringRules[key]['elements'] ?? []) as List)
+        .cast<String>();
+
+    for (String element in elements) {
+      Map<String, dynamic> dataInfo = _monitoringDataInfos[element];
+
+      print(dataInfo);
+
+      int length = dataInfo['length'];
+      bool signed = dataInfo['sign'] ?? false;
+      String type = dataInfo['type'] ?? 'int';
+      String name = dataInfo['name'];
+    }
   }
 
   bool _verityCrc(String hexString) {
