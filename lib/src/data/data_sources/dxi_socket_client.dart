@@ -30,6 +30,9 @@ class DxiSocketClient {
   set _updateConnectionState(ConnectionState state) =>
       _connectionStateSubject.sink.add(state);
 
+  Stream<ConnectionState> get connectionStateStream =>
+      _connectionStateSubject.stream;
+
   void initialize() {
     _initialize = true;
 
@@ -375,7 +378,7 @@ class DxiSocketClient {
 
     _sendRequest(dxiRequestModel);
 
-    if(exitAP) {
+    if (exitAP) {
       _updateConnectionState = ConnectionState.disconnect;
     }
   }

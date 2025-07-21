@@ -1,3 +1,4 @@
+import 'package:amuz_assignment/src/core/utils/connect_state.dart';
 import 'package:amuz_assignment/src/data/data_sources/dxi_socket_client.dart';
 import 'package:amuz_assignment/src/domain/repositories/dxi_repository.dart';
 
@@ -15,4 +16,8 @@ class DxiRepositoryImpl implements DxiRepository {
   Future<void> disconnect() async {
     await _client.disconnect();
   }
+
+  @override
+  Stream<ConnectionState> get connectionStateStream =>
+      _client.connectionStateStream;
 }
