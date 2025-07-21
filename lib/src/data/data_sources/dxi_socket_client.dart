@@ -44,6 +44,8 @@ class DxiSocketClient {
   Future<void> connect() async {
     if (!_initialize) return;
 
+    _updateConnectionState = ConnectionState.waiting;
+
     await serverAuthentication();
   }
 
@@ -372,6 +374,10 @@ class DxiSocketClient {
     );
 
     _sendRequest(dxiRequestModel);
+
+    if(exitAP) {
+      _updateConnectionState = ConnectionState.disconnect;
+    }
   }
 
   void _responseSpecVersion(String hexString) {
@@ -431,7 +437,11 @@ class DxiSocketClient {
       _sendProductRuleIndex = 0;
 
       _sendProductRule();
+
+      return;
     }
+
+    _updateConnectionState = ConnectionState.connect;
   }
 
   bool _verityCrc(String hexString) {
