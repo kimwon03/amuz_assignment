@@ -210,6 +210,8 @@ class DxiSocketClient {
   void _whenReceviedSendDxiData(Map<String, dynamic> data) {
     String hexString = data['bytes'];
 
+    if(!_verityCrc(hexString)) return;
+
     if (hexString.contains('AA0810B403')) {
       _responseSpecVersion(hexString);
     } else if (hexString.contains('AA0910B405')) {
@@ -366,13 +368,6 @@ class DxiSocketClient {
     List<String> hexList = hexStringTohexList(hexString);
     List<int> byteList = hexListToIntList(hexList);
 
-    if (!_verityCrc(
-      byteList.sublist(0, byteList.length - 2),
-      byteList[byteList.length - 2],
-    )) {
-      return;
-    }
-
     // Todo: 수신 종료 처리 추가
     if (byteList[5] != 0xF0) return;
 
@@ -384,13 +379,6 @@ class DxiSocketClient {
   void _responseSettingResult(String hexString) {
     List<String> hexList = hexStringTohexList(hexString);
     List<int> byteList = hexListToIntList(hexList);
-
-    if (!_verityCrc(
-      byteList.sublist(0, byteList.length - 2),
-      byteList[byteList.length - 2],
-    )) {
-      return;
-    }
 
     if (byteList[5] == 0xE0) {
       _sendProductRule();
@@ -416,10 +404,14 @@ class DxiSocketClient {
 
   void _responseCompleteResult(String hexString) {}
 
-  bool _verityCrc(List<int> revData, int originCrc) {
-    int revCrc = generateCrc8Bit(revData);
+  bool _verityCrc(String hexString) {
+    List<String> hexList = hexStringTohexList(hexString);
+    List<int> bytes = hexListToIntList(hexList);
 
-    return revCrc == originCrc;
+    int originCRC = bytes[bytes.length - 1];
+    int recvCRC = generateCrc8Bit(bytes.sublist(0, bytes.length - 2));
+
+    return originCRC == recvCRC;    
   }
 
   bool _isCommmndPingOrPong(String cmd) {
