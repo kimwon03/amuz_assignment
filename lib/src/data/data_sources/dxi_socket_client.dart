@@ -27,7 +27,7 @@ class DxiSocketClient {
   final BehaviorSubject<ConnectionState> _connectionStateSubject =
       BehaviorSubject.seeded(ConnectionState.disconnect);
 
-  set updateConnectionState(ConnectionState state) =>
+  set _updateConnectionState(ConnectionState state) =>
       _connectionStateSubject.sink.add(state);
 
   void initialize() {
