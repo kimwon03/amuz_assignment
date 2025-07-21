@@ -1,3 +1,4 @@
+import 'package:amuz_assignment/src/core/utils/connect_state.dart';
 import 'package:amuz_assignment/src/domain/repositories/dxi_repository.dart';
 import 'package:get_it/get_it.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
@@ -11,19 +12,15 @@ class ConnectNotifier extends _$ConnectNotifier {
   ConnectNotifier() : _dxiRepository = GetIt.I<DxiRepository>();
 
   @override
-  bool build() {
-    return false;
+  ConnectionState build() {
+    return ConnectionState.disconnect;
   }
 
   void connect() {
     _dxiRepository.connect();
-
-    state = true;
   }
   
   void disconnect() {
     _dxiRepository.disconnect();
-
-    state = false;
   }
 }
