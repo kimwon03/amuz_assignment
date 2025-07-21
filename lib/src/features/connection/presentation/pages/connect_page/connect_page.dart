@@ -1,5 +1,5 @@
-import 'package:amuz_assignment/src/core/utils/connect_state.dart' as Utils;
-import 'package:amuz_assignment/src/presentation/notifier/connect_notifier.dart';
+import 'package:amuz_assignment/src/core/common/models/connect_state.dart' as Utils;
+import 'package:amuz_assignment/src/features/connection/presentation/notifier/connect_notifier.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 

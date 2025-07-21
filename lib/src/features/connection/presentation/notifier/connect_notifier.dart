@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:amuz_assignment/src/core/utils/connect_state.dart';
-import 'package:amuz_assignment/src/domain/repositories/dxi_repository.dart';
+import 'package:amuz_assignment/src/core/common/models/connect_state.dart';
+import 'package:amuz_assignment/src/features/connection/domain/repositories/dxi_repository.dart';
 import 'package:get_it/get_it.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
