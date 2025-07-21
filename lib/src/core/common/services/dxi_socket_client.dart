@@ -471,10 +471,12 @@ class DxiSocketClient {
       hexString,
     );
 
-    monitoringMap.forEach((key, value) => _updateMonitoringData(key, value));
+    monitoringMap.forEach(
+      (key, value) => _updateMonitoringData(key, (value as List).cast()),
+    );
   }
 
-  void _updateMonitoringData(String key, dynamic value) {
+  void _updateMonitoringData(String key, List<String> value) {
     List<String> elements = ((_monitoringRules[key]['elements'] ?? []) as List)
         .cast<String>();
 
@@ -487,6 +489,16 @@ class DxiSocketClient {
       bool signed = dataInfo['sign'] ?? false;
       String type = dataInfo['type'] ?? 'int';
       String name = dataInfo['name'];
+
+      int parsingValue = hexListToInt(value.sublist(0, length));
+
+      if (signed) {
+        parsingValue = parsingValue.toSigned(
+          value.sublist(0, length).length * 4 * 2,
+        );
+      }
+
+      print(parsingValue);
     }
   }
 
