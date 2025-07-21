@@ -408,7 +408,7 @@ class DxiSocketClient {
     List<String> hexList = hexStringTohexList(hexString);
     List<int> bytes = hexListToIntList(hexList);
 
-    int originCRC = bytes[bytes.length - 1];
+    int originCRC = bytes[bytes.length - 2];
     int recvCRC = generateCrc8Bit(bytes.sublist(0, bytes.length - 2));
 
     return originCRC == recvCRC;    
