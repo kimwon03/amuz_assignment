@@ -214,6 +214,8 @@ class DxiSocketClient {
       _responseSpecVersion(hexString);
     } else if (hexString.contains('AA0910B405')) {
       _responseSettingResult(hexString);
+    } else if (hexString.contains('AA1310B407')) {
+      _responseCompleteResult(hexString);
     }
   }
 
@@ -412,7 +414,7 @@ class DxiSocketClient {
     }
   }
 
-  void _responseCompleteReulst(String hexString) {}
+  void _responseCompleteResult(String hexString) {}
 
   bool _verityCrc(List<int> revData, int originCrc) {
     int revCrc = generateCrc8Bit(revData);
