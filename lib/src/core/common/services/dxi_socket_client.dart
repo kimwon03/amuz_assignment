@@ -22,6 +22,7 @@ class DxiSocketClient {
   Timer? _sendSetDxiModeReqTimer;
 
   final List<String> _productRules = [];
+  late final Map<String, dynamic> _monitoringRules;
   int _sendProductRuleIndex = 0;
 
   final BehaviorSubject<ConnectionState> _connectionStateSubject =
@@ -42,6 +43,10 @@ class DxiSocketClient {
     settings.forEach((key, value) {
       _productRules.addAll((value as List).cast<String>());
     });
+
+    _monitoringRules =
+        productSpecification['productDesc']['product_setting']['monitoring'] ??
+        {};
   }
 
   Future<void> connect() async {
@@ -458,7 +463,13 @@ class DxiSocketClient {
   }
 
   void _responseMonitoring(String hexString) {
-    Map<String, dynamic> monitoringMap = monitoringByteTomonitoringMap(hexString);
+    Map<String, dynamic> monitoringMap = monitoringByteTomonitoringMap(
+      hexString,
+    );
+
+    monitoringMap.forEach((key, value) {
+      appLog.d(_monitoringRules[key]);
+    });
   }
 
   bool _verityCrc(String hexString) {
