@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
 
+import 'package:amuz_assignment/src/core/common/models/monitoring_parser_info_model.dart';
 import 'package:amuz_assignment/src/core/constants/app_constant.dart';
 import 'package:amuz_assignment/src/core/constants/dxi_constant.dart';
 import 'package:amuz_assignment/src/core/constants/keys.dart';
@@ -467,9 +468,7 @@ class DxiSocketClient {
   }
 
   void _responseMonitoring(String hexString) {
-    Map<String, dynamic> monitoringMap = monitoringByteTomonitoringMap(
-      hexString,
-    );
+    Map<String, dynamic> monitoringMap = hexStringToMap(hexString);
 
     monitoringMap.forEach(
       (key, value) => _updateMonitoringData(key, (value as List).cast()),
@@ -480,25 +479,47 @@ class DxiSocketClient {
     List<String> elements = ((_monitoringRules[key]['elements'] ?? []) as List)
         .cast<String>();
 
+    int offset = 0;
+
     for (String element in elements) {
       Map<String, dynamic> dataInfo = _monitoringDataInfos[element];
 
-      print(dataInfo);
+      MonitoringParserInfoModel monitoringParserInfo =
+          MonitoringParserInfoModel.fromJson(dataInfo);
 
-      int length = dataInfo['length'];
-      bool signed = dataInfo['sign'] ?? false;
-      String type = dataInfo['type'] ?? 'int';
-      String name = dataInfo['name'];
+      List<String> sublist = value.sublist(
+        offset,
+        offset + monitoringParserInfo.length,
+      );
 
-      int parsingValue = hexListToInt(value.sublist(0, length));
+      int parsingValue = hexListToInt(sublist.reversed.toList());
 
-      if (signed) {
-        parsingValue = parsingValue.toSigned(
-          value.sublist(0, length).length * 4 * 2,
-        );
+      if (monitoringParserInfo.signed ?? false) {
+        parsingValue = parsingValue.toSigned(sublist.length * 4 * 2);
       }
 
-      print(parsingValue);
+      if (monitoringParserInfo.deco != null) {
+        _calculateByDeco(parsingValue, monitoringParserInfo.deco!);
+      }
+
+      offset += monitoringParserInfo.length;
+    }
+  }
+
+  String _calculateByDeco(int value, String deco) {
+    String decoString = utf8.decode(base64Decode(deco));
+    Map<String, dynamic> convertMap = jsonDecode(decoString);
+    String calc = convertMap['calc'];
+
+    String operator = calc.substring(1, 2);
+    double calValue = double.parse(calc.substring(2));
+
+    if (operator == '*') {
+      return (value * calValue).toStringAsFixed(1);
+    } else if (operator == '/') {
+      return (value / calValue).toStringAsFixed(1);
+    } else {
+      return value.toString();
     }
   }
 
