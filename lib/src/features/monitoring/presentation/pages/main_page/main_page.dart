@@ -13,15 +13,13 @@ class MainPage extends HookConsumerWidget {
     }, []);
 
     return Scaffold(
-      body: Center(
-        child: Consumer(
-          builder: (context, ref, child) {
-            Map<String, dynamic> data = ref.watch(mainNotifierProvider);
-
-            return Text(data.toString());
-          },
-        ),
+      appBar: AppBar(
+        title: Text('실시간 데이터'),
+        actions: [],
       ),
+      body: ExpansionPanelList(
+        children: [],
+      )
     );
   }
 }
