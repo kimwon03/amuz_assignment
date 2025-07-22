@@ -1,5 +1,5 @@
 import 'package:amuz_assignment/src/core/common/models/connect_state.dart';
-import 'package:amuz_assignment/src/core/common/services/dxi_socket_client.dart';
+import 'package:amuz_assignment/src/features/connection/data/services/dxi_service.dart';
 import 'package:amuz_assignment/src/features/connection/domain/repositories/dxi_repository.dart';
 
 class DxiRepositoryImpl implements DxiRepository {

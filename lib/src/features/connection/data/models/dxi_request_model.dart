@@ -1,4 +1,4 @@
-import 'package:amuz_assignment/src/core/common/models/dxi_send_data_model.dart';
+import 'package:amuz_assignment/src/features/connection/data/models/dxi_send_data_model.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'dxi_request_model.freezed.dart';

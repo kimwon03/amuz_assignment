@@ -2,7 +2,9 @@ import 'dart:async';
 import 'dart:io';
 import 'dart:typed_data';
 
+import 'package:amuz_assignment/src/core/common/models/connect_state.dart';
 import 'package:amuz_assignment/src/core/constants/app_constant.dart';
+import 'package:rxdart/subjects.dart';
 
 class Message {
   final Object? message;
@@ -18,9 +20,15 @@ class Message {
 
 class BaseSocketClient {
   Socket? socket;
-  bool isConnected = false;
+  bool _isSocketConnected = false;
   StreamSubscription<Uint8List>? _socketSubscription;
   final List<Message> _messageQueue = [];
+  final BehaviorSubject<ConnectionState> _connectionState =
+      BehaviorSubject.seeded(ConnectionState.disconnect);
+
+  set updateConnectionState(ConnectionState newState) => _connectionState.sink.add(newState);
+
+  Stream<ConnectionState> get connectionStateStream => _connectionState.stream;
 
   Future<bool> connect(
     String ip,
@@ -45,7 +53,7 @@ class BaseSocketClient {
         socket = await Socket.connect(ip, port, timeout: Duration(seconds: 2));
       }
 
-      isConnected = true;
+      _isSocketConnected = true;
 
       _sendMessageOnQueue();
 
@@ -88,14 +96,14 @@ class BaseSocketClient {
       await socket?.close();
 
       socket?.done.then((_) {
-        isConnected = false;
+        _isSocketConnected = false;
       });
     } catch (e, stackTrace) {
       appLog.e(e, error: e, stackTrace: stackTrace);
       appLog.d('강제 연결해제 시작');
 
       socket?.destroy();
-      isConnected = false;
+      _isSocketConnected = false;
     }
   }
 
@@ -105,7 +113,7 @@ class BaseSocketClient {
     void Function()? onDone,
     bool? cancelOnError,
   }) async {
-    if (socket == null || !isConnected) return;
+    if (socket == null || !_isSocketConnected) return;
 
     await removeListener();
 
@@ -140,7 +148,7 @@ class BaseSocketClient {
         _write(message);
       }
 
-      return isConnected;
+      return _isSocketConnected;
     });
   }
 
