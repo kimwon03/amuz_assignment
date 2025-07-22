@@ -14,7 +14,7 @@ import 'package:amuz_assignment/src/features/connection/data/models/dxi_send_dat
 import 'package:amuz_assignment/src/features/connection/data/models/product_information_model.dart';
 import 'package:rxdart/subjects.dart';
 
-class DxiSocketClient {
+class DxiService {
   bool _initialize = false;
 
   final BaseSocketClient _socketClient = BaseSocketClient();

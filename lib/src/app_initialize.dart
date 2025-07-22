@@ -13,7 +13,7 @@ Future<void> appInitialize() async {
   );
   productSpecification = await json.decode(response);
 
-  DxiSocketClient dxiSocketClient = DxiSocketClient();
+  DxiService dxiSocketClient = DxiService();
 
   dxiSocketClient.initialize();
 

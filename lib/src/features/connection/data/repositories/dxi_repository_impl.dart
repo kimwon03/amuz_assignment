@@ -3,9 +3,9 @@ import 'package:amuz_assignment/src/features/connection/data/services/dxi_servic
 import 'package:amuz_assignment/src/features/connection/domain/repositories/dxi_repository.dart';
 
 class DxiRepositoryImpl implements DxiRepository {
-  late final DxiSocketClient _client;
+  late final DxiService _client;
 
-  DxiRepositoryImpl({required DxiSocketClient client}) : _client = client;
+  DxiRepositoryImpl({required DxiService client}) : _client = client;
 
   @override
   Future<void> connect() async {

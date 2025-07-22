@@ -11,7 +11,7 @@ import 'package:amuz_assignment/src/core/common/models/dxi_request_model.dart';
 import 'package:amuz_assignment/src/features/connection/data/models/dxi_send_data_model.dart';
 import 'package:rxdart/subjects.dart';
 
-class DxiSocketClient {
+class DxiService {
   bool _initialize = false;
 
   final BaseSocketClient _socketClient = BaseSocketClient();
