@@ -105,11 +105,11 @@ class DxiSocketClient {
     await _socketClient.disconnect();
   }
 
-  void disposeListener() {
+  Future<void> disposeListener() async {
     _stopSendSetDxiModeReqTimer();
     _stopSendSetDxiModeReqTimer();
 
-    _socketClient.removeListener();
+    await _socketClient.removeListener();
   }
 
   SecurityContext _getSecurityContext({

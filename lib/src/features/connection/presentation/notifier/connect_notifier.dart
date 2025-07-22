@@ -35,10 +35,10 @@ class ConnectNotifier extends _$ConnectNotifier {
     _dxiRepository.disconnect();
   }
 
-  void dispose() {
+  Future<void> dispose() async {
     _subscription?.cancel();
     _subscription = null;
 
-    _dxiRepository.disposeListener();
+    await _dxiRepository.disposeListener();
   }
 }

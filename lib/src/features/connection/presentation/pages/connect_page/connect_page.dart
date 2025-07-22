@@ -16,8 +16,8 @@ class ConnectPage extends ConsumerWidget {
     final Utils.ConnectionState state = ref.watch(connectNotifierProvider);
 
     if (state == Utils.ConnectionState.connect) {
-      Future.delayed(Duration.zero, () {
-        ref.read(connectNotifierProvider.notifier).dispose();
+      Future.delayed(Duration.zero, () async {
+        await ref.read(connectNotifierProvider.notifier).dispose();
 
         if (context.mounted) context.go(AppRoutes.main.path);
       });

@@ -99,7 +99,7 @@ class DxiService {
   }
 
   void _setMonitoringData(String key, List<String> value) {
-    Map<String, dynamic> monitoringData = {};
+    Map<String, dynamic> monitoringData = _monitoringDataSubject.value;
 
     List<String> elements = ((_monitoringRules[key]['elements'] ?? []) as List)
         .cast<String>();
@@ -125,12 +125,12 @@ class DxiService {
 
       String result = _generateDataByType(monitoringParserInfo, parsingValue);
 
-      monitoringData['name'] = result;
+      monitoringData[monitoringParserInfo.name] = result;
 
       offset += monitoringParserInfo.length;
     }
 
-    _updateMonitoringData = monitoringData;
+    _updateMonitoringData = Map.from(monitoringData);
   }
 
   String _generateDataByType(MonitoringParserInfoModel parser, int data) {

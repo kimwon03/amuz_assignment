@@ -20,13 +20,15 @@ class Message {
 
 class BaseSocketClient {
   Socket? socket;
+  Stream<Uint8List>? _broadcaseSocketStream;
   bool _isSocketConnected = false;
   StreamSubscription<Uint8List>? _socketSubscription;
   final List<Message> _messageQueue = [];
   final BehaviorSubject<ConnectionState> _connectionState =
       BehaviorSubject.seeded(ConnectionState.disconnect);
 
-  set updateConnectionState(ConnectionState newState) => _connectionState.sink.add(newState);
+  set updateConnectionState(ConnectionState newState) =>
+      _connectionState.sink.add(newState);
 
   Stream<ConnectionState> get connectionStateStream => _connectionState.stream;
 
@@ -93,6 +95,8 @@ class BaseSocketClient {
     try {
       await removeListener();
 
+      _broadcaseSocketStream = null;
+
       await socket?.close();
 
       socket?.done.then((_) {
@@ -117,10 +121,12 @@ class BaseSocketClient {
 
     await removeListener();
 
-    _socketSubscription = socket?.listen(
+    _broadcaseSocketStream ??= socket!.asBroadcastStream();
+
+    _socketSubscription = _broadcaseSocketStream!.listen(
       onData,
-      onDone: onDone,
       onError: onError,
+      onDone: onDone,
       cancelOnError: cancelOnError,
     );
   }

@@ -22,7 +22,7 @@ class DxiRepositoryImpl implements DxiRepository {
       _client.connectionStateStream;
 
   @override
-  void disposeListener() {
-    _client.disposeListener();
+  Future<void> disposeListener() {
+    return _client.disposeListener();
   }
 }

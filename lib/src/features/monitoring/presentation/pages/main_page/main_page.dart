@@ -12,6 +12,16 @@ class MainPage extends HookConsumerWidget {
       ref.read(mainNotifierProvider.notifier).startMonitoring();
     }, []);
 
-    return Scaffold(body: Center(child: Text('Main Page')));
+    return Scaffold(
+      body: Center(
+        child: Consumer(
+          builder: (context, ref, child) {
+            Map<String, dynamic> data = ref.watch(mainNotifierProvider);
+
+            return Text(data.toString());
+          },
+        ),
+      ),
+    );
   }
 }
