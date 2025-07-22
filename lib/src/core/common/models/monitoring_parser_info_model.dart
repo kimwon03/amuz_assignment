@@ -11,7 +11,7 @@ abstract class MonitoringParserInfoModel with _$MonitoringParserInfoModel {
     required bool control,
     @Default('int') @JsonKey(includeIfNull: false) String type,
     @JsonKey(includeIfNull: false) String? desc,
-    @Default(false) @JsonKey(includeIfNull: false) bool? signed,
+    @Default(false) @JsonKey(includeIfNull: false) bool? sign,
     @JsonKey(includeIfNull: false) String? deco,
     @JsonKey(includeIfNull: false) Map<String, dynamic>? map,
   }) = _MonitoringParserInfoModel;

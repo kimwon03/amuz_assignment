@@ -13,6 +13,7 @@ import 'package:amuz_assignment/src/core/common/utils/data_parser.dart';
 import 'package:amuz_assignment/src/core/common/models/dxi_request_model.dart';
 import 'package:amuz_assignment/src/core/common/models/dxi_send_data_model.dart';
 import 'package:amuz_assignment/src/core/common/models/product_information_model.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:rxdart/subjects.dart';
 
 class DxiSocketClient {
@@ -494,15 +495,29 @@ class DxiSocketClient {
 
       int parsingValue = hexListToInt(sublist.reversed.toList());
 
-      if (monitoringParserInfo.signed ?? false) {
+      if (monitoringParserInfo.sign ?? false) {
         parsingValue = parsingValue.toSigned(sublist.length * 4 * 2);
       }
 
-      if (monitoringParserInfo.deco != null) {
-        _calculateByDeco(parsingValue, monitoringParserInfo.deco!);
-      }
+      String result = _generateDataByType(monitoringParserInfo, parsingValue);
+
+      print('${monitoringParserInfo.name} : $result');
 
       offset += monitoringParserInfo.length;
+    }
+  }
+
+  String _generateDataByType(MonitoringParserInfoModel parser, int data) {
+    switch (parser.type) {
+      case 'int':
+        return parser.deco != null
+            ? _calculateByDeco(data, parser.deco!)
+            : data.toString();
+      case 'bool':
+      case 'enum':
+        return _convertDataUsingMap(parser.map ?? {}, data);
+      default:
+        return '';
     }
   }
 
@@ -521,6 +536,10 @@ class DxiSocketClient {
     } else {
       return value.toString();
     }
+  }
+
+  String _convertDataUsingMap(Map<String, dynamic> map, int value) {
+    return map[value.toString()];
   }
 
   bool _verityCrc(String hexString) {
