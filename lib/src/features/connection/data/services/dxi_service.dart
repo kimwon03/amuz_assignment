@@ -95,14 +95,20 @@ class DxiSocketClient {
   }
 
   Future<void> disconnect({bool releaseDxi = true, bool exitAP = true}) async {
-    _stopSendSet2WayCertReqTimer();
-    _stopSendSetDxiModeReqTimer();
+    disposeListener();
 
     if (releaseDxi) {
       _releaseDxiMode(exitAP: exitAP);
     }
 
     await _socketClient.disconnect();
+  }
+
+  void disposeListener() {
+    _stopSendSetDxiModeReqTimer();
+    _stopSendSetDxiModeReqTimer();
+
+    _socketClient.removeListener();
   }
 
   SecurityContext _getSecurityContext({

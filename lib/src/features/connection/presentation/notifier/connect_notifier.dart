@@ -9,7 +9,7 @@ part 'connect_notifier.g.dart';
 
 /// Notifier 사용 중단 시 dispose 필수
 ///
-/// dispose를 하지 않으면 connectionStateStream Listener가 종료 되지 않음!!!
+/// dispose를 하지 않으면 connectionStateStream Listener와 Connection_Feature.DxiClient의 SocketListener 및 Timer가 제거 되지 않음
 @Riverpod(keepAlive: false)
 class ConnectNotifier extends _$ConnectNotifier {
   late final DxiRepository _dxiRepository;
@@ -38,5 +38,7 @@ class ConnectNotifier extends _$ConnectNotifier {
   void dispose() {
     _subscription?.cancel();
     _subscription = null;
+
+    _dxiRepository.disposeListener();
   }
 }

@@ -20,4 +20,9 @@ class DxiRepositoryImpl implements DxiRepository {
   @override
   Stream<ConnectionState> get connectionStateStream =>
       _client.connectionStateStream;
+
+  @override
+  void disposeListener() {
+    _client.disposeListener();
+  }
 }
