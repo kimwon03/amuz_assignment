@@ -501,8 +501,6 @@ class DxiSocketClient {
 
       String result = _generateDataByType(monitoringParserInfo, parsingValue);
 
-      print('${monitoringParserInfo.name} : $result');
-
       offset += monitoringParserInfo.length;
     }
   }
@@ -516,6 +514,8 @@ class DxiSocketClient {
       case 'bool':
       case 'enum':
         return _convertDataUsingMap(parser.map ?? {}, data);
+      case 'various':
+        return _convertDataUsingVarious(parser, data);
       default:
         return '';
     }
@@ -540,6 +540,30 @@ class DxiSocketClient {
 
   String _convertDataUsingMap(Map<String, dynamic> map, int value) {
     return map[value.toString()];
+  }
+
+  String _convertDataUsingVarious(MonitoringParserInfoModel parser, int value) {
+    Map<String, dynamic> result = {};
+
+    String valueBinary = value.toRadixString(2).padLeft(parser.length * 8, '0');
+
+    Map<String, dynamic> elements = parser.elements ?? {};
+
+    elements.forEach((key, value) {
+      int offset = int.parse(key);
+
+      int reversedOffset = elements.keys.length - 1 - offset;
+
+      if (reversedOffset < 0) return;
+
+      String targetValue = valueBinary[reversedOffset];
+
+      if (targetValue == '1') {
+        result.addAll({value['name']: value['map'][targetValue]});
+      }
+    });
+
+    return jsonEncode(result);
   }
 
   bool _verityCrc(String hexString) {
