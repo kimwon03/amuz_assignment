@@ -37,6 +37,15 @@ class DxiSocketClient {
   Stream<ConnectionState> get connectionStateStream =>
       _connectionStateSubject.stream;
 
+  final BehaviorSubject<Map<String, dynamic>> _monitoringDataSubject =
+      BehaviorSubject.seeded({});
+
+  set _updateMonitoringData(Map<String, dynamic> newData) =>
+      _monitoringDataSubject.sink.add(newData);
+
+  Stream<Map<String, dynamic>> get monitoringDataStream =>
+      _monitoringDataSubject.stream;
+
   void initialize() {
     _initialize = true;
 
@@ -472,11 +481,13 @@ class DxiSocketClient {
     Map<String, dynamic> monitoringMap = hexStringToMap(hexString);
 
     monitoringMap.forEach(
-      (key, value) => _updateMonitoringData(key, (value as List).cast()),
+      (key, value) => _setMonitoringData(key, (value as List).cast()),
     );
   }
 
-  void _updateMonitoringData(String key, List<String> value) {
+  void _setMonitoringData(String key, List<String> value) {
+    Map<String, dynamic> monitoringData = {};
+
     List<String> elements = ((_monitoringRules[key]['elements'] ?? []) as List)
         .cast<String>();
 
@@ -501,8 +512,12 @@ class DxiSocketClient {
 
       String result = _generateDataByType(monitoringParserInfo, parsingValue);
 
+      monitoringData['name'] = result;
+
       offset += monitoringParserInfo.length;
     }
+
+    _updateMonitoringData = monitoringData;
   }
 
   String _generateDataByType(MonitoringParserInfoModel parser, int data) {
