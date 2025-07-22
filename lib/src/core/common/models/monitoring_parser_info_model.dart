@@ -7,7 +7,7 @@ part 'monitoring_parser_info_model.g.dart';
 abstract class MonitoringParserInfoModel with _$MonitoringParserInfoModel {
   const factory MonitoringParserInfoModel({
     required String name,
-    required String length,
+    required int length,
     required bool control,
     @Default('int') @JsonKey(includeIfNull: false) String type,
     required String desc,
