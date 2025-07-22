@@ -14,7 +14,7 @@ import 'package:rxdart/subjects.dart';
 class DxiService {
   bool _initialize = false;
 
-  final BaseSocketClient _socketClient = BaseSocketClient();
+  late final BaseSocketClient _socketClient;
 
   late final Map<String, dynamic> _monitoringRules;
   late final Map<String, dynamic> _monitoringDataInfos;
@@ -27,6 +27,8 @@ class DxiService {
 
   Stream<Map<String, dynamic>> get monitoringDataStream =>
       _monitoringDataSubject.stream;
+
+  DxiService(BaseSocketClient socketClient) : _socketClient = socketClient;
 
   void initialize() {
     _initialize = true;

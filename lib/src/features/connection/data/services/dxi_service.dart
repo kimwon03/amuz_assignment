@@ -12,12 +12,11 @@ import 'package:amuz_assignment/src/core/common/utils/data_parser.dart';
 import 'package:amuz_assignment/src/core/common/models/dxi_request_model.dart';
 import 'package:amuz_assignment/src/features/connection/data/models/dxi_send_data_model.dart';
 import 'package:amuz_assignment/src/features/connection/data/models/product_information_model.dart';
-import 'package:rxdart/subjects.dart';
 
-class DxiService {
+class DxiSocketClient {
   bool _initialize = false;
 
-  final BaseSocketClient _socketClient = BaseSocketClient();
+  late final BaseSocketClient _socketClient;
   Timer? _sendSet2WayCertReqTimer;
   Timer? _sendSetDxiModeReqTimer;
 
@@ -26,6 +25,8 @@ class DxiService {
 
   Stream<ConnectionState> get connectionStateStream =>
       _socketClient.connectionStateStream;
+
+  DxiSocketClient(BaseSocketClient socketClient) : _socketClient = socketClient;
 
   void initialize() {
     _initialize = true;
