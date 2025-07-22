@@ -1,11 +1,11 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'monitoring_parser_info.freezed.dart';
-part 'monitoring_parser_info.g.dart';
+part 'monitoring_parser_info_model.freezed.dart';
+part 'monitoring_parser_info_model.g.dart';
 
-@Freezed(fromJson: true)
-abstract class MonitoringParserInfo with _$MonitoringParserInfo {
-  const factory MonitoringParserInfo({
+@freezed
+abstract class MonitoringParserInfoModel with _$MonitoringParserInfoModel {
+  const factory MonitoringParserInfoModel({
     required String name,
     required String length,
     required bool control,
@@ -14,5 +14,8 @@ abstract class MonitoringParserInfo with _$MonitoringParserInfo {
     @Default(false) @JsonKey(includeIfNull: false) bool? signed,
     @JsonKey(includeIfNull: false) String? deco,
     @JsonKey(includeIfNull: false) Map<String, dynamic>? map,
-  }) = _MonitoringParserInfo;
+  }) = _MonitoringParserInfoModel;
+
+  factory MonitoringParserInfoModel.fromJson(Map<String, Object?> json) =>
+      _$MonitoringParserInfoModelFromJson(json);
 }
