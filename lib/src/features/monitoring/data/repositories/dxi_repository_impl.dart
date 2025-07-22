@@ -6,4 +6,9 @@ class DxiRepositoryImpl implements DxiRepository {
 
   DxiRepositoryImpl({required DxiService dxiService})
     : _dxiService = dxiService;
+
+  @override
+  void startMonitoring() {
+    _dxiService.startMonitoring();
+  }
 }
