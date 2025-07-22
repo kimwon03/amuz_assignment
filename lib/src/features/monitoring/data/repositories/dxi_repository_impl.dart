@@ -11,4 +11,8 @@ class DxiRepositoryImpl implements DxiRepository {
   void startMonitoring() {
     _dxiService.startMonitoring();
   }
+
+  @override
+  Stream<Map<String, dynamic>> get monitoringDataStream =>
+      _dxiService.monitoringDataStream;
 }
