@@ -24,6 +24,8 @@ class MainNotifier extends _$MainNotifier {
     _monitoringSubscription = _dxiRepository.monitoringDataStream.listen((
       data,
     ) {
+      print(data);
+
       state = data;
     });
   }

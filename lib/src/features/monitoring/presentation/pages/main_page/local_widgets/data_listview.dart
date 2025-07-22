@@ -9,6 +9,13 @@ class DataListview extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final Map<String, dynamic> dataMap = ref.watch(mainNotifierProvider);
 
-    return ExpansionPanelList(children: []);
+    return ExpansionPanelList(
+      children: dataMap.entries.map((e) {
+        return ExpansionPanel(
+          headerBuilder: (context, isExpanded) => ListTile(title: Text(e.key),),
+          body: Text(e.value),
+        );
+      }).toList(),
+    );
   }
 }
