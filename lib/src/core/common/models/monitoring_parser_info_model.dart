@@ -10,7 +10,7 @@ abstract class MonitoringParserInfoModel with _$MonitoringParserInfoModel {
     required int length,
     required bool control,
     @Default('int') @JsonKey(includeIfNull: false) String type,
-    required String desc,
+    @JsonKey(includeIfNull: false) String? desc,
     @Default(false) @JsonKey(includeIfNull: false) bool? signed,
     @JsonKey(includeIfNull: false) String? deco,
     @JsonKey(includeIfNull: false) Map<String, dynamic>? map,
