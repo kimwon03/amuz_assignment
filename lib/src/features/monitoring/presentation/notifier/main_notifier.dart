@@ -14,4 +14,8 @@ class MainNotifier extends _$MainNotifier {
   Map<String, dynamic> build() {
     return {};
   }
+
+  void startMonitoring() {
+    _dxiRepository.startMonitoring();
+  }
 }
