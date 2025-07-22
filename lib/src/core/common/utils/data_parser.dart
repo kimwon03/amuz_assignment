@@ -47,7 +47,7 @@ int hexListToInt(List<String> hexList) {
   return int.parse(hex, radix: 16);
 }
 
-Map<String, dynamic> monitoringByteTomonitoringMap(String hexString) {
+Map<String, dynamic> hexStringToMap(String hexString) {
   List<String> hexList = hexStringTohexList(hexString);
   List<String> dataList = hexList.sublist(11, hexList.length - 3);
 
