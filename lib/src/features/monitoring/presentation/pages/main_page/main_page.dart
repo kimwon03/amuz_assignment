@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import 'local_widgets/index.dart';
+
 class MainPage extends HookConsumerWidget {
   const MainPage({super.key});
 
@@ -13,13 +15,8 @@ class MainPage extends HookConsumerWidget {
     }, []);
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text('실시간 데이터'),
-        actions: [],
-      ),
-      body: ExpansionPanelList(
-        children: [],
-      )
+      appBar: AppBar(title: Text('실시간 데이터'), actions: []),
+      body: DataListview(),
     );
   }
 }
