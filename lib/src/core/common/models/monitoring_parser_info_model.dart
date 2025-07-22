@@ -14,7 +14,7 @@ abstract class MonitoringParserInfoModel with _$MonitoringParserInfoModel {
     @Default(false) @JsonKey(includeIfNull: false) bool? sign,
     @JsonKey(includeIfNull: false) String? deco,
     @JsonKey(includeIfNull: false) Map<String, dynamic>? map,
-    @JsonKey(includeFromJson: false) Map<String, dynamic>? elements,
+    @JsonKey(includeIfNull: false) Map<String, dynamic>? elements,
   }) = _MonitoringParserInfoModel;
 
   factory MonitoringParserInfoModel.fromJson(Map<String, Object?> json) =>
