@@ -9,7 +9,7 @@ import 'package:amuz_assignment/src/core/constants/keys.dart';
 import 'package:amuz_assignment/src/core/common/services/base_socket_client.dart';
 import 'package:amuz_assignment/src/core/common/models/connect_state.dart';
 import 'package:amuz_assignment/src/core/common/utils/data_parser.dart';
-import 'package:amuz_assignment/src/features/connection/data/models/dxi_request_model.dart';
+import 'package:amuz_assignment/src/core/common/models/dxi_request_model.dart';
 import 'package:amuz_assignment/src/features/connection/data/models/dxi_send_data_model.dart';
 import 'package:amuz_assignment/src/features/connection/data/models/product_information_model.dart';
 import 'package:rxdart/subjects.dart';
