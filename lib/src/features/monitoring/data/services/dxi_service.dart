@@ -1,7 +1,9 @@
 import 'dart:async';
 import 'dart:convert';
+import 'dart:io';
 import 'dart:typed_data';
 
+import 'package:amuz_assignment/src/core/common/models/connect_state.dart';
 import 'package:amuz_assignment/src/core/common/models/monitoring_parser_info_model.dart';
 import 'package:amuz_assignment/src/core/constants/app_constant.dart';
 import 'package:amuz_assignment/src/core/constants/dxi_constant.dart';
@@ -45,6 +47,14 @@ class DxiService {
     if (!_initialize) return;
 
     _socketClient.addListener(_dxiListener);
+  }
+
+  Future<void> disconnect() async {
+    _releaseDxiMode();
+
+    await _socketClient.disconnect();
+
+    _socketClient.updateConnectionState = ConnectionState.disconnect;
   }
 
   void _dxiListener(Uint8List response) {
@@ -192,6 +202,16 @@ class DxiService {
     });
 
     return jsonEncode(result);
+  }
+
+  void _releaseDxiMode() {
+    final DxiRequestModel dxiRequestModel = DxiRequestModel(
+      type: Type.dxi,
+      cmd: Cmd.releaseDxiMode,
+      data: DxiSendDataModel(constantConnect: 'N', exitAP: 'N'),
+    );
+
+    _sendRequest(dxiRequestModel);
   }
 
   void _sendRequest(DxiRequestModel dxiRequestModel) {

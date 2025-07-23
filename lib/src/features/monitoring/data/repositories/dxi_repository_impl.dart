@@ -15,4 +15,9 @@ class DxiRepositoryImpl implements DxiRepository {
   @override
   Stream<Map<String, dynamic>> get monitoringDataStream =>
       _dxiService.monitoringDataStream;
+
+  @override
+  Future<void> disconnect() {
+    return _dxiService.disconnect();
+  }
 }
