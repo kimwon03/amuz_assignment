@@ -61,9 +61,12 @@ class BaseSocketClient {
 
       appLog.i('Connect Socket ip : $ip, port $port');
 
+      _addErrorHandler();
+
       return true;
     } catch (e, stackTrace) {
       appLog.e(e, error: e, stackTrace: stackTrace);
+
       return false;
     }
   }
@@ -138,6 +141,18 @@ class BaseSocketClient {
 
   void addMessage(Message message) {
     _messageQueue.add(message);
+  }
+
+  void _addErrorHandler() {
+    socket?.handleError((e, stackTrace) async {
+      appLog.e('소켓 오류 발생', error: e, stackTrace: stackTrace);
+
+      await removeListener();
+
+      await disconnect();
+
+      updateConnectionState = ConnectionState.disconnect;
+    });
   }
 
   void _sendMessageOnQueue() {

@@ -59,7 +59,11 @@ class DxiSocketClient {
       ),
     );
 
-    if (!socketConnectResult) return;
+    if (!socketConnectResult) {
+      _socketClient.updateConnectionState = ConnectionState.disconnect;
+
+      return;
+    }
 
     await _socketClient.addListener(_authenticationListener);
 
@@ -86,7 +90,11 @@ class DxiSocketClient {
       ),
     );
 
-    if (!socketConnectResult) return;
+    if (!socketConnectResult) {
+      _socketClient.updateConnectionState = ConnectionState.disconnect;
+
+      return;
+    }
 
     _socketClient.addListener(_dxiListener);
 
@@ -252,7 +260,9 @@ class DxiSocketClient {
     int sendCount = 0;
 
     _sendSet2WayCertReqTimer = Timer.periodic(sendRequestDuration, (timer) {
-      if (sendCount >= maxSendCount) timer.cancel();
+      if (sendCount >= maxSendCount) {
+        disconnect(exitAP: false);
+      }
 
       final DxiRequestModel dxiRequestModel = DxiRequestModel(
         type: Type.request,
@@ -270,7 +280,11 @@ class DxiSocketClient {
     int sendCount = 0;
 
     _sendSetDxiModeReqTimer = Timer.periodic(sendRequestDuration, (timer) {
-      if (sendCount >= maxSendCount) timer.cancel();
+      if (sendCount >= maxSendCount) {
+        timer.cancel();
+
+        disconnect(exitAP: false);
+      }
 
       final DxiRequestModel dxiRequestModel = DxiRequestModel(
         type: Type.request,
