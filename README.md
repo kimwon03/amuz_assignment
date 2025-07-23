@@ -23,6 +23,8 @@
 $ flutter pub get
 $ flutter pub run build_runner build
 ```
+- `.env.sample`을 이용하여 `.env` 파일 생성
+- `core/constants/`에 `keys.dart` 추가
 ## 프로젝트 실행
 ```
 $ flutter run --dart-define-from-file=.env
