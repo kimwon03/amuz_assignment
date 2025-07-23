@@ -29,4 +29,11 @@ class MainNotifier extends _$MainNotifier {
       state = data;
     });
   }
+
+  void disconnect() {
+    _monitoringSubscription?.cancel();
+    _monitoringSubscription = null;
+
+    _dxiRepository.disconnect();
+  }
 }
