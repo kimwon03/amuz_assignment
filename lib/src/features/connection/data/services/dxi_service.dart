@@ -455,7 +455,7 @@ class DxiSocketClient {
     int major = hexListToInt(majorList);
     int minor = hexListToInt(minorList);
 
-    appLog.d('Get Version From Response : ${uid}.${major}.${minor}');
+    appLog.d('Get Version From Response : $uid.$major.$minor');
 
     if (uid == 0 && major == 0 && minor == 0) {
       appLog.d('Resend Product Rule');
