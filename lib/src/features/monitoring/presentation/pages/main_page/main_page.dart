@@ -15,7 +15,7 @@ class MainPage extends HookConsumerWidget {
     }, []);
 
     return Scaffold(
-      appBar: AppBar(title: Text('실시간 데이터'), actions: []),
+      appBar: AppBar(title: Text('실시간 데이터'), actions: [DisconnectButton()]),
       body: DataListview(),
     );
   }
