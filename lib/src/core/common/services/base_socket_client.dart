@@ -61,7 +61,7 @@ class BaseSocketClient {
 
       appLog.i('Connect Socket ip : $ip, port $port');
 
-      _addErrorHandler();
+      socket?.handleError(_addErrorHandler);
 
       return true;
     } catch (e, stackTrace) {
@@ -128,7 +128,7 @@ class BaseSocketClient {
 
     _socketSubscription = _broadcaseSocketStream!.listen(
       onData,
-      onError: onError,
+      onError: _addErrorHandler,
       onDone: onDone,
       cancelOnError: cancelOnError,
     );
@@ -143,16 +143,14 @@ class BaseSocketClient {
     _messageQueue.add(message);
   }
 
-  void _addErrorHandler() {
-    socket?.handleError((e, stackTrace) async {
-      appLog.e('소켓 오류 발생', error: e, stackTrace: stackTrace);
+  void _addErrorHandler(Object? e, StackTrace stackTrace) async {
+    appLog.e('소켓 오류 발생', error: e, stackTrace: stackTrace);
 
-      await removeListener();
+    await removeListener();
 
-      await disconnect();
+    await disconnect();
 
-      updateConnectionState = ConnectionState.disconnect;
-    });
+    updateConnectionState = ConnectionState.disconnect;
   }
 
   void _sendMessageOnQueue() {
