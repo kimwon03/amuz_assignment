@@ -7,13 +7,32 @@ environment:
   sdk: ^3.8.1
 
 dependencies:
+  convert: ^3.1.2
   flutter:
     sdk: flutter
+  flutter_hooks: ^0.21.2
+  freezed_annotation: ^3.1.0
+  get_it: ^8.0.3
+  go_router: ^16.0.0
+  hooks_riverpod: ^2.6.1
+  json_annotation: ^4.9.0
+  logger: ^2.6.0
+  riverpod_annotation: ^2.6.1
+  rxdart: ^0.28.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^5.0.0
+  build_runner: ^2.5.4
+  freezed: ^3.1.0
+  json_serializable: ^6.9.5
+  riverpod_generator: ^2.6.5
+  custom_lint: ^0.7.5
+  riverpod_lint: ^2.6.5
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/REF_NEXT_DXI_3_1_5.json

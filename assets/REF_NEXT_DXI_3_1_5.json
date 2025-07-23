@@ -1,0 +1,5260 @@
+{
+    "mapType": "THINQ",
+    "productDesc": {
+        "name": "REF_NEXT_DXI",
+        "version": "3.1.5",
+        "restrict": {
+            "block_memory_size": 4096,
+            "baudrate": 19200,
+            "packet_max_size": 512,
+            "packet_interval": 100,
+            "item_max_count": 50,
+            "use_rx_multi_packet": true,
+            "missmatch_defalut": 1,
+            "byte_order": "LE"
+        },
+        "desc": "",
+        "monitoring": {
+            "0": {
+                "name": "Catalog_Ver1",
+                "length": 4,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNDI5NDk2NzI5NQ==",
+                "sign": false
+            },
+            "4": {
+                "name": "Catalog_Ver2",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "6": {
+                "name": "Catalog_Ver3",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "8": {
+                "name": "RunTime",
+                "length": 4,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNDI5NDk2NzI5NQ==",
+                "sign": false
+            },
+            "12": {
+                "name": "SW-PartNo",
+                "length": 4,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNDI5NDk2NzI5NQ==",
+                "sign": false
+            },
+            "16": {
+                "name": "MainCheckSum",
+                "length": 4,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNDI5NDk2NzI5NQ==",
+                "sign": false
+            },
+            "20": {
+                "name": "DisplayP/No",
+                "length": 4,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNDI5NDk2NzI5NQ==",
+                "sign": false
+            },
+            "24": {
+                "name": "DisplayCheckSum",
+                "length": 4,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNDI5NDk2NzI5NQ==",
+                "sign": false
+            },
+            "28": {
+                "name": "CompP/No",
+                "length": 4,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNDI5NDk2NzI5NQ==",
+                "sign": false
+            },
+            "32": {
+                "name": "CompCheckSum",
+                "length": 4,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNDI5NDk2NzI5NQ==",
+                "sign": false
+            },
+            "36": {
+                "name": "SubP/No",
+                "length": 4,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNDI5NDk2NzI5NQ==",
+                "sign": false
+            },
+            "40": {
+                "name": "SubCheckSum",
+                "length": 4,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNDI5NDk2NzI5NQ==",
+                "sign": false
+            },
+            "60": {
+                "name": "R_Step_Init",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "int",
+                "desc": "bWluIDogMSwgbWF4IDogNw==",
+                "sign": false
+            },
+            "61": {
+                "name": "R_Step_Final",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "int",
+                "desc": "bWluIDogMSwgbWF4IDogNw==",
+                "sign": false
+            },
+            "62": {
+                "name": "R-ControlTemperature",
+                "length": 2,
+                "level": 3,
+                "control": true,
+                "type": "int",
+                "deco": "ew0KICAiY2FsYyI6ICJWLzEwIg0KfQ==",
+                "desc": "bWluIDogLTcwMCwgbWF4IDogMTAwMA==",
+                "sign": true
+            },
+            "64": {
+                "name": "R-SensorTemperature",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "deco": "ew0KICAiY2FsYyI6ICJWLzEwIg0KfQ==",
+                "desc": "bWluIDogLTcwMCwgbWF4IDogMTAwMA==",
+                "sign": true
+            },
+            "66": {
+                "name": "R-TempDifference",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "int",
+                "deco": "ew0KICAiY2FsYyI6ICJWLzEwIg0KfQ==",
+                "desc": "bWluIDogMC4xLCBtYXggOiA1",
+                "sign": false
+            },
+            "67": {
+                "name": "R-Zone",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "enum",
+                "map": {
+                    "0": "SATISFY",
+                    "1": "UNSATISFY",
+                    "2": "UPPER"
+                }
+            },
+            "68": {
+                "name": "R_AT_Compensation",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "deco": "ew0KICAiY2FsYyI6ICJWLzEwIg0KfQ==",
+                "desc": "bWluIDogLTEyOCwgbWF4IDogMTI3",
+                "sign": true
+            },
+            "69": {
+                "name": "R-TempCompenValue",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "int",
+                "deco": "ew0KICAiY2FsYyI6ICJWLzEwIg0KfQ==",
+                "desc": "bWluIDogLTEyOCwgbWF4IDogMTI3",
+                "sign": true
+            },
+            "70": {
+                "name": "F_Step_Init",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "int",
+                "desc": "bWluIDogMSwgbWF4IDogOQ==",
+                "sign": false
+            },
+            "71": {
+                "name": "F_Step_Final",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "int",
+                "desc": "bWluIDogMSwgbWF4IDogOQ==",
+                "sign": false
+            },
+            "72": {
+                "name": "F-ControlTemperature",
+                "length": 2,
+                "level": 3,
+                "control": true,
+                "type": "int",
+                "deco": "ew0KICAiY2FsYyI6ICJWLzEwIg0KfQ==",
+                "desc": "bWluIDogLTcwMCwgbWF4IDogMTAwMA==",
+                "sign": true
+            },
+            "74": {
+                "name": "F-SensorTemperature",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "deco": "ew0KICAiY2FsYyI6ICJWLzEwIg0KfQ==",
+                "desc": "bWluIDogLTcwMCwgbWF4IDogMTAwMA==",
+                "sign": true
+            },
+            "76": {
+                "name": "F-TempDifference",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "int",
+                "deco": "ew0KICAiY2FsYyI6ICJWLzEwIg0KfQ==",
+                "desc": "bWluIDogMC4xLCBtYXggOiA1",
+                "sign": false
+            },
+            "77": {
+                "name": "F-Zone",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "enum",
+                "map": {
+                    "0": "SATISFY",
+                    "1": "UNSATISFY",
+                    "2": "UPPER"
+                }
+            },
+            "78": {
+                "name": "F_AT_Compensation",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "deco": "ew0KICAiY2FsYyI6ICJWLzEwIg0KfQ==",
+                "desc": "bWluIDogLTEyOCwgbWF4IDogMTI3",
+                "sign": true
+            },
+            "79": {
+                "name": "F-TempCompenValue",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "int",
+                "deco": "ew0KICAiY2FsYyI6ICJWLzEwIg0KfQ==",
+                "desc": "bWluIDogLTEyOCwgbWF4IDogMTI3",
+                "sign": true
+            },
+            "80": {
+                "name": "I_Step_Init",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "sign": false
+            },
+            "81": {
+                "name": "I_Step_Final",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "sign": false
+            },
+            "82": {
+                "name": "I-ControlTemperature",
+                "length": 2,
+                "level": 3,
+                "control": true,
+                "type": "int",
+                "deco": "ew0KICAiY2FsYyI6ICJWLzEwIg0KfQ==",
+                "desc": "bWluIDogLTcwMCwgbWF4IDogMTAwMA==",
+                "sign": true
+            },
+            "84": {
+                "name": "I-SensorTemperature",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "deco": "ew0KICAiY2FsYyI6ICJWLzEwIg0KfQ==",
+                "desc": "bWluIDogLTcwMCwgbWF4IDogMTAwMA==",
+                "sign": true
+            },
+            "86": {
+                "name": "I-TempDifference",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "int",
+                "deco": "ew0KICAiY2FsYyI6ICJWLzEwIg0KfQ==",
+                "desc": "bWluIDogMC4xLCBtYXggOiA1",
+                "sign": false
+            },
+            "87": {
+                "name": "I-Zone",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "enum",
+                "map": {
+                    "0": "SATISFY",
+                    "1": "UNSATISFY",
+                    "2": "UPPER"
+                }
+            },
+            "88": {
+                "name": "I_AT_Compensation",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "deco": "ew0KICAiY2FsYyI6ICJWLzEwIg0KfQ==",
+                "desc": "bWluIDogLTEyOCwgbWF4IDogMTI3",
+                "sign": true
+            },
+            "89": {
+                "name": "I-TempCompenValue",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "int",
+                "deco": "ew0KICAiY2FsYyI6ICJWLzEwIg0KfQ==",
+                "desc": "bWluIDogLTEyOCwgbWF4IDogMTI3",
+                "sign": true
+            },
+            "90": {
+                "name": "P_Step_Init",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMw==",
+                "sign": false
+            },
+            "91": {
+                "name": "pantryMagicNotchLevel",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMw==",
+                "sign": false
+            },
+            "92": {
+                "name": "P_Control_Temperature",
+                "length": 2,
+                "level": 3,
+                "control": true,
+                "type": "int",
+                "deco": "ew0KICAiY2FsYyI6ICJWLzEwIg0KfQ==",
+                "desc": "bWluIDogLTcwMCwgbWF4IDogMTAwMA==",
+                "sign": true
+            },
+            "94": {
+                "name": "P_Temperature",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "deco": "ew0KICAiY2FsYyI6ICJWLzEwIg0KfQ==",
+                "desc": "bWluIDogLTcwMCwgbWF4IDogMTAwMA==",
+                "sign": true
+            },
+            "96": {
+                "name": "P_Control_Differencial",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "int",
+                "deco": "ew0KICAiY2FsYyI6ICJWLzEwIg0KfQ==",
+                "desc": "bWluIDogMC4xLCBtYXggOiA1",
+                "sign": false
+            },
+            "97": {
+                "name": "P_TemperatureZone",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "enum",
+                "map": {
+                    "0": "Satisfy",
+                    "1": "NotSatisfy",
+                    "2": "Upper"
+                }
+            },
+            "98": {
+                "name": "P_AT_Compensation",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "deco": "ew0KICAiY2FsYyI6ICJWLzEwIg0KfQ==",
+                "desc": "bWluIDogLTEyOCwgbWF4IDogMTI3",
+                "sign": true
+            },
+            "99": {
+                "name": "P_Additional_Compensation",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "int",
+                "deco": "ew0KICAiY2FsYyI6ICJWLzEwIg0KfQ==",
+                "desc": "bWluIDogLTEyOCwgbWF4IDogMTI3",
+                "sign": true
+            },
+            "100": {
+                "name": "C_Step_Init",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNQ==",
+                "sign": false
+            },
+            "101": {
+                "name": "C_Step_Final",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNQ==",
+                "sign": false
+            },
+            "102": {
+                "name": "C_Control_Temperature",
+                "length": 2,
+                "level": 3,
+                "control": true,
+                "type": "int",
+                "deco": "ew0KICAiY2FsYyI6ICJWLzEwIg0KfQ==",
+                "desc": "bWluIDogLTcwMCwgbWF4IDogMTAwMA==",
+                "sign": true
+            },
+            "104": {
+                "name": "C_Temperature",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "deco": "ew0KICAiY2FsYyI6ICJWLzEwIg0KfQ==",
+                "desc": "bWluIDogLTcwMCwgbWF4IDogMTAwMA==",
+                "sign": true
+            },
+            "106": {
+                "name": "C_Control_Differencial",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "int",
+                "deco": "ew0KICAiY2FsYyI6ICJWLzEwIg0KfQ==",
+                "desc": "bWluIDogMC4xLCBtYXggOiA1",
+                "sign": false
+            },
+            "107": {
+                "name": "C_TemperatureZone",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "enum",
+                "map": {
+                    "0": "Satisfy",
+                    "1": "NotSatisfy",
+                    "2": "Upper"
+                }
+            },
+            "108": {
+                "name": "C_AT_Compensation",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "deco": "ew0KICAiY2FsYyI6ICJWLzEwIg0KfQ==",
+                "desc": "bWluIDogLTEyOCwgbWF4IDogMTI3",
+                "sign": true
+            },
+            "109": {
+                "name": "C_Additional_Compensation",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "int",
+                "deco": "ew0KICAiY2FsYyI6ICJWLzEwIg0KfQ==",
+                "desc": "bWluIDogLTEyOCwgbWF4IDogMTI3",
+                "sign": true
+            },
+            "112": {
+                "name": "R-FanOn",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "OFF",
+                    "1": "ON"
+                }
+            },
+            "113": {
+                "name": "R-FanDuty",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "114": {
+                "name": "R-FanRPM",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNTAwMA==",
+                "deco": "ewogICJjYWxjIjogIlYvMiIKfQ==",
+                "sign": false
+            },
+            "116": {
+                "name": "F-FanOn",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "OFF",
+                    "1": "ON"
+                }
+            },
+            "117": {
+                "name": "F-FanDuty",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "118": {
+                "name": "F-FanRPM",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNTAwMA==",
+                "deco": "ewogICJjYWxjIjogIlYvMiIKfQ==",
+                "sign": false
+            },
+            "120": {
+                "name": "C-FanOn",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "OFF",
+                    "1": "ON"
+                }
+            },
+            "121": {
+                "name": "C-FanDuty",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "122": {
+                "name": "C-FanRPM",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNTAwMA==",
+                "deco": "ewogICJjYWxjIjogIlYvMiIKfQ==",
+                "sign": false
+            },
+            "124": {
+                "name": "I-FanOn",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "OFF",
+                    "1": "ON"
+                }
+            },
+            "125": {
+                "name": "I-FanDuty",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "126": {
+                "name": "I-FanRPM",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNTAwMA==",
+                "deco": "ewogICJjYWxjIjogIlYvMiIKfQ==",
+                "sign": false
+            },
+            "128": {
+                "name": "R-DamperState",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "CLOSE",
+                    "1": "OPEN"
+                }
+            },
+            "129": {
+                "name": "damperGearing",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "bool",
+                "map": {
+                    "0": "Async",
+                    "1": "Sync"
+                }
+            },
+            "130": {
+                "name": "P_Damper_State",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "CLOSE",
+                    "1": "OPEN"
+                }
+            },
+            "131": {
+                "name": "P_Fan_Power",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "False",
+                    "1": "True"
+                }
+            },
+            "132": {
+                "name": "C_Damper_State",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "CLOSE",
+                    "1": "OPEN"
+                }
+            },
+            "136": {
+                "name": "compressorOn",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "OFF",
+                    "1": "ON"
+                }
+            },
+            "137": {
+                "name": "compressorPowerLevel",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "138": {
+                "name": "CompressorMode",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "SAVE",
+                    "1": "POWER"
+                }
+            },
+            "139": {
+                "name": "CompressorFrequency",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "enum",
+                "map": {
+                    "1": "1",
+                    "2": "2",
+                    "3": "3",
+                    "4": "4",
+                    "5": "5",
+                    "6": "6",
+                    "7": "7",
+                    "8": "8",
+                    "9": "9",
+                    "10": "10",
+                    "11": "11",
+                    "12": "12",
+                    "13": "13",
+                    "14": "14",
+                    "15": "15"
+                }
+            },
+            "140": {
+                "name": "CompressorShift",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "enum",
+                "map": {
+                    "1": "1",
+                    "2": "2",
+                    "3": "3",
+                    "4": "4",
+                    "5": "5",
+                    "6": "6",
+                    "7": "7",
+                    "8": "8"
+                }
+            },
+            "142": {
+                "name": "compressorForceOffTime",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "144": {
+                "name": "compressorContinusRunningTime",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "146": {
+                "name": "Compressor_R_Power",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "OFF",
+                    "1": "ON"
+                }
+            },
+            "147": {
+                "name": "Compressor_R_Beta",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "148": {
+                "name": "Compressor_R_Mode",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "SAVE",
+                    "1": "POWER"
+                }
+            },
+            "149": {
+                "name": "Compressor_R_Frequency",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "enum",
+                "map": {
+                    "1": "1",
+                    "2": "2",
+                    "3": "3",
+                    "4": "4",
+                    "5": "5",
+                    "6": "6",
+                    "7": "7",
+                    "8": "8",
+                    "9": "9",
+                    "10": "10",
+                    "11": "11",
+                    "12": "12",
+                    "13": "13",
+                    "14": "14",
+                    "15": "15"
+                }
+            },
+            "150": {
+                "name": "Compressor_R_Shift",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "enum",
+                "map": {
+                    "1": "1",
+                    "2": "2",
+                    "3": "3",
+                    "4": "4",
+                    "5": "5",
+                    "6": "6",
+                    "7": "7",
+                    "8": "8"
+                }
+            },
+            "152": {
+                "name": "Compressor_R_ForceOffTime",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "154": {
+                "name": "Compressor_R_ContinuedOperationTime",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "156": {
+                "name": "airTemperature",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "deco": "ew0KICAiY2FsYyI6ICJWLzEwIg0KfQ==",
+                "desc": "bWluIDogLTcwMCwgbWF4IDogMTAwMA==",
+                "sign": true
+            },
+            "158": {
+                "name": "RT-Zone",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMSwgbWF4IDogOA==",
+                "sign": false
+            },
+            "160": {
+                "name": "airHumidity",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "deco": "ew0KICAiY2FsYyI6ICJWLzEwIg0KfQ==",
+                "desc": "bWluIDogLTUwMCwgbWF4IDogMTIwMA==",
+                "sign": true
+            },
+            "162": {
+                "name": "Humidity_After_Compensation",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "deco": "ew0KICAiY2FsYyI6ICJWLzEwIg0KfQ==",
+                "desc": "bWluIDogLTUwMCwgbWF4IDogMTIwMA==",
+                "sign": true
+            },
+            "164": {
+                "name": "Humidity_Zone_1st",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMSwgbWF4IDogOQ==",
+                "sign": false
+            },
+            "165": {
+                "name": "Humidity_Zone_2nd",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMSwgbWF4IDogOQ==",
+                "sign": false
+            },
+            "166": {
+                "name": "airHumidityZone",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMSwgbWF4IDogOQ==",
+                "sign": false
+            },
+            "168": {
+                "name": "operation_State",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "enum",
+                "map": {
+                    "0": "BOTH_OPERATION",
+                    "1": "RROOM",
+                    "2": "FROOM",
+                    "3": "CYCLE_OFF",
+                    "4": "PUMP_DOWN",
+                    "5": "PRECISION_OPERATION"
+                }
+            },
+            "170": {
+                "name": "3WayValve_Direction",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "enum",
+                "map": {
+                    "0": "Both Open",
+                    "1": "A Open(F)",
+                    "2": "Both Close",
+                    "3": "B Open(R)"
+                }
+            },
+            "171": {
+                "name": "threeWayValveStep",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "172": {
+                "name": "3WayValve_InitRemainTime",
+                "length": 2,
+                "level": 3,
+                "control": true,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "176": {
+                "name": "R-NormalTimeSummation",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "178": {
+                "name": "R-ChangeTimeSummation",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "180": {
+                "name": "R-DefrostSensorTemperature",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "deco": "ew0KICAiY2FsYyI6ICJWLzEwIg0KfQ==",
+                "desc": "bWluIDogLTcwMCwgbWF4IDogMTAwMA==",
+                "sign": true
+            },
+            "182": {
+                "name": "RD_Control_Temperature",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "deco": "ew0KICAiY2FsYyI6ICJWLzEwIg0KfQ==",
+                "desc": "bWluIDogLTcwMCwgbWF4IDogMTAwMA==",
+                "sign": true
+            },
+            "184": {
+                "name": "R Defrost Signal",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "bool",
+                "map": {
+                    "0": "False",
+                    "1": "True"
+                }
+            },
+            "185": {
+                "name": "R-NaturalDefrost",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMTA=",
+                "sign": false
+            },
+            "188": {
+                "name": "F-NormalTimeSummation",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "190": {
+                "name": "F-ChangeTimeSummation",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "192": {
+                "name": "F-DefrostSensorTemperature",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "deco": "ew0KICAiY2FsYyI6ICJWLzEwIg0KfQ==",
+                "desc": "bWluIDogLTcwMCwgbWF4IDogMTAwMA==",
+                "sign": true
+            },
+            "194": {
+                "name": "FD_Control_Temperature",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "deco": "ew0KICAiY2FsYyI6ICJWLzEwIg0KfQ==",
+                "desc": "bWluIDogLTcwMCwgbWF4IDogMTAwMA==",
+                "sign": true
+            },
+            "196": {
+                "name": "F Defrost Signal",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "bool",
+                "map": {
+                    "0": "OFF",
+                    "1": "ON"
+                }
+            },
+            "200": {
+                "name": "R-LED",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "OFF",
+                    "1": "ON"
+                }
+            },
+            "201": {
+                "name": "R_Room_LED_Brightness",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "int",
+                "desc": "bWluIDogMTAsIG1heCA6IDEwMA==",
+                "sign": false
+            },
+            "202": {
+                "name": "Instaview-LED",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "OFF",
+                    "1": "ON"
+                }
+            },
+            "203": {
+                "name": "Instaview_LED_Brightness",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "int",
+                "desc": "bWluIDogMTAsIG1heCA6IDEwMA==",
+                "sign": false
+            },
+            "204": {
+                "name": "FL-LED",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "OFF",
+                    "1": "ON"
+                }
+            },
+            "206": {
+                "name": "FU-LED",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "OFF",
+                    "1": "ON"
+                }
+            },
+            "208": {
+                "name": "C_Room_LED",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "OFF",
+                    "1": "ON"
+                }
+            },
+            "212": {
+                "name": "R-DefrostHeaterOn",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "OFF",
+                    "1": "ON"
+                }
+            },
+            "213": {
+                "name": "F-DefrostHeaterOn",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "OFF",
+                    "1": "ON"
+                }
+            },
+            "214": {
+                "name": "PillarHTR",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "OFF",
+                    "1": "ON"
+                }
+            },
+            "215": {
+                "name": "HomeBarHTR",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "OFF",
+                    "1": "ON"
+                }
+            },
+            "216": {
+                "name": "IstaviewHTR",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "OFF",
+                    "1": "ON"
+                }
+            },
+            "217": {
+                "name": "UtilityHTR",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "OFF",
+                    "1": "ON"
+                }
+            },
+            "218": {
+                "name": "Utility_Right_HTR",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "OFF",
+                    "1": "ON"
+                }
+            },
+            "219": {
+                "name": "DrainHTR",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "OFF",
+                    "1": "ON"
+                }
+            },
+            "220": {
+                "name": "BetaDuctHTR",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "OFF",
+                    "1": "ON"
+                }
+            },
+            "221": {
+                "name": "BetaGasketHTR",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "OFF",
+                    "1": "ON"
+                }
+            },
+            "222": {
+                "name": "CapductHTR",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "OFF",
+                    "1": "ON"
+                }
+            },
+            "223": {
+                "name": "PipeHTR",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "OFF",
+                    "1": "ON"
+                }
+            },
+            "224": {
+                "name": "R_Damper_HTR",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "OFF",
+                    "1": "ON"
+                }
+            },
+            "225": {
+                "name": "P_Damper_HTR",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "OFF",
+                    "1": "ON"
+                }
+            },
+            "226": {
+                "name": "C_Damper_HTR",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "False",
+                    "1": "True"
+                }
+            },
+            "227": {
+                "name": "CraftPipeHTR",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "OFF",
+                    "1": "ON"
+                }
+            },
+            "232": {
+                "name": "PilotValve",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "CLOSE",
+                    "1": "OPEN"
+                }
+            },
+            "233": {
+                "name": "In-Door-IceValve",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "CLOSE",
+                    "1": "OPEN"
+                }
+            },
+            "234": {
+                "name": "Craft-IceValve",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "CLOSE",
+                    "1": "OPEN"
+                }
+            },
+            "235": {
+                "name": "Ice_Valve_F",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "CLOSE",
+                    "1": "OPEN"
+                }
+            },
+            "236": {
+                "name": "Ice_Valve_Nugget",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "CLOSE",
+                    "1": "OPEN"
+                }
+            },
+            "237": {
+                "name": "WaterValve",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "CLOSE",
+                    "1": "OPEN"
+                }
+            },
+            "240": {
+                "name": "R-DoorState",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "bool",
+                "map": {
+                    "0": "CLOSE",
+                    "1": "OPEN"
+                }
+            },
+            "241": {
+                "name": "F-DoorState",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "bool",
+                "map": {
+                    "0": "False",
+                    "1": "True"
+                }
+            },
+            "242": {
+                "name": "Doors_C_Master",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "bool",
+                "map": {
+                    "0": "CLOSE",
+                    "1": "OPEN"
+                }
+            },
+            "243": {
+                "name": "Doors_R_Left",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "bool",
+                "map": {
+                    "0": "CLOSE",
+                    "1": "OPEN"
+                }
+            },
+            "244": {
+                "name": "Doors_R_Right",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "bool",
+                "map": {
+                    "0": "CLOSE",
+                    "1": "OPEN"
+                }
+            },
+            "245": {
+                "name": "DID-L-State",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "bool",
+                "map": {
+                    "0": "CLOSE",
+                    "1": "OPEN"
+                }
+            },
+            "246": {
+                "name": "DID-R-State",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "bool",
+                "map": {
+                    "0": "CLOSE",
+                    "1": "OPEN"
+                }
+            },
+            "247": {
+                "name": "FL-DoorState",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "bool",
+                "map": {
+                    "0": "CLOSE",
+                    "1": "OPEN"
+                }
+            },
+            "248": {
+                "name": "FU-DoorState",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "bool",
+                "map": {
+                    "0": "CLOSE",
+                    "1": "OPEN"
+                }
+            },
+            "249": {
+                "name": "KnockOn",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "bool",
+                "map": {
+                    "0": "OFF",
+                    "1": "ON"
+                }
+            },
+            "252": {
+                "name": "R-LoadManage",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMTA=",
+                "sign": false
+            },
+            "253": {
+                "name": "F-LoadManage",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMTA=",
+                "sign": false
+            },
+            "254": {
+                "name": "R-LoadManageTime",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "256": {
+                "name": "R-LoadManageBlockingTime",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "258": {
+                "name": "F-LoadManageTime",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "260": {
+                "name": "F-LoadManageBlockingTime",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "264": {
+                "name": "strongFreezeMode",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "enum",
+                "map": {
+                    "0": "OFF",
+                    "1": "ON",
+                    "2": "ON"
+                }
+            },
+            "265": {
+                "name": "ExpressFreeze_Step",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMTA=",
+                "sign": false
+            },
+            "266": {
+                "name": "strongFreeze-RemainTime",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "268": {
+                "name": "Hygiene_Mode",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "enum",
+                "map": {
+                    "0": "OFF",
+                    "1": "AUTO",
+                    "2": "POWER"
+                }
+            },
+            "269": {
+                "name": "hygieneBoxFanOn",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "OFF",
+                    "1": "ON"
+                }
+            },
+            "270": {
+                "name": "HygieneFilter-RemainTime_Month",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "272": {
+                "name": "HygieneFilter-ResetFlag",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "bool",
+                "map": {
+                    "0": "False",
+                    "1": "True"
+                }
+            },
+            "273": {
+                "name": "sabbathMode",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "False",
+                    "1": "True"
+                }
+            },
+            "274": {
+                "name": "Sabbath-RemainTime",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "276": {
+                "name": "Grid_DAL",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "bool",
+                "map": {
+                    "0": "CLEAR",
+                    "1": "SET"
+                }
+            },
+            "277": {
+                "name": "Grid_TALR",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "bool",
+                "map": {
+                    "0": "CLEAR",
+                    "1": "SET"
+                }
+            },
+            "278": {
+                "name": "SVC-R-TempCompenStep",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMTA=",
+                "sign": false
+            },
+            "279": {
+                "name": "SVC-F-TempCompenStep",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMTA=",
+                "sign": false
+            },
+            "280": {
+                "name": "SmartCare2-FreshAir",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "bool",
+                "map": {
+                    "0": "OFF",
+                    "1": "ON"
+                }
+            },
+            "281": {
+                "name": "SmartCare2-ActiveIceplus",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "bool",
+                "map": {
+                    "0": "False",
+                    "1": "True"
+                }
+            },
+            "282": {
+                "name": "SmartCare3-NightMood",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "bool",
+                "map": {
+                    "0": "OFF",
+                    "1": "ON"
+                }
+            },
+            "283": {
+                "name": "SmartCare3-NightSilence",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "bool",
+                "map": {
+                    "0": "OFF",
+                    "1": "ON"
+                }
+            },
+            "284": {
+                "name": "operationMode",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "bool",
+                "map": {
+                    "0": "OFF",
+                    "1": "ON"
+                }
+            },
+            "285": {
+                "name": "LQC-Mode",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMw==",
+                "sign": false
+            },
+            "286": {
+                "name": "LQC-Timer-min",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "288": {
+                "name": "doorOpenAlarm",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "OFF",
+                    "1": "ON"
+                }
+            },
+            "289": {
+                "name": "displaylock",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "Unlocked",
+                    "1": "Locked"
+                }
+            },
+            "300": {
+                "name": "Comp-Power",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "302": {
+                "name": "Comp-PWM",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "304": {
+                "name": "COMP_PWM_BUFF",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "306": {
+                "name": "COMP_B_CSUM",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "308": {
+                "name": "Comp-DCLink",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "310": {
+                "name": "COMP_REAL_FREQ",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "312": {
+                "name": "COMP_AFTER_OP_TIME",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "314": {
+                "name": "COMP_TRIP_RESTART_TIME",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "316": {
+                "name": "Comp-Stroke",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "318": {
+                "name": "COMP_REFER_STROKE",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "320": {
+                "name": "Comp-Phase",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "322": {
+                "name": "COMP_LOCK_PHASE",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "324": {
+                "name": "COMP_KGAS",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "326": {
+                "name": "COMP_REFER_TC",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "328": {
+                "name": "COMP_TC_C",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "330": {
+                "name": "COMP_OBJECTIVE",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "332": {
+                "name": "COMP_REFER_ID_BLDC",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "334": {
+                "name": "COMP_REAL_ID_BLDC",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "336": {
+                "name": "COMP_REFER_IQ_BLDC",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "338": {
+                "name": "COMP_REAL_IQ_BLDC",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "340": {
+                "name": "COMP_ST_DELAY_BLDC",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "342": {
+                "name": "COMP_REAL_STOP_DEG_BLDC",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "344": {
+                "name": "COMP_TOTAL_LEAD_ANGLE_BLDC",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "346": {
+                "name": "Comp-TripDisplayState",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "347": {
+                "name": "COMP_REFER_FREQ",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "348": {
+                "name": "COMP_TRIP_LED",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "349": {
+                "name": "COMP_IPM_TEMP",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "350": {
+                "name": "COMP_B_READY",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "351": {
+                "name": "Comp-Current",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "352": {
+                "name": "COMP_OFFSET_CURRENT",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "353": {
+                "name": "COMP_BIT_CURRENT",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "354": {
+                "name": "COMP_MM_CURRENT",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "355": {
+                "name": "COMP_TDC_FLAG",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "356": {
+                "name": "COMP_DETECT_NUM",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "357": {
+                "name": "COMP_REAL_BETA",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "358": {
+                "name": "COMP_TDC_BETA",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "359": {
+                "name": "COMP_RESEARCH_TIME",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "360": {
+                "name": "COMP_CALC_TDC",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "361": {
+                "name": "COMP_CALC_BETA",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "362": {
+                "name": "COMP_RATIO_STROKE",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "363": {
+                "name": "COMP_LINEAR_LOGIC",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "364": {
+                "name": "PWRM_Tick",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "366": {
+                "name": "PWRM_AccumPer5Min",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "368": {
+                "name": "Er-",
+                "length": 4,
+                "level": 3,
+                "control": false,
+                "type": "various",
+                "elements": {
+                    "0": {
+                        "name": "RT-Sensor",
+                        "length": 1,
+                        "level": 3,
+                        "control": false,
+                        "type": "bool",
+                        "map": {
+                            "0": "NOT_SET",
+                            "1": "SET"
+                        }
+                    },
+                    "1": {
+                        "name": "H-Sensor",
+                        "length": 1,
+                        "level": 3,
+                        "control": false,
+                        "type": "bool",
+                        "map": {
+                            "0": "NOT_SET",
+                            "1": "SET"
+                        }
+                    },
+                    "2": {
+                        "name": "R-Sensor",
+                        "length": 1,
+                        "level": 3,
+                        "control": false,
+                        "type": "bool",
+                        "map": {
+                            "0": "NOT_SET",
+                            "1": "SET"
+                        }
+                    },
+                    "3": {
+                        "name": "F-Sensor",
+                        "length": 1,
+                        "level": 3,
+                        "control": false,
+                        "type": "bool",
+                        "map": {
+                            "0": "NOT_SET",
+                            "1": "SET"
+                        }
+                    },
+                    "4": {
+                        "name": "IceRoomSensor",
+                        "length": 1,
+                        "level": 3,
+                        "control": false,
+                        "type": "bool",
+                        "map": {
+                            "0": "NOT_SET",
+                            "1": "SET"
+                        }
+                    },
+                    "5": {
+                        "name": "R-DefrostSensor",
+                        "length": 1,
+                        "level": 3,
+                        "control": false,
+                        "type": "bool",
+                        "map": {
+                            "0": "NOT_SET",
+                            "1": "SET"
+                        }
+                    },
+                    "6": {
+                        "name": "F-DefrostSensor",
+                        "length": 1,
+                        "level": 3,
+                        "control": false,
+                        "type": "bool",
+                        "map": {
+                            "0": "NOT_SET",
+                            "1": "SET"
+                        }
+                    },
+                    "7": {
+                        "name": "R-DefrostHeater",
+                        "length": 1,
+                        "level": 3,
+                        "control": false,
+                        "type": "bool",
+                        "map": {
+                            "0": "NOT_SET",
+                            "1": "SET"
+                        }
+                    },
+                    "8": {
+                        "name": "F-DefrostHeater",
+                        "length": 1,
+                        "level": 3,
+                        "control": false,
+                        "type": "bool",
+                        "map": {
+                            "0": "NOT_SET",
+                            "1": "SET"
+                        }
+                    },
+                    "9": {
+                        "name": "R-Fan",
+                        "length": 1,
+                        "level": 3,
+                        "control": false,
+                        "type": "bool",
+                        "map": {
+                            "0": "NOT_SET",
+                            "1": "SET"
+                        }
+                    },
+                    "10": {
+                        "name": "F-Fan",
+                        "length": 1,
+                        "level": 3,
+                        "control": false,
+                        "type": "bool",
+                        "map": {
+                            "0": "NOT_SET",
+                            "1": "SET"
+                        }
+                    },
+                    "11": {
+                        "name": "C-Fan",
+                        "length": 1,
+                        "level": 3,
+                        "control": false,
+                        "type": "bool",
+                        "map": {
+                            "0": "NOT_SET",
+                            "1": "SET"
+                        }
+                    },
+                    "12": {
+                        "name": "I-Fan",
+                        "length": 1,
+                        "level": 3,
+                        "control": false,
+                        "type": "bool",
+                        "map": {
+                            "0": "NOT_SET",
+                            "1": "SET"
+                        }
+                    },
+                    "13": {
+                        "name": "CC",
+                        "length": 1,
+                        "level": 3,
+                        "control": false,
+                        "type": "bool",
+                        "map": {
+                            "0": "NOT_SET",
+                            "1": "SET"
+                        }
+                    },
+                    "14": {
+                        "name": "Gas-error-high",
+                        "length": 1,
+                        "level": 3,
+                        "control": false,
+                        "type": "bool",
+                        "map": {
+                            "0": "NOT_SET",
+                            "1": "SET"
+                        }
+                    },
+                    "15": {
+                        "name": "Gas-error-low",
+                        "length": 1,
+                        "level": 3,
+                        "control": false,
+                        "type": "bool",
+                        "map": {
+                            "0": "NOT_SET",
+                            "1": "SET"
+                        }
+                    },
+                    "16": {
+                        "name": "IcemakerSensor",
+                        "length": 1,
+                        "level": 3,
+                        "control": false,
+                        "type": "bool",
+                        "map": {
+                            "0": "NOT_SET",
+                            "1": "SET"
+                        }
+                    },
+                    "17": {
+                        "name": "Id",
+                        "length": 1,
+                        "level": 3,
+                        "control": false,
+                        "type": "bool",
+                        "map": {
+                            "0": "NOT_SET",
+                            "1": "SET"
+                        }
+                    },
+                    "18": {
+                        "name": "IMS_F",
+                        "length": 1,
+                        "level": 3,
+                        "control": false,
+                        "type": "bool",
+                        "map": {
+                            "0": "NOT_SET",
+                            "1": "SET"
+                        }
+                    },
+                    "19": {
+                        "name": "IMS_Nugget",
+                        "length": 1,
+                        "level": 3,
+                        "control": false,
+                        "type": "bool",
+                        "map": {
+                            "0": "NOT_SET",
+                            "1": "SET"
+                        }
+                    },
+                    "20": {
+                        "name": "It",
+                        "length": 1,
+                        "level": 3,
+                        "control": false,
+                        "type": "bool",
+                        "map": {
+                            "0": "NOT_SET",
+                            "1": "SET"
+                        }
+                    },
+                    "21": {
+                        "name": "IU",
+                        "length": 1,
+                        "level": 3,
+                        "control": false,
+                        "type": "bool",
+                        "map": {
+                            "0": "NOT_SET",
+                            "1": "SET"
+                        }
+                    },
+                    "22": {
+                        "name": "IMK_F",
+                        "length": 1,
+                        "level": 3,
+                        "control": false,
+                        "type": "bool",
+                        "map": {
+                            "0": "NOT_SET",
+                            "1": "SET"
+                        }
+                    },
+                    "23": {
+                        "name": "IMK_Nugget",
+                        "length": 1,
+                        "level": 3,
+                        "control": false,
+                        "type": "bool",
+                        "map": {
+                            "0": "NOT_SET",
+                            "1": "SET"
+                        }
+                    },
+                    "24": {
+                        "name": "C",
+                        "length": 1,
+                        "level": 3,
+                        "control": false,
+                        "type": "bool",
+                        "map": {
+                            "0": "NOT_SET",
+                            "1": "SET"
+                        }
+                    },
+                    "25": {
+                        "name": "S-Sensor",
+                        "length": 1,
+                        "level": 3,
+                        "control": false,
+                        "type": "bool",
+                        "map": {
+                            "0": "NOT_SET",
+                            "1": "SET"
+                        }
+                    },
+                    "26": {
+                        "name": "Craft-icemakerHTR-Top-Error",
+                        "length": 1,
+                        "level": 3,
+                        "control": false,
+                        "type": "bool",
+                        "map": {
+                            "0": "NOT_SET",
+                            "1": "SET"
+                        }
+                    },
+                    "27": {
+                        "name": "Craft-icemakerHTR-Bottom-Error",
+                        "length": 1,
+                        "level": 3,
+                        "control": false,
+                        "type": "bool",
+                        "map": {
+                            "0": "NOT_SET",
+                            "1": "SET"
+                        }
+                    },
+                    "28": {
+                        "name": "gF",
+                        "length": 1,
+                        "level": 3,
+                        "control": false,
+                        "type": "bool",
+                        "map": {
+                            "0": "NOT_SET",
+                            "1": "SET"
+                        }
+                    },
+                    "29": {
+                        "name": "IMgF_Craft",
+                        "length": 1,
+                        "level": 3,
+                        "control": false,
+                        "type": "bool",
+                        "map": {
+                            "0": "NOT_SET",
+                            "1": "SET"
+                        }
+                    },
+                    "30": {
+                        "name": "IMgF_F",
+                        "length": 1,
+                        "level": 3,
+                        "control": false,
+                        "type": "bool",
+                        "map": {
+                            "0": "NOT_SET",
+                            "1": "SET"
+                        }
+                    },
+                    "31": {
+                        "name": "IMgF_Nugget",
+                        "length": 1,
+                        "level": 3,
+                        "control": false,
+                        "type": "bool",
+                        "map": {
+                            "0": "NOT_SET",
+                            "1": "SET"
+                        }
+                    }
+                }
+            },
+            "372": {
+                "name": "Er-",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "various",
+                "elements": {
+                    "1": {
+                        "name": "tt",
+                        "length": 1,
+                        "level": 3,
+                        "control": false,
+                        "type": "bool",
+                        "map": {
+                            "0": "NOT_SET",
+                            "1": "SET"
+                        }
+                    },
+                    "2": {
+                        "name": "Ad",
+                        "length": 1,
+                        "level": 3,
+                        "control": false,
+                        "type": "bool",
+                        "map": {
+                            "0": "NOT_SET",
+                            "1": "SET"
+                        }
+                    },
+                    "3": {
+                        "name": "Sd",
+                        "length": 1,
+                        "level": 3,
+                        "control": false,
+                        "type": "bool",
+                        "map": {
+                            "0": "NOT_SET",
+                            "1": "SET"
+                        }
+                    },
+                    "4": {
+                        "name": "UC",
+                        "length": 1,
+                        "level": 3,
+                        "control": false,
+                        "type": "bool",
+                        "map": {
+                            "0": "NOT_SET",
+                            "1": "SET"
+                        }
+                    }
+                }
+            },
+            "374": {
+                "name": "ERROR_LQC_01",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "375": {
+                "name": "LQC_ModeErrorCode",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "376": {
+                "name": "IceMakerDetailError",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "377": {
+                "name": "CraftIceMakerDetailError",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "378": {
+                "name": "ERROR_ICEMAKER_F",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "379": {
+                "name": "ERROR_ICEMAKER_Nugget",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "380": {
+                "name": "R-doorOpenCount",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "381": {
+                "name": "R-doorOpenTime",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "deco": "ew0KICAiY2FsYyI6ICJWKjIiDQp9",
+                "desc": "bWluIDogMCwgbWF4IDogNTEw",
+                "sign": false
+            },
+            "382": {
+                "name": "DID-doorOpenCount",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "383": {
+                "name": "DID-doorOpenTime",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "deco": "ew0KICAiY2FsYyI6ICJWKjIiDQp9",
+                "desc": "bWluIDogMCwgbWF4IDogNTEw",
+                "sign": false
+            },
+            "384": {
+                "name": "F-doorOpenCount",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "385": {
+                "name": "F-doorOpenTime",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "deco": "ew0KICAiY2FsYyI6ICJWKjIiDQp9",
+                "desc": "bWluIDogMCwgbWF4IDogNTEw",
+                "sign": false
+            },
+            "386": {
+                "name": "Doors_Statics_C_Open_CountPer5Min",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "387": {
+                "name": "Doors_Statics_C_OpenTimePer5Min",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "deco": "ew0KICAiY2FsYyI6ICJWKjIiDQp9",
+                "desc": "bWluIDogMCwgbWF4IDogNTEw",
+                "sign": false
+            },
+            "388": {
+                "name": "KnockOnCount",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "392": {
+                "name": "dispenserType",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "enum",
+                "map": {
+                    "1": "Crushed",
+                    "2": "Water",
+                    "3": "Cubed"
+                }
+            },
+            "393": {
+                "name": "WaterPadSwitch",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "bool",
+                "map": {
+                    "0": "RELEASE",
+                    "1": "PUSH"
+                }
+            },
+            "394": {
+                "name": "IcePadSwitch",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "bool",
+                "map": {
+                    "0": "RELEASE",
+                    "1": "PUSH"
+                }
+            },
+            "395": {
+                "name": "waterPressureLevel",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogOA==",
+                "sign": false
+            },
+            "396": {
+                "name": "WaterFilter-RemainTime_Month",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "398": {
+                "name": "WaterFilter-RemainUse",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "400": {
+                "name": "waterFilterStatus",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "bool",
+                "map": {
+                    "0": "CLEAR",
+                    "1": "SET"
+                }
+            },
+            "402": {
+                "name": "icemakerOn",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "OFF",
+                    "1": "ON"
+                }
+            },
+            "403": {
+                "name": "icemakerStatus",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "bool",
+                "map": {
+                    "0": "Not Full",
+                    "1": "Full"
+                }
+            },
+            "404": {
+                "name": "icemakerSensorTemperature",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "deco": "ew0KICAiY2FsYyI6ICJWLzEwIg0KfQ==",
+                "desc": "bWluIDogLTcwMCwgbWF4IDogMTAwMA==",
+                "sign": true
+            },
+            "406": {
+                "name": "icemakerState",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "407": {
+                "name": "IceMaker_InDoor_Operation_Sub_State",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "408": {
+                "name": "icemakerMotor",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "bool",
+                "map": {
+                    "0": "OFF",
+                    "1": "ON"
+                }
+            },
+            "409": {
+                "name": "icemakerMotor-Direction",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMw==",
+                "sign": false
+            },
+            "410": {
+                "name": "icemakerHallIC",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "bool",
+                "map": {
+                    "0": "LOW",
+                    "1": "HIGH"
+                }
+            },
+            "411": {
+                "name": "icemakerManufactureTime",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "412": {
+                "name": "icemakerFullCheckTime",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "413": {
+                "name": "icemakerErrorCheckTime",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "414": {
+                "name": "IceMaker_InDoor_Test",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "CLEAR",
+                    "1": "SET"
+                }
+            },
+            "415": {
+                "name": "IceMaker_InDoor_Reset",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "enum",
+                "map": {
+                    "1": "SET"
+                }
+            },
+            "416": {
+                "name": "Craft-icemakerOn",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "enum",
+                "map": {
+                    "0": "OFF",
+                    "1": "ON(3 ICE)",
+                    "2": "ON(6 ICE)"
+                }
+            },
+            "417": {
+                "name": "Craft-icemakerStatus",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "bool",
+                "map": {
+                    "0": "Not Full",
+                    "1": "Full"
+                }
+            },
+            "418": {
+                "name": "Craft-icemakerSensorTemperature",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "deco": "ew0KICAiY2FsYyI6ICJWLzEwIg0KfQ==",
+                "desc": "bWluIDogLTcwMCwgbWF4IDogMTAwMA==",
+                "sign": true
+            },
+            "420": {
+                "name": "Craft-icemakerBigState",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "421": {
+                "name": "Craft-icemakerSmallState",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "422": {
+                "name": "Craft-icemakerMotor",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "bool",
+                "map": {
+                    "0": "False",
+                    "1": "True"
+                }
+            },
+            "423": {
+                "name": "Craft-icemakerMotor-Direction",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "424": {
+                "name": "Craft-icemakerHallIC",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "bool",
+                "map": {
+                    "0": "LOW",
+                    "1": "HIGH"
+                }
+            },
+            "425": {
+                "name": "Craft-icemakerHTR-Top",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "bool",
+                "map": {
+                    "0": "OFF",
+                    "1": "ON"
+                }
+            },
+            "426": {
+                "name": "Craft-icemakerHTR-Bottom",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "bool",
+                "map": {
+                    "0": "OFF",
+                    "1": "ON"
+                }
+            },
+            "428": {
+                "name": "Craft-icemakerManufactureIndex",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "429": {
+                "name": "Craft-icemakerHTROnTime",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "430": {
+                "name": "Craft-icemakerManufactureTime",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "432": {
+                "name": "Craft-icemakerTargetTemperature",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "deco": "ew0KICAiY2FsYyI6ICJWLzEwIg0KfQ==",
+                "desc": "bWluIDogLTcwMCwgbWF4IDogMTAwMA==",
+                "sign": true
+            },
+            "434": {
+                "name": "IceMaker_Craft_SupplyPulseCount",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "436": {
+                "name": "IceMaker_Craft_SupplyTargetPulse",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "438": {
+                "name": "Craft-icemakerFullCheckTime",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "439": {
+                "name": "IceMaker_Craft_Error_RecheckTime",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "440": {
+                "name": "Craft-icemakerKitErrorCount",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "441": {
+                "name": "Craft-icemakerRemoveCount",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "442": {
+                "name": "IceMaker_Craft_Test",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "CLEAR",
+                    "1": "SET"
+                }
+            },
+            "443": {
+                "name": "IceMaker_Craft_Reset",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "enum",
+                "map": {
+                    "1": "SET"
+                }
+            },
+            "444": {
+                "name": "IceMaker_F_Power",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "OFF",
+                    "1": "ON"
+                }
+            },
+            "445": {
+                "name": "IceMaker_F_Full_Flag",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "bool",
+                "map": {
+                    "0": "Not Full",
+                    "1": "Full"
+                }
+            },
+            "446": {
+                "name": "IceMaker_F_Temperature",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "deco": "ew0KICAiY2FsYyI6ICJWLzEwIg0KfQ==",
+                "desc": "bWluIDogLTcwMCwgbWF4IDogMTAwMA==",
+                "sign": true
+            },
+            "448": {
+                "name": "IceMaker_F_Operation_Main_State",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "449": {
+                "name": "IceMaker_F_Operation_Sub_State",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "450": {
+                "name": "IceMaker_F_Motor_Power",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "bool",
+                "map": {
+                    "0": "OFF",
+                    "1": "ON"
+                }
+            },
+            "451": {
+                "name": "IceMaker_F_Motor_Direction",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMw==",
+                "sign": false
+            },
+            "452": {
+                "name": "IceMaker_F_Hall_IC",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "bool",
+                "map": {
+                    "0": "LOW",
+                    "1": "HIGH"
+                }
+            },
+            "453": {
+                "name": "IceMaker_F_MakingTime",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "454": {
+                "name": "IceMaker_F_Full_RecheckTime",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "455": {
+                "name": "IceMaker_F_Error_RecheckTime",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "456": {
+                "name": "IceMaker_F_Test",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "CLEAR",
+                    "1": "SET"
+                }
+            },
+            "457": {
+                "name": "IceMaker_F_Reset",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "enum",
+                "map": {
+                    "1": "SET"
+                }
+            },
+            "458": {
+                "name": "IceMaker_Nugget_Power",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "OFF",
+                    "1": "ON"
+                }
+            },
+            "459": {
+                "name": "IceMaker_Nugget_Full_Flag",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "bool",
+                "map": {
+                    "0": "Not Full",
+                    "1": "Full"
+                }
+            },
+            "460": {
+                "name": "IceMaker_Nugget_Temperature",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "deco": "ew0KICAiY2FsYyI6ICJWLzEwIg0KfQ==",
+                "desc": "bWluIDogLTcwMCwgbWF4IDogMTAwMA==",
+                "sign": true
+            },
+            "462": {
+                "name": "IceMaker_Nugget_Operation_Main_State",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "463": {
+                "name": "IceMaker_Nugget_Operation_Sub_State",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "464": {
+                "name": "IceMaker_Nugget_Motor_Power",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "bool",
+                "map": {
+                    "0": "False",
+                    "1": "True"
+                }
+            },
+            "465": {
+                "name": "IceMaker_Nugget_Motor_Direction",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMw==",
+                "sign": false
+            },
+            "466": {
+                "name": "IceMaker_Nugget_Hall_IC",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "bool",
+                "map": {
+                    "0": "False",
+                    "1": "True"
+                }
+            },
+            "467": {
+                "name": "IceMaker_Nugget_MakingTime",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "468": {
+                "name": "IceMaker_Nugget_Full_RecheckTime",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "469": {
+                "name": "IceMaker_Nugget_Error_RecheckTime",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "470": {
+                "name": "IceMaker_Nugget_Test",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "CLEAR",
+                    "1": "SET"
+                }
+            },
+            "471": {
+                "name": "IceMaker_Nugget_Reset",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "enum",
+                "map": {
+                    "1": "SET"
+                }
+            },
+            "472": {
+                "name": "PilotValve-OpenCount",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "474": {
+                "name": "Flowmeter-Count",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "476": {
+                "name": "waterFlowAmount",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "deco": "ew0KICAiY2FsYyI6ICJWKjEwMCINCn0=",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "478": {
+                "name": "iceFlowAmount",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "deco": "ew0KICAiY2FsYyI6ICJWKjE5LjQiDQp9",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "480": {
+                "name": "iceMakingAmount",
+                "length": 2,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "deco": "ew0KICAiY2FsYyI6ICJWKjIwLjA0MDkiDQp9",
+                "desc": "bWluIDogMCwgbWF4IDogNjU1MzU=",
+                "sign": false
+            },
+            "484": {
+                "name": "IceMaker_Nonplumbing_Motor_Power",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "bool",
+                "map": {
+                    "0": "False",
+                    "1": "True"
+                }
+            },
+            "485": {
+                "name": "IceMaker_Nonplumbing_Motor_Direction",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "486": {
+                "name": "Water_judge_sensor",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "bool",
+                "map": {
+                    "0": "False",
+                    "1": "True"
+                }
+            },
+            "487": {
+                "name": "NCM",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "bool",
+                "map": {
+                    "0": "False",
+                    "1": "True"
+                }
+            },
+            "488": {
+                "name": "Ring_LED",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "False",
+                    "1": "True"
+                }
+            },
+            "489": {
+                "name": "Ring_LED_Brightness",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMTAw",
+                "sign": false
+            },
+            "490": {
+                "name": "UVC_LED",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "OFF",
+                    "1": "ON"
+                }
+            },
+            "491": {
+                "name": "UVC_LED_OnTime",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "492": {
+                "name": "Auger_Motor_Power",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "OFF",
+                    "1": "ON"
+                }
+            },
+            "493": {
+                "name": "Auger_Motor_Direction",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "FORWARD",
+                    "1": "BACKWARD"
+                }
+            },
+            "494": {
+                "name": "Capduct_State",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "CLOSE",
+                    "1": "OPEN"
+                }
+            },
+            "495": {
+                "name": "Autodoor_Working",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "False",
+                    "1": "True"
+                }
+            },
+            "500": {
+                "name": "SDS_V1_01",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "501": {
+                "name": "SDS_V1_02",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "502": {
+                "name": "SDS_V1_03",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "503": {
+                "name": "SDS_V1_04",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "504": {
+                "name": "SDS_V1_05",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "505": {
+                "name": "SDS_V1_06",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "506": {
+                "name": "SDS_V1_07",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "507": {
+                "name": "SDS_V1_08",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "508": {
+                "name": "SDS_V1_09",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "509": {
+                "name": "SDS_V1_10",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "510": {
+                "name": "SDS_V1_11",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "511": {
+                "name": "SDS_V1_12",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "512": {
+                "name": "SDS_V1_13",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "513": {
+                "name": "SDS_V1_14",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "514": {
+                "name": "SDS_V1_15",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "515": {
+                "name": "SDS_V1_16",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "516": {
+                "name": "SDS_V1_17",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "517": {
+                "name": "SDS_V1_18",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "518": {
+                "name": "SDS_V1_19",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "519": {
+                "name": "SDS_V1_20",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "520": {
+                "name": "SDS_V1_21",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "521": {
+                "name": "SDS_V1_22",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "522": {
+                "name": "SDS_V1_23",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "523": {
+                "name": "SDS_V1_24",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "524": {
+                "name": "SDS_V1_25",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "525": {
+                "name": "SDS_V1_26",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "526": {
+                "name": "SDS_V1_27",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "527": {
+                "name": "SDS_V1_28",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "528": {
+                "name": "SDS_V1_29",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "529": {
+                "name": "SDS_V1_30",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "530": {
+                "name": "SDS_V1_31",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "531": {
+                "name": "SDS_V1_32",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "532": {
+                "name": "SDS_V1_33",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "533": {
+                "name": "SDS_V1_34",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "534": {
+                "name": "SDS_V1_35",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "535": {
+                "name": "SDS_V1_36",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "536": {
+                "name": "SDS_V1_37",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "537": {
+                "name": "SDS_V1_38",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "538": {
+                "name": "SDS_V1_39",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "539": {
+                "name": "SDS_V1_40",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "540": {
+                "name": "SDS_V1_41",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "541": {
+                "name": "SDS_V1_42",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "542": {
+                "name": "SDS_V1_43",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "543": {
+                "name": "SDS_V1_44",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "544": {
+                "name": "SDS_V1_45",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "545": {
+                "name": "SDS_V1_46",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "546": {
+                "name": "SDS_V1_47",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "547": {
+                "name": "SDS_V1_48",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "548": {
+                "name": "SDS_V1_49",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "549": {
+                "name": "SDS_V1_50",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "550": {
+                "name": "SDS_V1_51",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "551": {
+                "name": "SDS_V1_52",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "552": {
+                "name": "SDS_V1_53",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "553": {
+                "name": "SDS_V1_54",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "554": {
+                "name": "SDS_V1_55",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "555": {
+                "name": "SDS_V1_56",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "556": {
+                "name": "SDS_V1_57",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "557": {
+                "name": "SDS_V1_58",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "558": {
+                "name": "SDS_V1_59",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "559": {
+                "name": "SDS_V1_60",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "560": {
+                "name": "SDS_V3_01",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "561": {
+                "name": "SDS_V3_02",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "562": {
+                "name": "SDS_V3_03",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "563": {
+                "name": "SDS_V3_04",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "564": {
+                "name": "SDS_V3_05",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "565": {
+                "name": "SDS_V3_06",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "566": {
+                "name": "SDS_V3_07",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "567": {
+                "name": "SDS_V3_08",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "568": {
+                "name": "SDS_V3_09",
+                "length": 1,
+                "level": 3,
+                "control": false,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "600": {
+                "name": "KnockOn_IngTime",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "int",
+                "desc": "bWluIDogMCwgbWF4IDogMjU1",
+                "sign": false
+            },
+            "601": {
+                "name": "Buzzer_Muting",
+                "length": 1,
+                "level": 3,
+                "control": true,
+                "type": "bool",
+                "map": {
+                    "0": "None",
+                    "1": "Muted"
+                }
+            }
+        },
+        "control_func": {
+            "41216": {
+                "name": "Delay",
+                "group": "group",
+                "desc": "U2NlbmFyaW8gRGVsYXksIG1z"
+            },
+            "41472": {
+                "name": "Next_Day",
+                "group": "group",
+                "desc": "U2NlbmFyaW8gQ2hlY2sgRGF5IFBhc3NlZA=="
+            }
+        },
+        "product_setting": {
+            "monitoring": {
+                "C4,DD": {
+                    "name": "SDS",
+                    "type": "period",
+                    "elements": [
+                        "500",
+                        "501",
+                        "502",
+                        "503",
+                        "504",
+                        "505",
+                        "506",
+                        "507",
+                        "508",
+                        "509",
+                        "510",
+                        "511",
+                        "512",
+                        "513",
+                        "514",
+                        "515",
+                        "516",
+                        "517",
+                        "518",
+                        "519",
+                        "520",
+                        "521",
+                        "522",
+                        "523",
+                        "524",
+                        "525",
+                        "526",
+                        "527",
+                        "528",
+                        "529",
+                        "530",
+                        "531",
+                        "532",
+                        "533",
+                        "534",
+                        "535",
+                        "536",
+                        "537",
+                        "538",
+                        "539",
+                        "540",
+                        "541",
+                        "542",
+                        "543",
+                        "544",
+                        "545",
+                        "546",
+                        "547",
+                        "548",
+                        "549",
+                        "550",
+                        "551",
+                        "552",
+                        "553",
+                        "554",
+                        "555",
+                        "556",
+                        "557",
+                        "558",
+                        "559",
+                        "560",
+                        "561",
+                        "562",
+                        "563",
+                        "564",
+                        "565",
+                        "566",
+                        "567",
+                        "568"
+                    ],
+                    "desc": "",
+                    "interval": 3000
+                },
+                "C4,FF": {
+                    "name": "Superset_PCC",
+                    "type": "period",
+                    "elements": [
+                        "0",
+                        "4",
+                        "6",
+                        "8",
+                        "12",
+                        "16",
+                        "20",
+                        "24",
+                        "28",
+                        "32",
+                        "36",
+                        "40",
+                        "62",
+                        "64",
+                        "67",
+                        "72",
+                        "74",
+                        "77",
+                        "84",
+                        "91",
+                        "128",
+                        "136",
+                        "137",
+                        "156",
+                        "160",
+                        "168",
+                        "180",
+                        "192",
+                        "212",
+                        "213",
+                        "284",
+                        "300",
+                        "302",
+                        "308",
+                        "316",
+                        "320",
+                        "324",
+                        "346",
+                        "351",
+                        "368",
+                        "372",
+                        "376",
+                        "377",
+                        "380",
+                        "381",
+                        "384",
+                        "385",
+                        "393",
+                        "394",
+                        "395",
+                        "402",
+                        "403",
+                        "404",
+                        "416",
+                        "417",
+                        "418",
+                        "420",
+                        "421",
+                        "425",
+                        "426",
+                        "476",
+                        "478",
+                        "480",
+                        "486"
+                    ],
+                    "desc": "",
+                    "interval": 25
+                },
+                "C6,20": {
+                    "name": "DXI_EVENT_NOTCH_R",
+                    "type": "event",
+                    "elements": [
+                        "0",
+                        "4",
+                        "6",
+                        "60",
+                        "61",
+                        "62",
+                        "64",
+                        "66",
+                        "67",
+                        "68",
+                        "69",
+                        "70",
+                        "71",
+                        "72",
+                        "74",
+                        "76",
+                        "77",
+                        "78",
+                        "79",
+                        "128",
+                        "129"
+                    ],
+                    "desc": "",
+                    "target": [
+                        60
+                    ],
+                    "condition": 0,
+                    "option": 0,
+                    "value_len": 1,
+                    "value": 0
+                },
+                "C6,23": {
+                    "name": "DXI_EVENT_ERROR_GROUP1",
+                    "type": "event",
+                    "elements": [
+                        "0",
+                        "4",
+                        "6",
+                        "64",
+                        "74",
+                        "156",
+                        "158",
+                        "160",
+                        "162",
+                        "164",
+                        "165",
+                        "166",
+                        "192",
+                        "368",
+                        "372"
+                    ],
+                    "desc": "",
+                    "target": [
+                        368
+                    ],
+                    "condition": 0,
+                    "option": 0,
+                    "value_len": 4,
+                    "value": 0
+                },
+                "C6,22": {
+                    "name": "DXI_EVENT_CustomerSettingInfo1",
+                    "type": "event",
+                    "elements": [
+                        "0",
+                        "4",
+                        "6",
+                        "60",
+                        "61",
+                        "62",
+                        "64",
+                        "66",
+                        "67",
+                        "68",
+                        "69",
+                        "70",
+                        "71",
+                        "72",
+                        "74",
+                        "76",
+                        "77",
+                        "78",
+                        "79",
+                        "128",
+                        "129",
+                        "136",
+                        "137",
+                        "138",
+                        "139",
+                        "140",
+                        "142",
+                        "144"
+                    ],
+                    "desc": "",
+                    "target": [
+                        264
+                    ],
+                    "condition": 0,
+                    "option": 0,
+                    "value_len": 1,
+                    "value": 0
+                },
+                "C6,25": {
+                    "name": "DXI_EVENT_DOOR_MASTER_R",
+                    "type": "event",
+                    "elements": [
+                        "0",
+                        "4",
+                        "6",
+                        "240",
+                        "241",
+                        "243",
+                        "244",
+                        "245",
+                        "246",
+                        "247",
+                        "248",
+                        "249",
+                        "380",
+                        "381",
+                        "382",
+                        "383",
+                        "384",
+                        "385",
+                        "388"
+                    ],
+                    "desc": "",
+                    "target": [
+                        240
+                    ],
+                    "condition": 0,
+                    "option": 0,
+                    "value_len": 1,
+                    "value": 0
+                },
+                "C6,27": {
+                    "name": "DXI_EVENT_DEFROST_HEARTER_ON_OFF_R",
+                    "type": "event",
+                    "elements": [
+                        "0",
+                        "4",
+                        "6",
+                        "188",
+                        "190",
+                        "192",
+                        "194",
+                        "196"
+                    ],
+                    "desc": "",
+                    "target": [
+                        184
+                    ],
+                    "condition": 0,
+                    "option": 0,
+                    "value_len": 1,
+                    "value": 0
+                },
+                "C6,29": {
+                    "name": "DXI_EVENT_KNOCK_ON_OFF",
+                    "type": "event",
+                    "elements": [
+                        "0",
+                        "4",
+                        "6",
+                        "240",
+                        "241",
+                        "243",
+                        "244",
+                        "245",
+                        "246",
+                        "247",
+                        "248",
+                        "249",
+                        "380",
+                        "381",
+                        "382",
+                        "383",
+                        "384",
+                        "385",
+                        "388"
+                    ],
+                    "desc": "",
+                    "target": [
+                        249
+                    ],
+                    "condition": 0,
+                    "option": 0,
+                    "value_len": 1,
+                    "value": 0
+                },
+                "C6,2A": {
+                    "name": "DXI_EVENT_NATURAL_DEPROST",
+                    "type": "event",
+                    "elements": [
+                        "0",
+                        "4",
+                        "6",
+                        "188",
+                        "190",
+                        "192",
+                        "194",
+                        "196"
+                    ],
+                    "desc": "",
+                    "target": [
+                        185
+                    ],
+                    "condition": 0,
+                    "option": 0,
+                    "value_len": 1,
+                    "value": 0
+                },
+                "C6,2B": {
+                    "name": "DXI_EVENT_PAD_SWITCH_WATER",
+                    "type": "event",
+                    "elements": [
+                        "0",
+                        "4",
+                        "6",
+                        "240",
+                        "241",
+                        "243",
+                        "244",
+                        "247",
+                        "248",
+                        "249",
+                        "380",
+                        "381",
+                        "384",
+                        "385",
+                        "388"
+                    ],
+                    "desc": "",
+                    "target": [
+                        393
+                    ],
+                    "condition": 0,
+                    "option": 0,
+                    "value_len": 1,
+                    "value": 0
+                },
+                "C6,2D": {
+                    "name": "DXI_EVENT_ICEMAKER_DID",
+                    "type": "event",
+                    "elements": [
+                        "0",
+                        "4",
+                        "6",
+                        "416",
+                        "417",
+                        "418",
+                        "420",
+                        "421",
+                        "422",
+                        "423",
+                        "424",
+                        "425",
+                        "426",
+                        "428",
+                        "429",
+                        "430",
+                        "432",
+                        "434",
+                        "436",
+                        "438",
+                        "439",
+                        "440",
+                        "441"
+                    ],
+                    "desc": "",
+                    "target": [
+                        402
+                    ],
+                    "condition": 0,
+                    "option": 0,
+                    "value_len": 1,
+                    "value": 0
+                },
+                "C6,2F": {
+                    "name": "DXI_EVENT_R_LOADMANAGE_ON_OFF",
+                    "type": "event",
+                    "elements": [
+                        "0",
+                        "4",
+                        "6",
+                        "60",
+                        "61",
+                        "62",
+                        "64",
+                        "66",
+                        "70",
+                        "71",
+                        "72",
+                        "74",
+                        "76",
+                        "128",
+                        "129",
+                        "252",
+                        "253",
+                        "254",
+                        "256",
+                        "258",
+                        "260"
+                    ],
+                    "desc": "",
+                    "target": [
+                        252
+                    ],
+                    "condition": 0,
+                    "option": 0,
+                    "value_len": 1,
+                    "value": 0
+                },
+                "C6,30": {
+                    "name": "DXI_EVENT_F_LOADMANAGE_ON_OFF",
+                    "type": "event",
+                    "elements": [
+                        "0",
+                        "4",
+                        "6",
+                        "60",
+                        "61",
+                        "62",
+                        "64",
+                        "66",
+                        "70",
+                        "71",
+                        "72",
+                        "74",
+                        "76",
+                        "252",
+                        "253",
+                        "254",
+                        "256",
+                        "258",
+                        "260"
+                    ],
+                    "desc": "",
+                    "target": [
+                        253
+                    ],
+                    "condition": 0,
+                    "option": 0,
+                    "value_len": 1,
+                    "value": 0
+                },
+                "C6,31": {
+                    "name": "DXI_EVENT_DISPENSER",
+                    "type": "event",
+                    "elements": [
+                        "0",
+                        "4",
+                        "6",
+                        "392",
+                        "393",
+                        "394",
+                        "395",
+                        "396",
+                        "398",
+                        "400",
+                        "472",
+                        "474",
+                        "476",
+                        "478",
+                        "480"
+                    ],
+                    "desc": "",
+                    "target": [
+                        392
+                    ],
+                    "condition": 0,
+                    "option": 0,
+                    "value_len": 1,
+                    "value": 0
+                },
+                "C6,21": {
+                    "name": "DXI_EVENT_NOTCH_F",
+                    "type": "event",
+                    "elements": [
+                        "0",
+                        "4",
+                        "6",
+                        "60",
+                        "61",
+                        "62",
+                        "64",
+                        "66",
+                        "67",
+                        "68",
+                        "69",
+                        "70",
+                        "71",
+                        "72",
+                        "74",
+                        "76",
+                        "77",
+                        "78",
+                        "79"
+                    ],
+                    "desc": "",
+                    "target": [
+                        70
+                    ],
+                    "condition": 0,
+                    "option": 0,
+                    "value_len": 1,
+                    "value": 0
+                },
+                "C6,24": {
+                    "name": "DXI_EVENT_ERROR_GROUP2",
+                    "type": "event",
+                    "elements": [
+                        "0",
+                        "4",
+                        "6",
+                        "64",
+                        "74",
+                        "156",
+                        "158",
+                        "160",
+                        "162",
+                        "164",
+                        "165",
+                        "166",
+                        "192",
+                        "368",
+                        "372"
+                    ],
+                    "desc": "",
+                    "target": [
+                        372
+                    ],
+                    "condition": 0,
+                    "option": 0,
+                    "value_len": 2,
+                    "value": 0
+                },
+                "C6,26": {
+                    "name": "DXI_EVENT_DOOR_MASTER_F",
+                    "type": "event",
+                    "elements": [
+                        "0",
+                        "4",
+                        "6",
+                        "240",
+                        "241",
+                        "243",
+                        "244",
+                        "245",
+                        "246",
+                        "247",
+                        "248",
+                        "249",
+                        "380",
+                        "381",
+                        "382",
+                        "383",
+                        "384",
+                        "385",
+                        "388"
+                    ],
+                    "desc": "",
+                    "target": [
+                        241
+                    ],
+                    "condition": 0,
+                    "option": 0,
+                    "value_len": 1,
+                    "value": 0
+                },
+                "C6,28": {
+                    "name": "DXI_EVENT_DEFROST_HEARTER_ON_OFF_F",
+                    "type": "event",
+                    "elements": [
+                        "0",
+                        "4",
+                        "6",
+                        "188",
+                        "190",
+                        "192",
+                        "194",
+                        "196"
+                    ],
+                    "desc": "",
+                    "target": [
+                        196
+                    ],
+                    "condition": 0,
+                    "option": 0,
+                    "value_len": 1,
+                    "value": 0
+                },
+                "C6,2C": {
+                    "name": "DXI_EVENT_PAD_SWITCH_ICE",
+                    "type": "event",
+                    "elements": [
+                        "0",
+                        "4",
+                        "6",
+                        "240",
+                        "241",
+                        "243",
+                        "244",
+                        "247",
+                        "248",
+                        "249",
+                        "380",
+                        "381",
+                        "384",
+                        "385",
+                        "388"
+                    ],
+                    "desc": "",
+                    "target": [
+                        394
+                    ],
+                    "condition": 0,
+                    "option": 0,
+                    "value_len": 1,
+                    "value": 0
+                },
+                "C6,2E": {
+                    "name": "DXI_EVENT_ICEMAKER_CRAFT",
+                    "type": "event",
+                    "elements": [
+                        "0",
+                        "4",
+                        "6",
+                        "227",
+                        "234",
+                        "416",
+                        "417",
+                        "418",
+                        "420",
+                        "421",
+                        "422",
+                        "423",
+                        "424",
+                        "425",
+                        "426",
+                        "428",
+                        "429",
+                        "430",
+                        "432",
+                        "434",
+                        "436",
+                        "438",
+                        "439",
+                        "440",
+                        "441",
+                        "442",
+                        "484",
+                        "485",
+                        "486"
+                    ],
+                    "desc": "",
+                    "target": [
+                        416
+                    ],
+                    "condition": 0,
+                    "option": 0,
+                    "value_len": 1,
+                    "value": 0
+                },
+                "C6,32": {
+                    "name": "DXI_EVENT_DISPLAY_LOCK",
+                    "type": "event",
+                    "elements": [
+                        "0",
+                        "4",
+                        "6",
+                        "60",
+                        "61",
+                        "62",
+                        "64",
+                        "66",
+                        "67",
+                        "68",
+                        "69",
+                        "70",
+                        "71",
+                        "72",
+                        "74",
+                        "76",
+                        "77",
+                        "78",
+                        "79"
+                    ],
+                    "desc": "",
+                    "target": [
+                        289
+                    ],
+                    "condition": 0,
+                    "option": 0,
+                    "value_len": 1,
+                    "value": 0
+                },
+                "C4,01": {
+                    "name": "Superset_01",
+                    "type": "period",
+                    "elements": [
+                        "0",
+                        "4",
+                        "6",
+                        "8",
+                        "12",
+                        "16",
+                        "20",
+                        "24",
+                        "28",
+                        "32",
+                        "36",
+                        "40",
+                        "60",
+                        "61",
+                        "62",
+                        "64",
+                        "66",
+                        "67",
+                        "68",
+                        "69",
+                        "70",
+                        "71",
+                        "72",
+                        "74",
+                        "76",
+                        "77",
+                        "78",
+                        "79",
+                        "116",
+                        "117",
+                        "118",
+                        "120",
+                        "121",
+                        "122",
+                        "128",
+                        "129",
+                        "136",
+                        "137",
+                        "138",
+                        "139",
+                        "140",
+                        "142",
+                        "144",
+                        "156",
+                        "158",
+                        "160",
+                        "162",
+                        "164",
+                        "165",
+                        "166",
+                        "168",
+                        "170",
+                        "171",
+                        "172"
+                    ],
+                    "desc": "",
+                    "interval": 25
+                },
+                "C4,02": {
+                    "name": "Superset_02",
+                    "type": "period",
+                    "elements": [
+                        "0",
+                        "4",
+                        "6",
+                        "8",
+                        "188",
+                        "190",
+                        "192",
+                        "194",
+                        "196",
+                        "200",
+                        "201",
+                        "202",
+                        "203",
+                        "204",
+                        "206",
+                        "213",
+                        "214",
+                        "215",
+                        "216",
+                        "217",
+                        "218",
+                        "240",
+                        "241",
+                        "243",
+                        "244",
+                        "245",
+                        "246",
+                        "247",
+                        "248",
+                        "249",
+                        "252",
+                        "253",
+                        "254",
+                        "256",
+                        "258",
+                        "260",
+                        "264",
+                        "265",
+                        "266",
+                        "269",
+                        "278",
+                        "279",
+                        "280",
+                        "282",
+                        "284",
+                        "285",
+                        "286",
+                        "288",
+                        "289"
+                    ],
+                    "desc": "",
+                    "interval": 25
+                },
+                "C4,03": {
+                    "name": "Superset_03",
+                    "type": "period",
+                    "elements": [
+                        "0",
+                        "4",
+                        "6",
+                        "8",
+                        "300",
+                        "302",
+                        "304",
+                        "306",
+                        "308",
+                        "310",
+                        "312",
+                        "314",
+                        "316",
+                        "318",
+                        "320",
+                        "322",
+                        "324",
+                        "326",
+                        "328",
+                        "330",
+                        "332",
+                        "334",
+                        "336",
+                        "338",
+                        "340",
+                        "342",
+                        "344",
+                        "346",
+                        "347",
+                        "348",
+                        "349",
+                        "350",
+                        "351",
+                        "352",
+                        "353",
+                        "354",
+                        "355",
+                        "356",
+                        "357",
+                        "358",
+                        "359",
+                        "360",
+                        "361",
+                        "362",
+                        "363"
+                    ],
+                    "desc": "",
+                    "interval": 25
+                },
+                "C4,04": {
+                    "name": "Superset_04",
+                    "type": "period",
+                    "elements": [
+                        "0",
+                        "4",
+                        "6",
+                        "8",
+                        "364",
+                        "366",
+                        "368",
+                        "372",
+                        "374",
+                        "375",
+                        "380",
+                        "381",
+                        "382",
+                        "383",
+                        "384",
+                        "385",
+                        "388"
+                    ],
+                    "desc": "",
+                    "interval": 25
+                },
+                "C4,05": {
+                    "name": "Superset_05",
+                    "type": "period",
+                    "elements": [
+                        "0",
+                        "4",
+                        "6",
+                        "8"
+                    ],
+                    "desc": "",
+                    "interval": 25
+                }
+            },
+            "control": {},
+            "setting": {
+                "monitoring_rule": [
+                    "AAA710B304AFA00010C4DD0BB80B0000000000000000004500F401F501F601F701F801F901FA01FB01FC01FD01FE01FF0100020102020203020402050206020702080209020A020B020C020D020E020F0210021102120213021402150216021702180219021A021B021C021D021E021F0220022102220223022402250226022702280229022A022B022C022D022E022F02300231023202330234023502360237023802450089BB",
+                    "AA9D10B304AF960010C4FF0B1900000000000000000000400000000400060008000C001000140018001C002000240028003E004000430048004A004D0054005B008000880089009C00A000A800B400C000D400D5001C012C012E0134013C01400144015A015F0170017401780179017C017D018001810189018A018B01920193019401A001A101A201A401A501A901AA01DC01DE01E001E60178007ABB",
+                    "AA4510B304AF3E0020C62009013C0000000001000015000000040006003C003D003E00400042004300440045004600470048004A004C004D004E004F00800081001E00DDBB",
+                    "AA3F10B304AF380020C6230F0170010000000400000000000000000F0000000400060040004A009C009E00A000A200A400A500A600C000700174011E00A2BB",
+                    "AA5310B304AF4C0020C622090108010000000100001C000000040006003C003D003E00400042004300440045004600470048004A004C004D004E004F0080008100880089008A008B008C008E009000270006BB",
+                    "AA4110B304AF3A0020C6250901F0000000000100001300000004000600F000F100F300F400F500F600F700F800F9007C017D017E017F018001810184011800A6BB",
+                    "AA2B10B304AF240020C6270901B8000000000100000800000004000600BC00BE00C000C200C400110077BB",
+                    "AA4110B304AF3A0020C6290901F9000000000100001300000004000600F000F100F300F400F500F600F700F800F9007C017D017E017F01800181018401180055BB",
+                    "AA2B10B304AF240020C62A0901B9000000000100000800000004000600BC00BE00C000C200C400110073BB",
+                    "AA3910B304AF320020C62B090189010000000100000F00000004000600F000F100F300F400F700F800F9007C017D018001810184011400C4BB",
+                    "AA4910B304AF420020C62D090192010000000100001700000004000600A001A101A201A401A501A601A701A801A901AA01AC01AD01AE01B001B201B401B601B701B801B901210074BB",
+                    "AA4510B304AF3E0020C62F0901FC0000000001000015000000040006003C003D003E00400042004600470048004A004C0080008100FC00FD00FE000001020104012200F0BB",
+                    "AA4110B304AF3A0020C6300901FD0000000001000013000000040006003C003D003E00400042004600470048004A004C00FC00FD00FE000001020104012000CFBB",
+                    "AA3910B304AF320020C631090188010000000100000F00000004000600880189018A018B018C018E019001D801DA01DC01DE01E0011B00C7BB",
+                    "AA4110B304AF3A0020C6210901460000000001000013000000040006003C003D003E00400042004300440045004600470048004A004C004D004E004F001C00D3BB",
+                    "AA3B10B304AF340020C6240B01740100000002000000000F0000000400060040004A009C009E00A000A200A400A500A600C000700174011E00BBBB",
+                    "AA4110B304AF3A0020C6260901F1000000000100001300000004000600F000F100F300F400F500F600F700F800F9007C017D017E017F018001810184011800A0BB",
+                    "AA2B10B304AF240020C6280901C4000000000100000800000004000600BC00BE00C000C200C40011007ABB",
+                    "AA3910B304AF320020C62C09018A010000000100000F00000004000600F000F100F300F400F700F800F9007C017D018001810184011400C6BB",
+                    "AA5510B304AF4E0020C62E0901A0010000000100001D00000004000600E300EA00A001A101A201A401A501A601A701A801A901AA01AC01AD01AE01B001B201B401B601B701B801B901BA01E401E501E6012700DBBB",
+                    "AA4110B304AF3A0020C6320901210100000001000013000000040006003C003D003E00400042004300440045004600470048004A004C004D004E004F001C0026BB",
+                    "AA8910B304AF820010C4010B1900000000000000000000360000000400060008000C001000140018001C002000240028003C003D003E00400042004300440045004600470048004A004C004D004E004F00740075007600780079007A0080008100880089008A008B008C008E0090009C009E00A000A200A400A500A600A800AA00AB00AC006200F2BB",
+                    "AA7F10B304AF780010C4020B190000000000000000000031000000040006000800BC00BE00C000C200C400C800C900CA00CB00CC00CE00D500D600D700D800D900DA00F000F100F300F400F500F600F700F800F900FC00FD00FE00000102010401080109010A010D011601170118011A011C011D011E01200121014300BEBB",
+                    "AA7710B304AF700010C4030B19000000000000000000002D0000000400060008002C012E01300132013401360138013A013C013E01400142014401460148014A014C014E01500152015401560158015A015B015C015D015E015F0160016101620163016401650166016701680169016A016B014C00C4BB",
+                    "AA3F10B304AF380010C4040B1900000000000000000000110000000400060008006C016E0170017401760177017C017D017E017F018001810184011F005DBB",
+                    "AA2510B304AF1E0010C4050B1900000000000000000000040000000400060008000C00D7BB"
+                ],
+                "auth_info": [
+                    "AA5710B3044A379CB8174A379CB8174A379CB8174A379CB8174A379CB8174A379CB8174A379CB8174A379CB8174A379CB8174A379CB8174A379CB8174A379CB8174A379CB8174A379CB8174A379CB8174A369CE8A81DBB",
+                    "AA5710B3044A379CB8174A379CB8174A379CB8174A379CB8174A379CB8174A379CB8174A379CB8174A379CB8174A379CB8174A379CB8174A379CB8174A379CB8174A379CB8174A379CB8174A379CB8174A359CE8A812BB",
+                    "AA5710B30449379CB8174A379CB8174A379CB8E84A375CBF1756379CB9D74E369CB8174A379CB8174A379CB8146AF5ADB8174A089347E615379CB8034A37E0A70A7904B8C1090EA678C8174A379CB8174A349CE8A89BBB",
+                    "AA5710B30449379CB8174A379CB8174A379CB8E84A375CBF1756379CB9D74E369CB8174A379CB8174A379CB8146AF5ADB8174A089347E615379CB8034A37E0A70A7904B8C1090EA678C8174A379CB8174A339CE8A898BB",
+                    "AA5710B30449379CB8174A379CB8174A379CB8E84A375CBF1756379CB9D74E369CB8174A379CB8174A379CB8146AF5ADB8174A089347E615379CB8034A37E0A70A7904B8C1090EA678C8174A379CB8174A329CE8A899BB",
+                    "AA5710B3044A379CB8174A379CB8174A379CB8174A379CB8174A379CB8174A379CB8174A379CB8174A379CB8174A379CB8174A379CB8174A379CB8174A379CB8174A379CB8174A379CB8174A379CB8174A369CE8D82DBB",
+                    "AA5710B3044A379CB8174A379CB8174A379CB8174A379CB8174A379CB8174A379CB8174A379CB8174A379CB8174A379CB8174A379CB8174A379CB8174A379CB8174A379CB8174A379CB8174A379CB8174A359CE8D822BB",
+                    "AA5710B30449379CB816B5C86347E8B5C86348E8BB626367E835E2EB4FE897688347C615C861ED421F62C9E81435C0EBAD64B5089347E61522CFED0A3F62E1E7083D40A1C7489DC261C8174B268DA9061B349CE8D84EBB",
+                    "AA5710B30449379CB816B5C86347E8B5C86348E8BB626367E835E2EB4FE897688347C615C861ED421F62C9E81435C0EBAD64B5089347E61522CFED0A3F62E1E7083D40A1C7489DC261C8174B268DA9061B339CE8D84FBB",
+                    "AA5710B30449379CB816B5C86347E8B5C86348E8BB626367E835E2EB4FE897688347C615C861ED421F62C9E81435C0EBAD64B5089347E61522CFED0A3F62E1E7083D40A1C7489DC261C8174B268DA9061B329CE8D84CBB",
+                    "AA1110B304FF0A380A0000BC9A38E515BB"
+                ],
+                "additional_command": [
+                    "AA3310B3C48519718F097C0B1170B90D2B8ECA21EF03455FDAE14E448E60708150B7F784098631242CB9387727AD40B44216BB"
+                ]
+            }
+        }
+    },
+    "specVer": "3.1.5"
+}
