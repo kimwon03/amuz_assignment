@@ -12,6 +12,10 @@ class MainPage extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     useEffect(() {
       ref.read(mainNotifierProvider.notifier).startMonitoring();
+
+      return () async {
+        ref.read(mainNotifierProvider.notifier).dispose();
+      };
     }, []);
 
     return Scaffold(

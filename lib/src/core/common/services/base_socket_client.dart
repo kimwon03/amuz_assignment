@@ -159,6 +159,8 @@ class BaseSocketClient {
   }
 
   void _write(Object? object) {
+    if (socket == null || !_isSocketConnected) return;
+
     socket!.write(object);
   }
 }

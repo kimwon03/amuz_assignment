@@ -31,9 +31,11 @@ class MainNotifier extends _$MainNotifier {
   }
 
   void disconnect() {
+    _dxiRepository.disconnect();
+  }
+
+  void dispose() {
     _monitoringSubscription?.cancel();
     _monitoringSubscription = null;
-
-    _dxiRepository.disconnect();
   }
 }

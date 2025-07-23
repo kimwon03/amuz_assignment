@@ -7,6 +7,7 @@ import 'package:amuz_assignment/src/features/connection/initialize.dart'
 import 'package:amuz_assignment/src/features/monitoring/initialize.dart'
     as Monitoring;
 import 'package:flutter/services.dart';
+import 'package:get_it/get_it.dart';
 
 Future<void> appInitialize() async {
   final String response = await rootBundle.loadString(
@@ -15,6 +16,8 @@ Future<void> appInitialize() async {
   productSpecification = await json.decode(response);
 
   BaseSocketClient socketClient = BaseSocketClient();
+
+  GetIt.I.registerLazySingleton<BaseSocketClient>(() => socketClient);
 
   Connection.initialize(socketClient);
   Monitoring.initialize(socketClient);
