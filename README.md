@@ -43,3 +43,7 @@ $ flutter run --dart-define-from-file=.env
 ```
 $ flutter build apk --dart-define-from-file=.env && flutter install
 ```
+
+# 프로젝트 기능
+1. 냉장고와 DXi 프로토콜 소켓 연결
+2. 실시간 모니터링 데이터 표시
