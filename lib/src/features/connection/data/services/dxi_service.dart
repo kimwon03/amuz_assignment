@@ -55,7 +55,7 @@ class DxiSocketClient {
       port,
       context: _getSecurityContext(
         key: Keys.blackboxKey,
-        password: Keys.blackboxPassword,
+        password: blackboxPassword,
       ),
     );
 
@@ -84,7 +84,7 @@ class DxiSocketClient {
       port,
       context: _getSecurityContext(
         key: Keys.appKey,
-        password: Keys.appPassword,
+        password: appPassword,
         rootCA: Keys.rootCert,
         serverCert: Keys.appCert,
       ),

@@ -1,6 +1,9 @@
 const String host = String.fromEnvironment('dxi_host');
 const int port = int.fromEnvironment('dxi_port');
 
+const String appPassword = String.fromEnvironment('app_password');
+const String blackboxPassword = String.fromEnvironment('blackbox_password');
+
 const int maxSendCount = 3;
 
 final Duration sendRequestDuration = Duration(seconds: 5);
